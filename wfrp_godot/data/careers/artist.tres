@@ -1,0 +1,69 @@
+[gd_resource type="Resource" script_class="CareerDefinition" format=3 uid="uid://bo3056ofaxrpq"]
+
+[ext_resource type="Script" uid="uid://cr4lrv134m8k1" path="res://scripts/resources/career_definition.gd" id="1"]
+[ext_resource type="Script" uid="uid://3ug4teqahf5m" path="res://scripts/resources/career_level.gd" id="2"]
+
+[sub_resource type="Resource" id="Level_1"]
+script = ExtResource("2")
+level_name = "Apprentice Artist"
+status_tier = "Silver"
+status_stars = 1
+attribute_advances = {
+"dexterity": 5,
+"initiative": 5,
+"strength": 5
+}
+skills = Array[String](["Art (Any)", "Cool", "Consume Alcohol", "Evaluate", "Endurance", "Gossip", "Perception", "Stealth (Urban)"])
+talents = Array[String](["Artistic", "Sharp", "Strong Back", "Tenacious"])
+trappings = Array[String](["Brush or Chisel or Quill Pen"])
+income_skill = "Art (Any)"
+
+[sub_resource type="Resource" id="Level_2"]
+script = ExtResource("2")
+level_name = "Artist"
+tier = 2
+status_tier = "Silver"
+status_stars = 3
+attribute_advances = {
+"fellowship": 5
+}
+skills = Array[String](["Climb", "Gamble", "Haggle", "Intuition", "Language (Classical)", "Trade (Art Supplies)"])
+talents = Array[String](["Carouser", "Criminal", "Gregarious", "Nimble Fingered"])
+trappings = Array[String](["Sling Bag containing Trade Tools (Artist)"])
+income_skill = "Art (Any)"
+
+[sub_resource type="Resource" id="Level_3"]
+script = ExtResource("2")
+level_name = "Master Artist"
+tier = 3
+status_tier = "Silver"
+status_stars = 5
+attribute_advances = {
+"willpower": 5
+}
+skills = Array[String](["Charm", "Leadership", "Lore (Art)", "Lore (Heraldry)"])
+talents = Array[String](["Acute Sense (Any)", "Dealmaker", "Etiquette (Any)", "Nose for Trouble"])
+trappings = Array[String](["Apprentice", "Patron", "Workshop (Artist)"])
+income_skill = "Art (Any)"
+
+[sub_resource type="Resource" id="Level_4"]
+script = ExtResource("2")
+level_name = "Maestro"
+tier = 4
+status_tier = "Gold"
+status_stars = 2
+attribute_advances = {
+"intelligence": 5
+}
+skills = Array[String](["Research", "Ride (Horse)"])
+talents = Array[String](["Ambidextrous", "Kingpin", "Magnum Opus", "Read/Write"])
+trappings = Array[String](["Large Workshop (Artist)", "Library (Art)", "3 Apprentices"])
+income_skill = "Art (Any)"
+
+[resource]
+script = ExtResource("1")
+career_name = "Artist"
+career_class = "Courtier"
+valid_races = Array[String](["Dwarf", "Halfling", "High Elf", "Human", "Wood Elf"])
+levels = Array[ExtResource("2")]([SubResource("Level_1"), SubResource("Level_2"), SubResource("Level_3"), SubResource("Level_4")])
+summary = "You possess an artistic gift, one that transcends daily life and uplifts the souls of others."

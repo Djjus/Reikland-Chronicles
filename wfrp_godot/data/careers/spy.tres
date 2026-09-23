@@ -1,0 +1,68 @@
+[gd_resource type="Resource" script_class="CareerDefinition" format=3 uid="uid://r3j18rmo7pmx"]
+
+[ext_resource type="Script" uid="uid://cr4lrv134m8k1" path="res://scripts/resources/career_definition.gd" id="1"]
+[ext_resource type="Script" uid="uid://3ug4teqahf5m" path="res://scripts/resources/career_level.gd" id="2"]
+
+[sub_resource type="Resource" id="Level_1"]
+script = ExtResource("2")
+level_name = "Informer"
+status_stars = 3
+attribute_advances = {
+"agility": 5,
+"fellowship": 5,
+"willpower": 5
+}
+skills = Array[String](["Bribery", "Charm", "Cool", "Gamble", "Gossip", "Haggle", "Perception", "Stealth (Any)"])
+talents = Array[String](["Blather", "Carouser", "Gregarious", "Shadow"])
+trappings = Array[String](["Charcoal stick", "Sling Bag containing 2 different sets of clothing and Hooded Cloak"])
+income_skill = "Stealth (Any)"
+
+[sub_resource type="Resource" id="Level_2"]
+script = ExtResource("2")
+level_name = "Spy"
+tier = 2
+status_tier = "Silver"
+status_stars = 3
+attribute_advances = {
+"weapon_skill": 5
+}
+skills = Array[String](["Climb", "Entertain (Act)", "Intuition", "Melee (Basic)", "Secret Signs (Any)", "Sleight of Hand"])
+talents = Array[String](["Etiquette (Any)", "Lip Reading", "Read/Write", "Secret Identity"])
+trappings = Array[String](["Informer", "Sword", "Disguise Kit", "Ring of Informers", "Telescope"])
+income_skill = "Stealth (Any)"
+
+[sub_resource type="Resource" id="Level_3"]
+script = ExtResource("2")
+level_name = "Agent"
+tier = 3
+status_tier = "Gold"
+status_stars = 1
+attribute_advances = {
+"initiative": 5
+}
+skills = Array[String](["Animal Care", "Animal Training (Pigeon)", "Language (Any)", "Leadership"])
+talents = Array[String](["Attractive", "Cat-tongued", "Master of Disguise", "Mimic"])
+trappings = Array[String](["Book (Cryptography)", "Ring of Spies and Informers", "Loft of Homing Pigeons", "Quill and Ink"])
+income_skill = "Leadership"
+
+[sub_resource type="Resource" id="Level_4"]
+script = ExtResource("2")
+level_name = "Spymaster"
+tier = 4
+status_tier = "Gold"
+status_stars = 4
+attribute_advances = {
+"intelligence": 5
+}
+skills = Array[String](["Lore (Any)", "Research"])
+talents = Array[String](["Briber", "Schemer", "Suave", "Tower of Memories"])
+trappings = Array[String](["Office and Staff", "Large Spy Ring of Agents, Spies, and Informers"])
+income_skill = "Leadership"
+
+[resource]
+script = ExtResource("1")
+career_name = "Spy"
+career_class = "Courtier"
+valid_races = Array[String](["Dwarf", "Halfling", "High Elf", "Human", "Wood Elf"])
+levels = Array[ExtResource("2")]([SubResource("Level_1"), SubResource("Level_2"), SubResource("Level_3"), SubResource("Level_4")])
+summary = "You are the eyes and ears of another, exposing secrets and spreading lies."

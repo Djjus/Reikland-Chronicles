@@ -1,0 +1,48 @@
+extends RefCounted
+class_name ElderStory
+## The Village Elder's own quest chain — a hand-built, 3-stage
+## narrative quest (see Character's own ELDER_QUEST_ID functions),
+## walked through via SocialEncounterScreen's own dedicated flow
+## rather than the random SocialEncounterDefinition system, since it
+## needs to always show the correct stage of an ongoing story rather
+## than a one-shot random exchange. Every word here is original
+## writing for this project — informed by the Empire's own general
+## grimdark, rural-hardship tone (bad harvests, high taxes, a
+## superstitious and half-abandoned countryside), not copied from any
+## published sourcebook.
+
+const ELDER_NAME := "Elder Anselm Vogt"
+const VILLAGE_NAME := "Giessingen"
+
+## --- Stage 1: the opening story, and the request to cull the vermin ---
+const STAGE_1_INTRO := "The old man doesn't so much stand as lean — against a fence post gone grey and soft with age, in the thin light of a Reikland morning that hasn't decided yet whether it means to rain. He watches you a long moment before he speaks, the way people do out here, where a stranger on the road is either trouble or a rumour of trouble not yet arrived.\n\n\"Giessingen,\" he says at last, nodding at the huddle of low roofs behind him, as if the name alone explains everything worth knowing. In a way, it does. \"Not much of a place, I'll grant you. Wasn't always so thin. My father's father spoke of granaries so full the mice went fat and lazy on the spillage. That was before the winter the river froze wrong, and the taxes didn't, and half the young folk went to Altdorf chasing work that never quite existed once they got there.\"\n\nHe says this without much bitterness — the flat, practiced tone of a man who has told this story to himself so many times it has worn as smooth as a river stone. \"What's left is old women, younger children, and men too stubborn or too poor to leave. And me, for my sins, since nobody else wanted the bother of being Elder. The reeve rides through twice a year to collect what little we have and remind us the Baron remembers we exist. Sigmar's priests haven't bothered since old Brother Konrad died of the flux three winters back. We get by on Taal's mercy, Rhya's patience, and a stubbornness I can't rightly account for.\""
+
+## Two flavour Skill Tests during Stage 1 — per the request, these
+## never gate anything; both outcomes lead to the same request for
+## help, only the flavour text differs.
+const STAGE_1_CHARM_PROMPT := "He studies you the way a man studies weather he isn't sure of yet — hard to say if it'll pass or spoil the whole day."
+const STAGE_1_CHARM_SUCCESS := "Something in your manner eases him — whatever he was bracing for, you clearly aren't it. His shoulders drop half an inch, which for a man like this is practically an embrace. \"Well. You've an honest enough face, for a stranger. That'll have to do.\""
+const STAGE_1_CHARM_FAIL := "He doesn't relax so much as decide he's out of better options. \"Can't say I trust you, particularly. But trust's a luxury Giessingen gave up sometime around the second bad harvest, and I'm past being choosy.\""
+
+const STAGE_1_REQUEST := "\"Here's the truth of it,\" he says, straightening as much as his back allows. \"Since old Gerta the hedge-warden passed — heart, in her sleep, kindest death anyone's had here in years — nothing's kept the wild things back from the fields. Rats in the grain stores. Wolves bold enough to take a lamb in daylight. Things with too many legs in the tall grass that I'd rather not put a name to before breakfast. It's eating into what little we've got left to eat ourselves, and eating into what little courage this village has left besides.\n\n\"I'm not fool enough to ask you to do it for love of Giessingen — you don't know us from any other cluster of huts on the road. But I can ask you to do it for the doing. Thin out whatever's out there. Eight kills, honestly earned, not eight excuses. Do that, and come find me again — I'll not forget it, and neither will this village, whatever short memory folk say the Empire has for kindness these days.\""
+
+## --- Stage 1: repeat visit, not yet ready ---
+const STAGE_1_NOT_READY := "The Elder looks up from whatever small, patient task his hands are occupied with. \"Still at it, are you? Good. The fields don't get any less hungry for waiting.\" He says it without reproach — more the tired patience of a man who has waited for worse things than this."
+
+## --- Stage 2: transition after 8 kills, and the new request ---
+const STAGE_2_TRANSITION := "The Elder's face does something complicated when you tell him it's done — not quite a smile, more the loosening of a knot he'd stopped noticing he was carrying. \"Eight, you say. I believe you — you've the look of someone who's earned a long sit and a stronger drink than Giessingen can rightly offer.\" He's quiet a moment, turning something over. \"There's more I could ask of you, if you'll hear it. Not vermin this time — people. My people, for what that's worth to a stranger.\n\n\"Old Marta's roof won't survive another storm, and there's no one left with the back for it. The miller's boy has a debt he's too proud to speak of and too young to know how to solve. Widow Priske hasn't spoken a whole sentence since her husband didn't come back from the treeline last autumn, and I fear what happens to a woman left alone with silence for company. Small things, most of them. The kind that don't matter to a Baron or a reeve, and matter enormously to the people living them.\n\n\"Help where you find it — four of them, say, however you come across the need. Giessingen's a small enough place that trouble doesn't have to go looking for you. Just... be the sort of stranger who stops when he sees it.\""
+
+## --- Stage 2: repeat visit, not yet ready ---
+const STAGE_2_NOT_READY := "\"How's the village treating you?\" the Elder asks, and there's a real question underneath the pleasantry — he's watching to see if you've actually been paying attention to the place, or just passing through it."
+
+## --- Stage 3: transition after 4 helps, and the idol request ---
+const STAGE_3_TRANSITION := "\"Four,\" the Elder repeats, and this time the something in his face isn't complicated at all — it's plain, unguarded gratitude, the kind a proud old man doesn't often let show. \"I've heard, you know. Small village. Word travels faster than sense does. Marta's roof holds. The miller's boy sleeps easier. Priske spoke three whole sentences to me last market day, which is three more than I'd had from her in a year.\n\n\"So I'll tell you something I haven't told most who pass through here, because most who pass through here wouldn't care, and the ones who would care are exactly the ones you don't want knowing.\" He lowers his voice, though there's no one nearby to overhear. \"Giessingen keeps a small idol — older than the shrine it sits in, older than the village itself, if the stories are honest, which stories rarely are. Rhya's likeness, or something older wearing her face. Every harvest, we bring it to the fields before the first cut. Superstition, the reeve calls it, when he bothers to notice it at all. Maybe it is. But three weeks back, a raiding party of greenskins out of the fort east of here took it — along with the strongbox, and two good goats, though I'll admit the goats sting less.\n\n\"I'm not fool enough to think Sigmar or Rhya or anyone much cares whether a stone idol sits in a goblin fort or a village shrine. But this village has had one bad thing after another for longer than I care to count, and I'd very much like, just once, for something taken from us to come back. I'll not order you into a goblin fort — that's a fool's errand for a fool's coin, and you've already done more for us than we'd any right to ask. But if you were the sort to go looking anyway... I expect you'd find something in there worth the risk.\""
+
+## --- Stage 3: repeat visit, idol not yet retrieved ---
+const STAGE_3_NOT_READY := "The Elder's eyes flick toward the eastern road, then back to you, the question unspoken but obvious enough. \"No idol, then. Well. I didn't expect it'd be easy. Mind yourself out there — Giessingen's buried enough of its own this year already.\""
+
+## --- Final resolution: idol returned ---
+const RESOLUTION := "You set the idol in his hands, and for a moment Elder Anselm Vogt doesn't say anything at all — just turns it over, thumb tracing the same worn groove generations of Giessingen's own hands wore smooth before yours. When he finally looks up, his eyes are wet in a way he'd clearly rather you didn't mention.\n\n\"Well,\" he manages, voice rougher than before. \"Well. Look at that.\" He clears his throat, visibly gathering himself back into the dry, practical old man you first met. \"I'll not insult you by pretending this squares what Giessingen owes you — it doesn't, not close. But it's what the village has, and I'll not have you leave empty-handed either.\" He presses a small, worn purse into your hand. \"Ten Gold Crowns. More than this place has seen in one place in longer than I care to admit.\n\n\"Whatever else you find on your road, stranger — you'll always find a bed and a bowl in Giessingen, for as long as I've any say in the matter. That's not nothing, out here. It might even be everything.\""
+
+## --- Post-completion: talking to the Elder again ---
+const POST_COMPLETION := "The Elder nods to you the way he'd nod to family — brief, unremarkable, entirely without the wariness he greeted you with the first time. \"Fields are holding. Roof's holding. Village is holding.\" A small, dry smile. \"Turns out that's most of what anyone out here's really asking for.\""

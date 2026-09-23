@@ -1,0 +1,68 @@
+[gd_resource type="Resource" script_class="CareerDefinition" format=3 uid="uid://dnxrkjrwhh1vs"]
+
+[ext_resource type="Script" uid="uid://cr4lrv134m8k1" path="res://scripts/resources/career_definition.gd" id="1"]
+[ext_resource type="Script" uid="uid://3ug4teqahf5m" path="res://scripts/resources/career_level.gd" id="2"]
+
+[sub_resource type="Resource" id="Level_1"]
+script = ExtResource("2")
+level_name = "Riverguide"
+status_stars = 4
+attribute_advances = {
+"initiative": 5,
+"toughness": 5,
+"weapon_skill": 5
+}
+skills = Array[String](["Consume Alcohol", "Gossip", "Intuition", "Lore (Local)", "Lore (Riverways)", "Perception", "Row", "Swim"])
+talents = Array[String](["Fisherman", "Night Vision", "Orientation", "Waterman"])
+trappings = Array[String](["Sword", "Storm Lantern and Oil"])
+income_skill = "Lore (Riverways)"
+
+[sub_resource type="Resource" id="Level_2"]
+script = ExtResource("2")
+level_name = "Huffer"
+tier = 2
+status_tier = "Silver"
+status_stars = 1
+attribute_advances = {
+"willpower": 5
+}
+skills = Array[String](["Charm", "Cool", "Entertain (Storytelling)", "Language (Any)", "Melee (Basic)", "Navigation"])
+talents = Array[String](["Dealmaker", "Etiquette (Guilder)", "Nose for Trouble", "River Guide"])
+trappings = Array[String](["Leather Jerkin", "Rope", "Row Boat"])
+income_skill = "Lore (Riverways)"
+
+[sub_resource type="Resource" id="Level_3"]
+script = ExtResource("2")
+level_name = "Pilot"
+tier = 3
+status_tier = "Silver"
+status_stars = 3
+attribute_advances = {
+"intelligence": 5
+}
+skills = Array[String](["Haggle", "Intimidate", "Lore (Local)", "Lore (Wrecks)"])
+talents = Array[String](["Acute Sense (Sight)", "Pilot", "Sea Legs", "Very Strong"])
+trappings = Array[String](["Pole", "Storm Lantern and Oil"])
+income_skill = "Lore (Riverways)"
+
+[sub_resource type="Resource" id="Level_4"]
+script = ExtResource("2")
+level_name = "Master Pilot"
+tier = 4
+status_tier = "Silver"
+status_stars = 5
+attribute_advances = {
+"fellowship": 5
+}
+skills = Array[String](["Leadership", "Sail"])
+talents = Array[String](["Sixth Sense", "Sharp", "Strong Swimmer", "Tenacious"])
+trappings = Array[String](["Boathand", "Small Riverboat"])
+income_skill = "Leadership"
+
+[resource]
+script = ExtResource("1")
+career_name = "Huffer"
+career_class = "Riverfolk"
+valid_races = Array[String](["Dwarf", "Halfling", "Human"])
+levels = Array[ExtResource("2")]([SubResource("Level_1"), SubResource("Level_2"), SubResource("Level_3"), SubResource("Level_4")])
+summary = "You guide vessels safely through the Old World's most treacherous waterways."

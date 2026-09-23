@@ -1,0 +1,231 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/character_creation_screen.gd" id="1"]
+
+[node name="CharacterCreation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.075, 0.06, 0.045, 1)
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="GameTitle" type="Label" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_colors/font_color = Color(0.85, 0.7, 0.35, 1)
+text = "Reikland Chronicles"
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="Margin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "← Main Menu"
+
+[node name="ContinueHeader" type="Label" parent="Margin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.85, 0.7, 0.35, 1)
+text = "Continue"
+visible = false
+
+[node name="ContinueBox" type="VBoxContainer" parent="Margin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="ContinueSep" type="HSeparator" parent="Margin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+visible = false
+
+[node name="CreateHeader" type="Label" parent="Margin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.85, 0.7, 0.35, 1)
+text = "Create a New Character"
+
+[node name="StepLabel" type="Label" parent="Margin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(0.7, 0.65, 0.55, 1)
+text = "Step 1 of 5: Species"
+
+[node name="SummaryHeader" type="PanelContainer" parent="Margin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SummaryMargin" type="MarginContainer" parent="Margin/VBox/SummaryHeader"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 8
+
+[node name="SummaryRow" type="HBoxContainer" parent="Margin/VBox/SummaryHeader/SummaryMargin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="SummaryPortrait" type="TextureRect" parent="Margin/VBox/SummaryHeader/SummaryMargin/SummaryRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(56, 56)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SummaryInfo" type="VBoxContainer" parent="Margin/VBox/SummaryHeader/SummaryMargin/SummaryRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="SummaryNameLine" type="Label" parent="Margin/VBox/SummaryHeader/SummaryMargin/SummaryRow/SummaryInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(0.85, 0.7, 0.35, 1)
+text = "Unnamed Wanderer"
+
+[node name="SummaryRaceCareerLine" type="Label" parent="Margin/VBox/SummaryHeader/SummaryMargin/SummaryRow/SummaryInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.75, 0.68, 0.55, 1)
+text = "Species: (not yet chosen)    Career: (not yet chosen)"
+
+[node name="SummaryStatsLine" type="Label" parent="Margin/VBox/SummaryHeader/SummaryMargin/SummaryRow/SummaryInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.7, 0.65, 0.55, 1)
+autowrap_mode = 3
+text = "Characteristics: (not yet rolled)"
+
+[node name="SummaryVitalsLine" type="Label" parent="Margin/VBox/SummaryHeader/SummaryMargin/SummaryRow/SummaryInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.7, 0.65, 0.55, 1)
+autowrap_mode = 3
+text = "Wounds / Movement / Fate / Resilience: (not yet available)    Bonus XP: 0"
+
+[node name="StepScroll" type="ScrollContainer" parent="Margin/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 380)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="StepContainer" type="VBoxContainer" parent="Margin/VBox/StepScroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="BeginHeader" type="Label" parent="Margin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.68, 0.55, 1)
+text = "Generate a character, then choose a slot to begin your adventure:"
+visible = false
+
+[node name="BeginBox" type="HFlowContainer" parent="Margin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 8
+
+[node name="OutputLabel" type="RichTextLabel" parent="Margin/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+visible = false
+
+[node name="OverwriteConfirmOverlay" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 0
+visible = false
+
+[node name="Dim" type="ColorRect" parent="OverwriteConfirmOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.6)
+
+[node name="Center" type="CenterContainer" parent="OverwriteConfirmOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel" type="PanelContainer" parent="OverwriteConfirmOverlay/Center"]
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="OverwriteConfirmOverlay/Center/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBox" type="VBoxContainer" parent="OverwriteConfirmOverlay/Center/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="OverwriteConfirmOverlay/Center/Panel/Margin/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.85, 0.7, 0.35, 1)
+text = "Overwrite Save?"
+horizontal_alignment = 1
+
+[node name="WarningLabel" type="Label" parent="OverwriteConfirmOverlay/Center/Panel/Margin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+custom_minimum_size = Vector2(360, 0)
+autowrap_mode = 3
+horizontal_alignment = 1
+text = ""
+
+[node name="ButtonRow" type="HBoxContainer" parent="OverwriteConfirmOverlay/Center/Panel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="ConfirmButton" type="Button" parent="OverwriteConfirmOverlay/Center/Panel/Margin/VBox/ButtonRow"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Yes, Overwrite"
+
+[node name="CancelButton" type="Button" parent="OverwriteConfirmOverlay/Center/Panel/Margin/VBox/ButtonRow"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Cancel"

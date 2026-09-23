@@ -1,0 +1,68 @@
+[gd_resource type="Resource" script_class="CareerDefinition" format=3 uid="uid://oy4ugdhy4aee"]
+
+[ext_resource type="Script" uid="uid://cr4lrv134m8k1" path="res://scripts/resources/career_definition.gd" id="1"]
+[ext_resource type="Script" uid="uid://3ug4teqahf5m" path="res://scripts/resources/career_level.gd" id="2"]
+
+[sub_resource type="Resource" id="Level_1"]
+script = ExtResource("2")
+level_name = "Runner"
+status_stars = 3
+attribute_advances = {
+"agility": 5,
+"initiative": 5,
+"toughness": 5
+}
+skills = Array[String](["Athletics", "Climb", "Dodge", "Endurance", "Gossip", "Navigation", "Perception", "Melee (Brawling)"])
+talents = Array[String](["Flee!", "Fleet Footed", "Sprinter", "Step Aside"])
+trappings = Array[String](["Scroll Case"])
+income_skill = "Athletics"
+
+[sub_resource type="Resource" id="Level_2"]
+script = ExtResource("2")
+level_name = "Messenger"
+tier = 2
+status_tier = "Silver"
+status_stars = 1
+attribute_advances = {
+"weapon_skill": 5
+}
+skills = Array[String](["Animal Care", "Charm", "Cool", "Lore (Local)", "Melee (Basic)", "Ride (Horse)"])
+talents = Array[String](["Crack the Whip", "Criminal", "Orientation", "Seasoned Traveller"])
+trappings = Array[String](["Sword", "Leather Jack", "Riding Horse with Saddle and Tack"])
+income_skill = "Athletics"
+
+[sub_resource type="Resource" id="Level_3"]
+script = ExtResource("2")
+level_name = "Courier"
+tier = 3
+status_tier = "Silver"
+status_stars = 3
+attribute_advances = {
+"willpower": 5
+}
+skills = Array[String](["Charm Animal", "Bribery", "Consume Alcohol", "Outdoor Survival"])
+talents = Array[String](["Nose for Trouble", "Relentless", "Tenacious", "Trick Riding"])
+trappings = Array[String](["Backpack", "Saddlebags", "Shield"])
+income_skill = "Athletics"
+
+[sub_resource type="Resource" id="Level_4"]
+script = ExtResource("2")
+level_name = "Courier-Captain"
+tier = 4
+status_tier = "Silver"
+status_stars = 5
+attribute_advances = {
+"fellowship": 5
+}
+skills = Array[String](["Intimidate", "Leadership"])
+talents = Array[String](["Dealmaker", "Hatred (Outlaws)", "Kingpin", "Very Resilient"])
+trappings = Array[String](["Couriers", "Mail Shirt", "Writing Kit"])
+income_skill = "Leadership"
+
+[resource]
+script = ExtResource("1")
+career_name = "Messenger"
+career_class = "Ranger"
+valid_races = Array[String](["Dwarf", "Halfling", "High Elf", "Human", "Wood Elf"])
+levels = Array[ExtResource("2")]([SubResource("Level_1"), SubResource("Level_2"), SubResource("Level_3"), SubResource("Level_4")])
+summary = "Swift and sure-footed, nothing stops you delivering your messages on time."

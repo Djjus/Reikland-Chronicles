@@ -1,0 +1,65 @@
+[gd_resource type="Resource" script_class="CareerDefinition" format=3 uid="uid://drvcn5d7mklwp"]
+
+[ext_resource type="Script" uid="uid://cr4lrv134m8k1" path="res://scripts/resources/career_definition.gd" id="1"]
+[ext_resource type="Script" uid="uid://3ug4teqahf5m" path="res://scripts/resources/career_level.gd" id="2"]
+
+[sub_resource type="Resource" id="Level_1"]
+script = ExtResource("2")
+level_name = "Hexer"
+status_stars = 1
+attribute_advances = {
+"toughness": 5,
+"weapon_skill": 5,
+"willpower": 5
+}
+skills = Array[String](["Channelling (Any Colour)", "Cool", "Endurance", "Gossip", "Intimidate", "Language (Magick)", "Sleight of Hand", "Stealth (Rural)"])
+talents = Array[String](["Criminal", "Instinctive Diction", "Menacing", "Petty Magic"])
+trappings = Array[String](["Candles", "Chalk", "Doll", "Pins"])
+income_skill = "Intimidate"
+
+[sub_resource type="Resource" id="Level_2"]
+script = ExtResource("2")
+level_name = "Witch"
+tier = 2
+status_stars = 2
+attribute_advances = {
+"initiative": 5
+}
+skills = Array[String](["Charm Animal", "Dodge", "Intuition", "Melee (Polearm)", "Perception", "Trade (Herbalist)"])
+talents = Array[String](["Arcane Magic (Witchery)", "Attractive", "Second Sight", "Witch!"])
+trappings = Array[String](["Quarterstaff", "Sack", "Selection of Herbs", "Trade Tools (Herbalist)"])
+income_skill = "Intimidate"
+
+[sub_resource type="Resource" id="Level_3"]
+script = ExtResource("2")
+level_name = "Wyrd"
+tier = 3
+status_stars = 3
+attribute_advances = {
+"fellowship": 5
+}
+skills = Array[String](["Bribery", "Charm", "Haggle", "Lore (Dark Magic)"])
+talents = Array[String](["Animal Affinity", "Fast Hands", "Frightening", "Magical Sense"])
+trappings = Array[String](["Backpack", "Cloak with Several Pockets", "Lucky Charm"])
+income_skill = "Intimidate"
+
+[sub_resource type="Resource" id="Level_4"]
+script = ExtResource("2")
+level_name = "Warlock"
+tier = 4
+status_stars = 5
+attribute_advances = {
+"intelligence": 5
+}
+skills = Array[String](["Lore (Daemonology)", "Lore (Magic)"])
+talents = Array[String](["Aethyric Attunement", "Luck", "Strong-minded", "Very Resilient"])
+trappings = Array[String](["Robes", "Skull"])
+income_skill = "Intimidate"
+
+[resource]
+script = ExtResource("1")
+career_name = "Witch"
+career_class = "Rogue"
+valid_races = Array[String](["Human"])
+levels = Array[ExtResource("2")]([SubResource("Level_1"), SubResource("Level_2"), SubResource("Level_3"), SubResource("Level_4")])
+summary = "Wilful and ambitious, you strive to master magic without an officially sanctioned licence to operate."

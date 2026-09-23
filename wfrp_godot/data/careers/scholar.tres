@@ -1,0 +1,68 @@
+[gd_resource type="Resource" script_class="CareerDefinition" format=3 uid="uid://cuq77onuwn8gg"]
+
+[ext_resource type="Script" uid="uid://cr4lrv134m8k1" path="res://scripts/resources/career_definition.gd" id="1"]
+[ext_resource type="Script" uid="uid://3ug4teqahf5m" path="res://scripts/resources/career_level.gd" id="2"]
+
+[sub_resource type="Resource" id="Level_1"]
+script = ExtResource("2")
+level_name = "Student"
+status_stars = 3
+attribute_advances = {
+"intelligence": 5,
+"toughness": 5,
+"willpower": 5
+}
+skills = Array[String](["Consume Alcohol", "Entertain (Storytelling)", "Gamble", "Gossip", "Haggle", "Language (Classical)", "Lore (Any)", "Research"])
+talents = Array[String](["Carouser", "Read/Write", "Savvy", "Super Numerate"])
+trappings = Array[String](["Alcohol", "Book", "Opinions", "Writing Kit"])
+income_skill = "Research"
+
+[sub_resource type="Resource" id="Level_2"]
+script = ExtResource("2")
+level_name = "Scholar"
+tier = 2
+status_tier = "Silver"
+status_stars = 2
+attribute_advances = {
+"initiative": 5
+}
+skills = Array[String](["Art (Writing)", "Intuition", "Language (Any)", "Lore (Any)", "Perception", "Trade (Any)"])
+talents = Array[String](["Bookish", "Etiquette (Scholars)", "Speedreader", "Suave"])
+trappings = Array[String](["Access to a Library", "Degree"])
+income_skill = "Research"
+
+[sub_resource type="Resource" id="Level_3"]
+script = ExtResource("2")
+level_name = "Fellow"
+tier = 3
+status_tier = "Silver"
+status_stars = 5
+attribute_advances = {
+"fellowship": 5
+}
+skills = Array[String](["Entertain (Lecture)", "Intimidate", "Language (Any)", "Lore (Any)"])
+talents = Array[String](["Linguistics", "Public Speaker", "Savant (Any)", "Tower of Memories"])
+trappings = Array[String](["Mortarboard", "Robes"])
+income_skill = "Entertain (Lecture)"
+
+[sub_resource type="Resource" id="Level_4"]
+script = ExtResource("2")
+level_name = "Professor"
+tier = 4
+status_tier = "Gold"
+status_stars = 1
+attribute_advances = {
+"dexterity": 5
+}
+skills = Array[String](["Entertain (Rhetoric)", "Lore (Any)"])
+talents = Array[String](["Magnum Opus", "Master Orator", "Savant (Any)", "Sharp"])
+trappings = Array[String](["Study"])
+income_skill = "Entertain (Rhetoric)"
+
+[resource]
+script = ExtResource("1")
+career_name = "Scholar"
+career_class = "Academic"
+valid_races = Array[String](["Dwarf", "Halfling", "High Elf", "Human", "Wood Elf"])
+levels = Array[ExtResource("2")]([SubResource("Level_1"), SubResource("Level_2"), SubResource("Level_3"), SubResource("Level_4")])
+summary = "You dedicate your life to the pursuit and study of knowledge, wherever that may take you."

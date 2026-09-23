@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="RaceDefinition" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/race_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+race_name = "Halfling"
+characteristic_bases = {
+"weapon_skill": 10,
+"ballistic_skill": 30,
+"strength": 10,
+"toughness": 20,
+"initiative": 20,
+"agility": 20,
+"dexterity": 30,
+"intelligence": 20,
+"willpower": 30,
+"fellowship": 30
+}
+starting_fate = 3
+starting_resilience = 1
+extra_points = 3
+starting_extra_wounds = 0
+movement = 3
+racial_skill_pool = Array[String](["Charm", "Consume Alcohol", "Dodge", "Gamble", "Haggle", "Intuition", "Language (Mootish)", "Lore (Reikland)", "Perception", "Sleight of Hand", "Stealth (Any)", "Trade (Cook)"])
+racial_talents = Array[String](["Acute Sense (Taste)", "Night Vision", "Resistance (Chaos)", "Small"])
+racial_random_talent_count = 2
+summary = "Small, cheerful, and famously fond of food; found wherever there's good cooking."

@@ -1,0 +1,69 @@
+[gd_resource type="Resource" script_class="CareerDefinition" format=3 uid="uid://dho434enud2eq"]
+
+[ext_resource type="Script" uid="uid://cr4lrv134m8k1" path="res://scripts/resources/career_definition.gd" id="1"]
+[ext_resource type="Script" uid="uid://3ug4teqahf5m" path="res://scripts/resources/career_level.gd" id="2"]
+
+[sub_resource type="Resource" id="Level_1"]
+script = ExtResource("2")
+level_name = "Thief-taker"
+status_tier = "Silver"
+status_stars = 1
+attribute_advances = {
+"agility": 5,
+"toughness": 5,
+"weapon_skill": 5
+}
+skills = Array[String](["Bribery", "Charm", "Gossip", "Haggle", "Intuition", "Melee (Basic)", "Outdoor Survival", "Perception"])
+talents = Array[String](["Break and Enter", "Shadow", "Strike to Stun", "Suave"])
+trappings = Array[String](["Sword", "Leather Jerkin", "Rope"])
+income_skill = "Melee (Basic)"
+
+[sub_resource type="Resource" id="Level_2"]
+script = ExtResource("2")
+level_name = "Bounty Hunter"
+tier = 2
+status_tier = "Silver"
+status_stars = 3
+attribute_advances = {
+"ballistic_skill": 5
+}
+skills = Array[String](["Athletics", "Endurance", "Intimidate", "Ranged (Crossbow)", "Ranged (Entangling)", "Track"])
+talents = Array[String](["Marksman", "Relentless", "Seasoned Traveller", "Strong Back"])
+trappings = Array[String](["Crossbow and 10 bolts", "Leather Skullcap", "Manacles", "Net", "Warrant Papers"])
+income_skill = "Intimidate"
+
+[sub_resource type="Resource" id="Level_3"]
+script = ExtResource("2")
+level_name = "Master Bounty Hunter"
+tier = 3
+status_tier = "Silver"
+status_stars = 5
+attribute_advances = {
+"strength": 5
+}
+skills = Array[String](["Animal Care", "Climb", "Ride (Horse)", "Swim"])
+talents = Array[String](["Accurate Shot", "Careful Strike", "Dual Wielder", "Sprinter"])
+trappings = Array[String](["Mail Shirt", "Riding Horse and Saddle"])
+income_skill = "Intimidate"
+
+[sub_resource type="Resource" id="Level_4"]
+script = ExtResource("2")
+level_name = "Bounty Hunter General"
+tier = 4
+status_tier = "Gold"
+status_stars = 1
+attribute_advances = {
+"intelligence": 5
+}
+skills = Array[String](["Drive", "Lore (Law)"])
+talents = Array[String](["Deadeye Shot", "Fearless (Bounties)", "Hardy", "Sure Shot"])
+trappings = Array[String](["Draught Horse and Cart", "Mail Shirt", "4 Pairs of Manacles"])
+income_skill = "Intimidate"
+
+[resource]
+script = ExtResource("1")
+career_name = "Bounty Hunter"
+career_class = "Ranger"
+valid_races = Array[String](["Dwarf", "Halfling", "High Elf", "Human", "Wood Elf"])
+levels = Array[ExtResource("2")]([SubResource("Level_1"), SubResource("Level_2"), SubResource("Level_3"), SubResource("Level_4")])
+summary = "Ruthless and determined, you pursue your quarry to the bitter end."

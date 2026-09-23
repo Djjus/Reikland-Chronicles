@@ -1,0 +1,485 @@
+[gd_resource type="Resource" script_class="SkillDatabase" load_steps=56 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/skill_database.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/resources/skill_definition.gd" id="2"]
+
+[sub_resource type="Resource" id="SkillDef_1"]
+script = ExtResource("2")
+skill_name = "Art"
+linked_characteristic = "dexterity"
+is_advanced = false
+is_grouped = false
+group_options = Array[String]([])
+summary = "Creating drawings, paintings, or sculpture."
+
+[sub_resource type="Resource" id="SkillDef_2"]
+script = ExtResource("2")
+skill_name = "Athletics"
+linked_characteristic = "agility"
+is_advanced = false
+is_grouped = false
+group_options = Array[String]([])
+summary = "Running, jumping, and general physical exertion."
+
+[sub_resource type="Resource" id="SkillDef_3"]
+script = ExtResource("2")
+skill_name = "Bribery"
+linked_characteristic = "fellowship"
+is_advanced = false
+is_grouped = false
+group_options = Array[String]([])
+summary = "Offering (or judging) a well-placed bribe."
+
+[sub_resource type="Resource" id="SkillDef_4"]
+script = ExtResource("2")
+skill_name = "Charm"
+linked_characteristic = "fellowship"
+is_advanced = false
+is_grouped = false
+group_options = Array[String]([])
+summary = "Winning someone over through pleasant persuasion."
+
+[sub_resource type="Resource" id="SkillDef_5"]
+script = ExtResource("2")
+skill_name = "Charm Animal"
+linked_characteristic = "willpower"
+is_advanced = false
+is_grouped = false
+group_options = Array[String]([])
+summary = "Calming or influencing an animal's behaviour."
+
+[sub_resource type="Resource" id="SkillDef_6"]
+script = ExtResource("2")
+skill_name = "Climb"
+linked_characteristic = "strength"
+is_advanced = false
+is_grouped = false
+group_options = Array[String]([])
+summary = "Scaling walls, cliffs, and other steep surfaces."
+
+[sub_resource type="Resource" id="SkillDef_7"]
+script = ExtResource("2")
+skill_name = "Consume Alcohol"
+linked_characteristic = "toughness"
+is_advanced = false
+is_grouped = false
+group_options = Array[String]([])
+summary = "Holding your drink."
+
+[sub_resource type="Resource" id="SkillDef_8"]
+script = ExtResource("2")
+skill_name = "Cool"
+linked_characteristic = "willpower"
+is_advanced = false
+is_grouped = false
+group_options = Array[String]([])
+summary = "Keeping a level head under pressure or fear."
+
+[sub_resource type="Resource" id="SkillDef_9"]
+script = ExtResource("2")
+skill_name = "Dodge"
+linked_characteristic = "agility"
+is_advanced = false
+is_grouped = false
+group_options = Array[String]([])
+summary = "Avoiding blows and incoming attacks."
+
+[sub_resource type="Resource" id="SkillDef_10"]
+script = ExtResource("2")
+skill_name = "Drive"
+linked_characteristic = "agility"
+is_advanced = false
+is_grouped = false
+group_options = Array[String]([])
+summary = "Handling a cart, wagon, or other vehicle."
+
+[sub_resource type="Resource" id="SkillDef_11"]
+script = ExtResource("2")
+skill_name = "Endurance"
+linked_characteristic = "toughness"
+is_advanced = false
+is_grouped = false
+group_options = Array[String]([])
+summary = "Enduring fatigue, hunger, cold, or hardship."
+
+[sub_resource type="Resource" id="SkillDef_12"]
+script = ExtResource("2")
+skill_name = "Entertain"
+linked_characteristic = "fellowship"
+is_advanced = false
+is_grouped = true
+group_options = Array[String](["Acting", "Comedy", "Singing", "Storytelling"])
+summary = "Performing for an audience — singing, acting, or storytelling — using skills anyone can attempt, even untrained."
+
+[sub_resource type="Resource" id="SkillDef_13"]
+script = ExtResource("2")
+skill_name = "Gamble"
+linked_characteristic = "intelligence"
+is_advanced = false
+is_grouped = false
+group_options = Array[String]([])
+summary = "Games of chance and reading a table."
+
+[sub_resource type="Resource" id="SkillDef_14"]
+script = ExtResource("2")
+skill_name = "Gossip"
+linked_characteristic = "fellowship"
+is_advanced = false
+is_grouped = false
+group_options = Array[String]([])
+summary = "Trading in rumour and local news."
+
+[sub_resource type="Resource" id="SkillDef_15"]
+script = ExtResource("2")
+skill_name = "Haggle"
+linked_characteristic = "fellowship"
+is_advanced = false
+is_grouped = false
+group_options = Array[String]([])
+summary = "Negotiating a better price."
+
+[sub_resource type="Resource" id="SkillDef_16"]
+script = ExtResource("2")
+skill_name = "Intimidate"
+linked_characteristic = "strength"
+is_advanced = false
+is_grouped = false
+group_options = Array[String]([])
+summary = "Cowing someone through threat or presence."
+
+[sub_resource type="Resource" id="SkillDef_17"]
+script = ExtResource("2")
+skill_name = "Intuition"
+linked_characteristic = "initiative"
+is_advanced = false
+is_grouped = false
+group_options = Array[String]([])
+summary = "Reading a situation or a person's intent."
+
+[sub_resource type="Resource" id="SkillDef_18"]
+script = ExtResource("2")
+skill_name = "Leadership"
+linked_characteristic = "fellowship"
+is_advanced = false
+is_grouped = false
+group_options = Array[String]([])
+summary = "Rallying and directing others."
+
+[sub_resource type="Resource" id="SkillDef_19"]
+script = ExtResource("2")
+skill_name = "Melee"
+linked_characteristic = "weapon_skill"
+is_advanced = false
+is_grouped = true
+group_options = Array[String](["Basic", "Brawling", "Cavalry", "Fencing", "Flail", "Parry", "Polearm", "Two-Handed"])
+summary = "Fighting in close combat with a given weapon group."
+
+[sub_resource type="Resource" id="SkillDef_20"]
+script = ExtResource("2")
+skill_name = "Navigation"
+linked_characteristic = "initiative"
+is_advanced = false
+is_grouped = false
+group_options = Array[String]([])
+summary = "Finding your way and avoiding getting lost."
+
+[sub_resource type="Resource" id="SkillDef_21"]
+script = ExtResource("2")
+skill_name = "Outdoor Survival"
+linked_characteristic = "intelligence"
+is_advanced = false
+is_grouped = false
+group_options = Array[String]([])
+summary = "Living off the land."
+
+[sub_resource type="Resource" id="SkillDef_22"]
+script = ExtResource("2")
+skill_name = "Perception"
+linked_characteristic = "initiative"
+is_advanced = false
+is_grouped = false
+group_options = Array[String]([])
+summary = "Noticing details in your surroundings."
+
+[sub_resource type="Resource" id="SkillDef_23"]
+script = ExtResource("2")
+skill_name = "Ride"
+linked_characteristic = "agility"
+is_advanced = false
+is_grouped = true
+group_options = Array[String](["Demigryph", "Great Wolf", "Griffon", "Horse", "Pegasus"])
+summary = "Riding and controlling a mount."
+
+[sub_resource type="Resource" id="SkillDef_24"]
+script = ExtResource("2")
+skill_name = "Row"
+linked_characteristic = "strength"
+is_advanced = false
+is_grouped = false
+group_options = Array[String]([])
+summary = "Propelling a boat with oars."
+
+[sub_resource type="Resource" id="SkillDef_25"]
+script = ExtResource("2")
+skill_name = "Stealth"
+linked_characteristic = "agility"
+is_advanced = false
+is_grouped = true
+group_options = Array[String](["Rural", "Underground", "Urban"])
+summary = "Moving unseen and unheard."
+
+[sub_resource type="Resource" id="SkillDef_26"]
+script = ExtResource("2")
+skill_name = "Swim"
+linked_characteristic = "strength"
+is_advanced = false
+is_grouped = false
+group_options = Array[String]([])
+summary = "Staying afloat and moving through water."
+
+[sub_resource type="Resource" id="SkillDef_27"]
+script = ExtResource("2")
+skill_name = "Animal Care"
+linked_characteristic = "intelligence"
+is_advanced = true
+is_grouped = false
+group_options = Array[String]([])
+summary = "Tending to the health of animals."
+
+[sub_resource type="Resource" id="SkillDef_28"]
+script = ExtResource("2")
+skill_name = "Animal Training"
+linked_characteristic = "willpower"
+is_advanced = true
+is_grouped = true
+group_options = Array[String](["Guard", "Draught", "Hunting", "Riding"])
+summary = "Training an animal to obey commands."
+
+[sub_resource type="Resource" id="SkillDef_29"]
+script = ExtResource("2")
+skill_name = "Channelling"
+linked_characteristic = "willpower"
+is_advanced = true
+is_grouped = true
+group_options = Array[String](["Beasts", "Death", "Fire", "Heavens", "Metal", "Shadow", "Light", "Life", "Hedgecraft", "Witchery", "Necromancy", "Daemonology", "Nurgle", "Slaanesh", "Tzeentch"])
+summary = "Drawing on the Wind of Magic tied to a Lore, to power a spell from that Lore — the same specialisation list as Arcane Magic, since casting from a Lore requires Channelling its matching Wind."
+
+[sub_resource type="Resource" id="SkillDef_30"]
+script = ExtResource("2")
+skill_name = "Common Knowledge"
+linked_characteristic = "intelligence"
+is_advanced = true
+is_grouped = true
+group_options = Array[String](["the Empire", "the Wasteland", "Bretonnia", "Dwarfs", "Elves", "the Border Princes", "Kislev", "Tilea", "Estalia", "the Vampire Coast", "Halflings", "the Southlands"])
+summary = "Broad common knowledge of a region or people."
+
+[sub_resource type="Resource" id="SkillDef_31"]
+script = ExtResource("2")
+skill_name = "Evaluate"
+linked_characteristic = "intelligence"
+is_advanced = true
+is_grouped = false
+group_options = Array[String]([])
+summary = "Judging the true value of goods."
+
+[sub_resource type="Resource" id="SkillDef_32"]
+script = ExtResource("2")
+skill_name = "Heal"
+linked_characteristic = "intelligence"
+is_advanced = true
+is_grouped = false
+group_options = Array[String]([])
+summary = "Diagnosing and treating wounds and ailments."
+
+[sub_resource type="Resource" id="SkillDef_33"]
+script = ExtResource("2")
+skill_name = "Language"
+linked_characteristic = "intelligence"
+is_advanced = true
+is_grouped = true
+group_options = Array[String](["Battle Tongue", "Bretonnian", "Classical", "Guilder", "Khazalid", "Magick", "Thief", "Tilean"])
+summary = "Reading, writing, and speaking a specialised language or jargon. (Language (Magick), used for spellcasting, is tracked as its own separate skill rather than a specialisation of this one — see Language (Magick) below.)"
+
+[sub_resource type="Resource" id="SkillDef_34"]
+script = ExtResource("2")
+skill_name = "Lore"
+linked_characteristic = "intelligence"
+is_advanced = true
+is_grouped = true
+group_options = Array[String](["Engineering", "Geology", "Heraldry", "History", "Law", "Magick", "Metallurgy", "Science", "Theology"])
+summary = "Deep specialist knowledge of a subject."
+
+[sub_resource type="Resource" id="SkillDef_35"]
+script = ExtResource("2")
+skill_name = "Magical Sense"
+linked_characteristic = "willpower"
+is_advanced = true
+is_grouped = false
+group_options = Array[String]([])
+summary = "Detecting the presence of magic."
+
+[sub_resource type="Resource" id="SkillDef_36"]
+script = ExtResource("2")
+skill_name = "Perform"
+linked_characteristic = "agility"
+is_advanced = true
+is_grouped = true
+group_options = Array[String](["Acrobatics", "Clowning", "Dancing", "Firebreathing", "Juggling", "Miming", "Rope Walking"])
+summary = "A physically demanding performance art — acrobatics, dance, juggling, and the like — as opposed to Entertain (untrained-friendly, spoken-word performance) or Play (musical instruments)."
+
+[sub_resource type="Resource" id="SkillDef_37"]
+script = ExtResource("2")
+skill_name = "Play"
+linked_characteristic = "dexterity"
+is_advanced = true
+is_grouped = true
+group_options = Array[String](["Bagpipe", "Lute", "Harpsichord", "Horn", "Violin"])
+summary = "Playing a musical instrument skilfully. A real, distinct Skill from Perform (p.35's own Skill list lists both separately) — an earlier pass in this project mistakenly treated them as the same skill; corrected here."
+
+[sub_resource type="Resource" id="SkillDef_38"]
+script = ExtResource("2")
+skill_name = "Pick Lock"
+linked_characteristic = "dexterity"
+is_advanced = true
+is_grouped = false
+group_options = Array[String]([])
+summary = "Bypassing locks without a key."
+
+[sub_resource type="Resource" id="SkillDef_39"]
+script = ExtResource("2")
+skill_name = "Ranged"
+linked_characteristic = "ballistic_skill"
+is_advanced = true
+is_grouped = true
+group_options = Array[String](["Bow", "Crossbow", "Sling", "Throwing", "Blackpowder", "Engineering", "Entangling", "Explosives"])
+summary = "Making attacks with ranged weapons of a given group."
+
+[sub_resource type="Resource" id="SkillDef_40"]
+script = ExtResource("2")
+skill_name = "Research"
+linked_characteristic = "intelligence"
+is_advanced = true
+is_grouped = false
+group_options = Array[String]([])
+summary = "Digging up information from texts and records."
+
+[sub_resource type="Resource" id="SkillDef_41"]
+script = ExtResource("2")
+skill_name = "Sail"
+linked_characteristic = "agility"
+is_advanced = true
+is_grouped = true
+group_options = Array[String](["Barge", "Caravel", "Cog", "Frigate", "Wolfship"])
+summary = "Handling a sailing vessel."
+
+[sub_resource type="Resource" id="SkillDef_42"]
+script = ExtResource("2")
+skill_name = "Secret Signs"
+linked_characteristic = "intelligence"
+is_advanced = true
+is_grouped = true
+group_options = Array[String](["Grey Order", "Guild (any one)", "Ranger", "Scout", "Thief", "Vagabond"])
+summary = "Recognising the covert signs of a group."
+
+[sub_resource type="Resource" id="SkillDef_43"]
+script = ExtResource("2")
+skill_name = "Set Trap"
+linked_characteristic = "intelligence"
+is_advanced = true
+is_grouped = false
+group_options = Array[String]([])
+summary = "Rigging snares and traps."
+
+[sub_resource type="Resource" id="SkillDef_44"]
+script = ExtResource("2")
+skill_name = "Sleight of Hand"
+linked_characteristic = "dexterity"
+is_advanced = true
+is_grouped = false
+group_options = Array[String]([])
+summary = "Palming, pickpocketing, and misdirection."
+
+[sub_resource type="Resource" id="SkillDef_45"]
+script = ExtResource("2")
+skill_name = "Speak Language"
+linked_characteristic = "intelligence"
+is_advanced = true
+is_grouped = true
+group_options = Array[String](["Reikspiel", "Classical", "Eltharin", "Khazalid", "Mootish", "Wastelander", "Tilean", "Estalian", "Kislevarin", "Norse", "Queekish", "Goblin-markings"])
+summary = "Speaking a given language."
+
+[sub_resource type="Resource" id="SkillDef_46"]
+script = ExtResource("2")
+skill_name = "Track"
+linked_characteristic = "initiative"
+is_advanced = true
+is_grouped = false
+group_options = Array[String]([])
+summary = "Following a trail left by people or animals."
+
+[sub_resource type="Resource" id="SkillDef_47"]
+script = ExtResource("2")
+skill_name = "Trade"
+linked_characteristic = "dexterity"
+is_advanced = true
+is_grouped = true
+group_options = Array[String](["Apothecary", "Calligrapher", "Chandler", "Carpenter", "Cook", "Embalmer", "Smith", "Tanner"])
+summary = "Practising a professional trade."
+
+[sub_resource type="Resource" id="SkillDef_48"]
+script = ExtResource("2")
+skill_name = "Consume Poison"
+linked_characteristic = "toughness"
+is_advanced = true
+is_grouped = false
+group_options = Array[String]([])
+summary = "Resisting the effects of an ingested poison."
+
+[sub_resource type="Resource" id="SkillDef_49"]
+script = ExtResource("2")
+skill_name = "Pray"
+linked_characteristic = "fellowship"
+is_advanced = true
+is_grouped = false
+group_options = Array[String]([])
+summary = "Calling on a deity's favour to enact a Blessing or Miracle."
+
+[sub_resource type="Resource" id="SkillDef_50"]
+script = ExtResource("2")
+skill_name = "Disguise"
+linked_characteristic = "fellowship"
+is_advanced = true
+is_grouped = false
+group_options = Array[String]([])
+summary = "Passing yourself off as someone or something else."
+
+[sub_resource type="Resource" id="SkillDef_51"]
+script = ExtResource("2")
+skill_name = "Language (Magick)"
+linked_characteristic = "intelligence"
+is_advanced = true
+is_grouped = false
+group_options = Array[String]([])
+summary = "Reading and speaking the arcane tongue of magic."
+
+[sub_resource type="Resource" id="SkillDef_52"]
+script = ExtResource("2")
+skill_name = "Lip Reading"
+linked_characteristic = "intelligence"
+is_advanced = true
+is_grouped = false
+group_options = Array[String]([])
+summary = "Reading speech from lip movement alone."
+
+[sub_resource type="Resource" id="SkillDef_53"]
+script = ExtResource("2")
+skill_name = "Torture"
+linked_characteristic = "willpower"
+is_advanced = true
+is_grouped = false
+group_options = Array[String]([])
+summary = "Extracting information through pain."
+
+[resource]
+script = ExtResource("1")
+skills = Array[Resource]([SubResource("SkillDef_1"), SubResource("SkillDef_2"), SubResource("SkillDef_3"), SubResource("SkillDef_4"), SubResource("SkillDef_5"), SubResource("SkillDef_6"), SubResource("SkillDef_7"), SubResource("SkillDef_8"), SubResource("SkillDef_9"), SubResource("SkillDef_10"), SubResource("SkillDef_11"), SubResource("SkillDef_12"), SubResource("SkillDef_13"), SubResource("SkillDef_14"), SubResource("SkillDef_15"), SubResource("SkillDef_16"), SubResource("SkillDef_17"), SubResource("SkillDef_18"), SubResource("SkillDef_19"), SubResource("SkillDef_20"), SubResource("SkillDef_21"), SubResource("SkillDef_22"), SubResource("SkillDef_23"), SubResource("SkillDef_24"), SubResource("SkillDef_25"), SubResource("SkillDef_26"), SubResource("SkillDef_27"), SubResource("SkillDef_28"), SubResource("SkillDef_29"), SubResource("SkillDef_30"), SubResource("SkillDef_31"), SubResource("SkillDef_32"), SubResource("SkillDef_33"), SubResource("SkillDef_34"), SubResource("SkillDef_35"), SubResource("SkillDef_36"), SubResource("SkillDef_37"), SubResource("SkillDef_38"), SubResource("SkillDef_39"), SubResource("SkillDef_40"), SubResource("SkillDef_41"), SubResource("SkillDef_42"), SubResource("SkillDef_43"), SubResource("SkillDef_44"), SubResource("SkillDef_45"), SubResource("SkillDef_46"), SubResource("SkillDef_47"), SubResource("SkillDef_48"), SubResource("SkillDef_49"), SubResource("SkillDef_50"), SubResource("SkillDef_51"), SubResource("SkillDef_52"), SubResource("SkillDef_53")])

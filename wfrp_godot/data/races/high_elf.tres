@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="RaceDefinition" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/race_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+race_name = "High Elf"
+characteristic_bases = {
+"weapon_skill": 30,
+"ballistic_skill": 30,
+"strength": 20,
+"toughness": 20,
+"initiative": 40,
+"agility": 30,
+"dexterity": 30,
+"intelligence": 30,
+"willpower": 30,
+"fellowship": 20
+}
+starting_fate = 0
+starting_resilience = 1
+extra_points = 2
+starting_extra_wounds = 0
+movement = 5
+racial_skill_pool = Array[String](["Cool", "Entertain (Sing)", "Evaluate", "Language (Eltharin)", "Leadership", "Melee (Basic)", "Navigation", "Perception", "Play (any one)", "Ranged (Bow)", "Sail", "Swim"])
+racial_talents = Array[String](["Acute Sense (Sight)", "Night Vision", "Read/Write"])
+racial_talent_choice_groups = Array[Array]([["Coolheaded", "Savvy"], ["Second Sight", "Sixth Sense"]])
+summary = "Ancient, graceful, and rarely seen outside their own enclaves."

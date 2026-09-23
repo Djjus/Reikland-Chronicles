@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="RaceDefinition" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/race_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+race_name = "Dwarf"
+characteristic_bases = {
+"weapon_skill": 30,
+"ballistic_skill": 20,
+"strength": 20,
+"toughness": 30,
+"initiative": 20,
+"agility": 10,
+"dexterity": 30,
+"intelligence": 20,
+"willpower": 40,
+"fellowship": 10
+}
+starting_fate = 0
+starting_resilience = 2
+extra_points = 2
+starting_extra_wounds = 2
+movement = 3
+racial_skill_pool = Array[String](["Consume Alcohol", "Cool", "Endurance", "Entertain (Storytelling)", "Evaluate", "Intimidate", "Language (Khazalid)", "Lore (Dwarfs)", "Lore (Geology)", "Lore (Metallurgy)", "Melee (Basic)", "Trade (any one)"])
+racial_talents = Array[String](["Magic Resistance", "Night Vision", "Sturdy"])
+racial_talent_choice_groups = Array[Array]([["Read/Write", "Relentless"], ["Resolute", "Strong-minded"]])
+summary = "Stout, stubborn, and slow to forgive; masters of stone and steel."

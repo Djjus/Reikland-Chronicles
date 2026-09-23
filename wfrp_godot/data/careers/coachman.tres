@@ -1,0 +1,69 @@
+[gd_resource type="Resource" script_class="CareerDefinition" format=3 uid="uid://cex27rpcv06r6"]
+
+[ext_resource type="Script" uid="uid://cr4lrv134m8k1" path="res://scripts/resources/career_definition.gd" id="1"]
+[ext_resource type="Script" uid="uid://3ug4teqahf5m" path="res://scripts/resources/career_level.gd" id="2"]
+
+[sub_resource type="Resource" id="Level_1"]
+script = ExtResource("2")
+level_name = "Postilion"
+status_tier = "Silver"
+status_stars = 1
+attribute_advances = {
+"ballistic_skill": 5,
+"toughness": 5,
+"willpower": 5
+}
+skills = Array[String](["Animal Care", "Charm Animal", "Climb", "Drive", "Endurance", "Perception", "Ranged (Entangling)", "Ride (Horse)"])
+talents = Array[String](["Animal Affinity", "Seasoned Traveller", "Trick Riding", "Tenacious"])
+trappings = Array[String](["Warm Coat and Gloves", "Whip"])
+income_skill = "Drive"
+
+[sub_resource type="Resource" id="Level_2"]
+script = ExtResource("2")
+level_name = "Coachman"
+tier = 2
+status_tier = "Silver"
+status_stars = 2
+attribute_advances = {
+"agility": 5
+}
+skills = Array[String](["Consume Alcohol", "Gossip", "Intuition", "Lore (Local)", "Navigation", "Ranged (Blackpowder)"])
+talents = Array[String](["Coolheaded", "Crack the Whip", "Gunner", "Strong-minded"])
+trappings = Array[String](["Blunderbuss with 10 Shots", "Coach Horn", "Leather Jack", "Hat"])
+income_skill = "Drive"
+
+[sub_resource type="Resource" id="Level_3"]
+script = ExtResource("2")
+level_name = "Coach Master"
+tier = 3
+status_tier = "Silver"
+status_stars = 3
+attribute_advances = {
+"weapon_skill": 5
+}
+skills = Array[String](["Animal Training (Horse)", "Intimidate", "Language (Any)", "Lore (Routes)"])
+talents = Array[String](["Accurate Shot", "Dealmaker", "Fearless (Outlaws)", "Nose for Trouble"])
+trappings = Array[String](["Mail Shirt", "Pistol", "Quality Cloak"])
+income_skill = "Drive"
+
+[sub_resource type="Resource" id="Level_4"]
+script = ExtResource("2")
+level_name = "Route Master"
+tier = 4
+status_tier = "Silver"
+status_stars = 5
+attribute_advances = {
+"initiative": 5
+}
+skills = Array[String](["Charm", "Leadership"])
+talents = Array[String](["Fearless (Beastmen)", "Marksman", "Orientation", "Rapid Reload"])
+trappings = Array[String](["Fleet of Coaches and Horses", "Maps"])
+income_skill = "Leadership"
+
+[resource]
+script = ExtResource("1")
+career_name = "Coachman"
+career_class = "Ranger"
+valid_races = Array[String](["Dwarf", "Halfling", "Human"])
+levels = Array[ExtResource("2")]([SubResource("Level_1"), SubResource("Level_2"), SubResource("Level_3"), SubResource("Level_4")])
+summary = "You drive a coach along the Empire's roads, braving weather, bandits, and worse."

@@ -1,0 +1,107 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/wilderness_encounter_screen.gd" id="1"]
+
+[node name="WildernessEncounter" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.07, 0.08, 0.06, 1)
+
+[node name="OuterVBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/separation = 0
+
+[node name="TitlePanel" type="PanelContainer" parent="OuterVBox"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="TitleMargin" type="MarginContainer" parent="OuterVBox/TitlePanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 8
+
+[node name="TitleVBox" type="VBoxContainer" parent="OuterVBox/TitlePanel/TitleMargin"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="TitleLabel" type="Label" parent="OuterVBox/TitlePanel/TitleMargin/TitleVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.65, 0.8, 0.55, 1)
+text = "Wilderness Encounter"
+autowrap_mode = 2
+
+[node name="RollLabel" type="Label" parent="OuterVBox/TitlePanel/TitleMargin/TitleVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+theme_override_colors/font_color = Color(0.6, 0.58, 0.5, 1)
+text = ""
+autowrap_mode = 2
+
+[node name="BodyMargin" type="MarginContainer" parent="OuterVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 16
+
+[node name="MainSplit" type="HBoxContainer" parent="OuterVBox/BodyMargin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="LeftCol" type="VBoxContainer" parent="OuterVBox/BodyMargin/MainSplit"]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 10
+
+[node name="ButtonRow" type="HFlowContainer" parent="OuterVBox/BodyMargin/MainSplit/LeftCol"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 8
+
+[node name="RightCol" type="VBoxContainer" parent="OuterVBox/BodyMargin/MainSplit"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 14
+
+[node name="TextScroll" type="ScrollContainer" parent="OuterVBox/BodyMargin/MainSplit/RightCol"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="HistoryList" type="VBoxContainer" parent="OuterVBox/BodyMargin/MainSplit/RightCol/TextScroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="RewardLabel" type="Label" parent="OuterVBox/BodyMargin/MainSplit/RightCol"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+theme_override_colors/font_color = Color(0.8, 0.75, 0.4, 1)
+text = ""
+autowrap_mode = 2
+visible = false

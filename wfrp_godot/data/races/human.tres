@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="RaceDefinition" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/race_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+race_name = "Human"
+characteristic_bases = {
+"weapon_skill": 20,
+"ballistic_skill": 20,
+"strength": 20,
+"toughness": 20,
+"initiative": 20,
+"agility": 20,
+"dexterity": 20,
+"intelligence": 20,
+"willpower": 20,
+"fellowship": 20
+}
+starting_fate = 2
+starting_resilience = 1
+extra_points = 3
+starting_extra_wounds = 0
+movement = 4
+racial_skill_pool = Array[String](["Animal Care", "Charm", "Cool", "Evaluate", "Gossip", "Haggle", "Language (Bretonnian)", "Language (Wastelander)", "Leadership", "Lore (Reikland)", "Melee (Basic)", "Ranged (Bow)"])
+racial_talents = Array[String](["Doomed"])
+racial_talent_choice_groups = Array[Array]([["Savvy", "Suave"]])
+racial_random_talent_count = 3
+summary = "Adaptable and ambitious; the most numerous folk of the Old World."

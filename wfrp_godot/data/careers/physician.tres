@@ -1,0 +1,68 @@
+[gd_resource type="Resource" script_class="CareerDefinition" format=3 uid="uid://3nvhgeiemlni"]
+
+[ext_resource type="Script" uid="uid://cr4lrv134m8k1" path="res://scripts/resources/career_definition.gd" id="1"]
+[ext_resource type="Script" uid="uid://3ug4teqahf5m" path="res://scripts/resources/career_level.gd" id="2"]
+
+[sub_resource type="Resource" id="Level_1"]
+script = ExtResource("2")
+level_name = "Physician's Apprentice"
+status_stars = 4
+attribute_advances = {
+"dexterity": 5,
+"intelligence": 5,
+"willpower": 5
+}
+skills = Array[String](["Bribery", "Cool", "Drive", "Endurance", "Gossip", "Heal", "Perception", "Sleight of Hand"])
+talents = Array[String](["Bookish", "Field Dressing", "Read/Write", "Strike to Stun"])
+trappings = Array[String](["Bandages", "Healing Draught"])
+income_skill = "Heal"
+
+[sub_resource type="Resource" id="Level_2"]
+script = ExtResource("2")
+level_name = "Physician"
+tier = 2
+status_tier = "Silver"
+status_stars = 3
+attribute_advances = {
+"fellowship": 5
+}
+skills = Array[String](["Charm", "Haggle", "Language (Guilder)", "Lore (Anatomy)", "Lore (Medicine)", "Trade (Barber)"])
+talents = Array[String](["Coolheaded", "Criminal", "Etiquette (Guilder)", "Surgery"])
+trappings = Array[String](["Book (Medicine)", "Guild Licence", "Trade Tools (Medicine)"])
+income_skill = "Heal"
+
+[sub_resource type="Resource" id="Level_3"]
+script = ExtResource("2")
+level_name = "Doktor"
+tier = 3
+status_tier = "Silver"
+status_stars = 5
+attribute_advances = {
+"initiative": 5
+}
+skills = Array[String](["Consume Alcohol", "Intimidate", "Leadership", "Research"])
+talents = Array[String](["Etiquette (Scholars)", "Resistance (Disease)", "Savvy", "Strike to Injure"])
+trappings = Array[String](["Apprentice", "Workshop (Medicine)"])
+income_skill = "Heal"
+
+[sub_resource type="Resource" id="Level_4"]
+script = ExtResource("2")
+level_name = "Court Physician"
+tier = 4
+status_tier = "Gold"
+status_stars = 1
+attribute_advances = {
+"agility": 5
+}
+skills = Array[String](["Lore (Noble)", "Perform (Dancing)"])
+talents = Array[String](["Etiquette (Nobles)", "Nimble Fingered", "Savant (Medicine)", "Strong-minded"])
+trappings = Array[String](["Courtly Attire", "Letter of Appointment"])
+income_skill = "Heal"
+
+[resource]
+script = ExtResource("1")
+career_name = "Physician"
+career_class = "Academic"
+valid_races = Array[String](["Dwarf", "Halfling", "High Elf", "Human"])
+levels = Array[ExtResource("2")]([SubResource("Level_1"), SubResource("Level_2"), SubResource("Level_3"), SubResource("Level_4")])
+summary = "Trained (or self-taught) in anatomy and surgery, you treat the sick and wounded — for those who can afford it."

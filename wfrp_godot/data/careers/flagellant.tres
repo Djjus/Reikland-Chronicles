@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="CareerDefinition" format=3 uid="uid://5pluyjtge84h"]
+
+[ext_resource type="Script" uid="uid://cr4lrv134m8k1" path="res://scripts/resources/career_definition.gd" id="1"]
+[ext_resource type="Script" uid="uid://3ug4teqahf5m" path="res://scripts/resources/career_level.gd" id="2"]
+
+[sub_resource type="Resource" id="Level_1"]
+script = ExtResource("2")
+level_name = "Zealot"
+attribute_advances = {
+"strength": 5,
+"toughness": 5,
+"weapon_skill": 5
+}
+skills = Array[String](["Dodge", "Endurance", "Heal", "Intimidate", "Intuition", "Lore (Sigmar)", "Melee (Flail)", "Outdoor Survival"])
+talents = Array[String](["Berserk Charge", "Frenzy", "Read/Write", "Stone Soup"])
+trappings = Array[String](["Flail", "Tattered Robes"])
+income_skill = "Intimidate"
+
+[sub_resource type="Resource" id="Level_2"]
+script = ExtResource("2")
+level_name = "Flagellant"
+tier = 2
+attribute_advances = {
+"willpower": 5
+}
+skills = Array[String](["Art (Icons)", "Athletics", "Cool", "Language (Classical)", "Lore (The Empire)", "Ranged (Sling)"])
+talents = Array[String](["Hardy", "Hatred (Heretics)", "Flagellant", "Implacable"])
+trappings = Array[String](["Placard", "Religious Symbol", "Sling"])
+income_skill = "Intimidate"
+
+[sub_resource type="Resource" id="Level_3"]
+script = ExtResource("2")
+level_name = "Penitent"
+tier = 3
+attribute_advances = {
+"initiative": 5
+}
+skills = Array[String](["Charm", "Language (Any)", "Lore (Theology)", "Perception"])
+talents = Array[String](["Field Dressing", "Furious Assault", "Menacing", "Seasoned Traveller"])
+trappings = Array[String](["Religious Relic"])
+income_skill = "Intimidate"
+
+[sub_resource type="Resource" id="Level_4"]
+script = ExtResource("2")
+level_name = "Prophet of Doom"
+tier = 4
+attribute_advances = {
+"fellowship": 5
+}
+skills = Array[String](["Entertain (Speeches)", "Leadership"])
+talents = Array[String](["Battle Rage", "Fearless (Heretics)", "Frightening", "Impassioned Zeal"])
+trappings = Array[String](["Book (Religion)", "Followers (including Penitents, Flagellants, and Zealots)"])
+income_skill = "Leadership"
+
+[resource]
+script = ExtResource("1")
+career_name = "Flagellant"
+career_class = "Ranger"
+valid_races = Array[String](["Human"])
+levels = Array[ExtResource("2")]([SubResource("Level_1"), SubResource("Level_2"), SubResource("Level_3"), SubResource("Level_4")])
+summary = "Just when you abandoned all hope, your suffering and the righteousness of Sigmar saved you."

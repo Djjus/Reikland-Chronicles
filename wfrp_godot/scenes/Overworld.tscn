@@ -1,0 +1,252 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/game/overworld.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/Player.tscn" id="2"]
+[ext_resource type="TileSet" path="res://resources/tileset.tres" id="3"]
+
+[node name="Overworld" type="Node2D"]
+script = ExtResource("1")
+
+[node name="WaterLayer" type="TileMapLayer" parent="."]
+z_index = -1
+tile_set = ExtResource("3")
+
+[node name="ShoreOverlayLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("3")
+
+[node name="ShadowContainer" type="Node2D" parent="."]
+
+[node name="TreeCanopyOverlay" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="BuildingLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("3")
+
+[node name="RoofLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("3")
+
+[node name="RoofOverflowMaskLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("3")
+
+[node name="Player" parent="." instance=ExtResource("2")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="CoordsLabel" type="Label" parent="UI"]
+unique_name_in_owner = true
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -28.0
+offset_right = 150.0
+offset_bottom = -4.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.85, 0.85, 0.8, 0.85)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.8)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 11
+text = "(0, 0)"
+
+[node name="TravelProgressPanel" type="VBoxContainer" parent="UI"]
+unique_name_in_owner = true
+visible = false
+mouse_filter = 2
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -220.0
+offset_top = -96.0
+offset_right = 220.0
+offset_bottom = -40.0
+theme_override_constants/separation = 4
+
+[node name="TravelStageLabel" type="Label" parent="UI/TravelProgressPanel"]
+unique_name_in_owner = true
+mouse_filter = 2
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.9, 0.87, 0.75, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.8)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 12
+text = "Travelling — Stage 1 of 1"
+
+[node name="TravelProgressBar" type="ProgressBar" parent="UI/TravelProgressPanel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 18)
+mouse_filter = 2
+show_percentage = false
+value = 0.0
+
+[node name="TravelStopHintLabel" type="Label" parent="UI/TravelProgressPanel"]
+unique_name_in_owner = true
+mouse_filter = 2
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.75, 0.72, 0.62, 0.9)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.8)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 10
+text = "Esc or Space stops the journey"
+
+[node name="NightOverlay" type="ColorRect" parent="UI"]
+mouse_filter = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0)
+
+[node name="CloudShadowOverlay" type="ColorRect" parent="UI"]
+mouse_filter = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.05, 0.07, 0.1, 1)
+
+[node name="InfoBar" type="PanelContainer" parent="UI"]
+unique_name_in_owner = true
+anchor_right = 1.0
+offset_bottom = 68.0
+
+[node name="InfoBarMargin" type="MarginContainer" parent="UI/InfoBar"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 4
+
+[node name="InfoBarRow" type="HBoxContainer" parent="UI/InfoBar/InfoBarMargin"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="PartyPanelRow" type="HBoxContainer" parent="UI/InfoBar/InfoBarMargin/InfoBarRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 8
+
+[node name="VSep1" type="VSeparator" parent="UI/InfoBar/InfoBarMargin/InfoBarRow"]
+layout_mode = 2
+
+[node name="XPLabel" type="Label" parent="UI/InfoBar/InfoBarMargin/InfoBarRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 11
+text = "XP: -"
+
+[node name="VSep2" type="VSeparator" parent="UI/InfoBar/InfoBarMargin/InfoBarRow"]
+layout_mode = 2
+
+[node name="GoldLabel" type="Label" parent="UI/InfoBar/InfoBarMargin/InfoBarRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 11
+text = "-"
+
+[node name="VSep3" type="VSeparator" parent="UI/InfoBar/InfoBarMargin/InfoBarRow"]
+layout_mode = 2
+
+[node name="TimeLabel" type="Label" parent="UI/InfoBar/InfoBarMargin/InfoBarRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 15
+text = "--:--"
+
+[node name="DateLabel" type="Label" parent="UI/InfoBar/InfoBarMargin/InfoBarRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.75, 0.7, 0.6, 1)
+text = ""
+
+[node name="QuestSpacer" type="Control" parent="UI/InfoBar/InfoBarMargin/InfoBarRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VSepQuest" type="VSeparator" parent="UI/InfoBar/InfoBarMargin/InfoBarRow"]
+layout_mode = 2
+
+[node name="QuestTrackerBox" type="VBoxContainer" parent="UI/InfoBar/InfoBarMargin/InfoBarRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+size_flags_horizontal = 8
+theme_override_constants/separation = 0
+
+[node name="QuestTrackerTitle" type="Label" parent="UI/InfoBar/InfoBarMargin/InfoBarRow/QuestTrackerBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+theme_override_colors/font_color = Color(0.85, 0.7, 0.35, 1)
+text = ""
+horizontal_alignment = 2
+
+[node name="QuestTrackerDetail" type="Label" parent="UI/InfoBar/InfoBarMargin/InfoBarRow/QuestTrackerBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 9
+theme_override_colors/font_color = Color(0.75, 0.7, 0.65, 1)
+text = ""
+horizontal_alignment = 2
+
+[node name="HudLabel" type="Label" parent="UI"]
+offset_left = 8.0
+offset_top = 68.0
+offset_right = 920.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+text = "Loading..."
+
+[node name="DialogueLabel" type="Label" parent="UI"]
+visible = false
+offset_left = 8.0
+offset_top = 180.0
+offset_right = 376.0
+offset_bottom = 212.0
+theme_override_font_sizes/font_size = 10
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+autowrap_mode = 3
+text = ""
+
+[node name="EncounterBox" type="PanelContainer" parent="UI"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -60.0
+offset_right = 260.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EncounterMargin" type="MarginContainer" parent="UI/EncounterBox"]
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 14
+
+[node name="EncounterLabel" type="Label" parent="UI/EncounterBox/EncounterMargin"]
+theme_override_font_sizes/font_size = 10
+theme_override_colors/font_color = Color(1, 0.85, 0.6, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+text = "An enemy approaches!"

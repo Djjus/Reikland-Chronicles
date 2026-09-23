@@ -1,0 +1,258 @@
+[gd_resource type="Resource" script_class="PrayerDatabase" load_steps=28 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/prayer_database.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/resources/prayer_definition.gd" id="2"]
+
+[sub_resource type="Resource" id="PrayerDef_1"]
+script = ExtResource("2")
+prayer_name = "Blessing of Battle"
+prayer_type = "Blessing"
+god = "Any"
+range_text = "6 yards"
+target_text = "1"
+duration_text = "6 Rounds"
+summary = "Your target gains +10 Weapon Skill."
+
+[sub_resource type="Resource" id="PrayerDef_2"]
+script = ExtResource("2")
+prayer_name = "Blessing of Breath"
+prayer_type = "Blessing"
+god = "Any"
+range_text = "6 yards"
+target_text = "1"
+duration_text = "6 Rounds"
+summary = "Your target does not need to breathe and ignores rules for suffocation."
+
+[sub_resource type="Resource" id="PrayerDef_3"]
+script = ExtResource("2")
+prayer_name = "Blessing of Charisma"
+prayer_type = "Blessing"
+god = "Any"
+range_text = "6 yards"
+target_text = "1"
+duration_text = "6 Rounds"
+summary = "Your target gains +10 Fellowship."
+
+[sub_resource type="Resource" id="PrayerDef_4"]
+script = ExtResource("2")
+prayer_name = "Blessing of Conscience"
+prayer_type = "Blessing"
+god = "Any"
+range_text = "6 yards"
+target_text = "1"
+duration_text = "6 Rounds"
+summary = "Your target must pass an Average (+20) Willpower Test to break any of the Strictures of your deity, or be overcome with Shame and not take the action."
+
+[sub_resource type="Resource" id="PrayerDef_5"]
+script = ExtResource("2")
+prayer_name = "Blessing of Courage"
+prayer_type = "Blessing"
+god = "Any"
+range_text = "6 yards"
+target_text = "1"
+duration_text = "6 Rounds"
+summary = "Your target gains +10 Willpower."
+
+[sub_resource type="Resource" id="PrayerDef_6"]
+script = ExtResource("2")
+prayer_name = "Blessing of Finesse"
+prayer_type = "Blessing"
+god = "Any"
+range_text = "6 yards"
+target_text = "1"
+duration_text = "6 Rounds"
+summary = "Your target gains +10 Dexterity."
+
+[sub_resource type="Resource" id="PrayerDef_7"]
+script = ExtResource("2")
+prayer_name = "Blessing of Fortune"
+prayer_type = "Blessing"
+god = "Any"
+range_text = "6 yards"
+target_text = "1"
+duration_text = "6 Rounds"
+summary = "Your target's next failed Test may be rerolled. The reroll must stand."
+
+[sub_resource type="Resource" id="PrayerDef_8"]
+script = ExtResource("2")
+prayer_name = "Blessing of Grace"
+prayer_type = "Blessing"
+god = "Any"
+range_text = "6 yards"
+target_text = "1"
+duration_text = "6 Rounds"
+summary = "Your target gains +10 Agility."
+
+[sub_resource type="Resource" id="PrayerDef_9"]
+script = ExtResource("2")
+prayer_name = "Blessing of Hardiness"
+prayer_type = "Blessing"
+god = "Any"
+range_text = "6 yards"
+target_text = "1"
+duration_text = "6 Rounds"
+summary = "Your target gains +10 Toughness."
+
+[sub_resource type="Resource" id="PrayerDef_10"]
+script = ExtResource("2")
+prayer_name = "Blessing of Healing"
+prayer_type = "Blessing"
+god = "Any"
+range_text = "Touch"
+target_text = "1"
+duration_text = "Instant"
+summary = "Your target heals +1 Wound."
+
+[sub_resource type="Resource" id="PrayerDef_11"]
+script = ExtResource("2")
+prayer_name = "Blessing of The Hunt"
+prayer_type = "Blessing"
+god = "Any"
+range_text = "6 yards"
+target_text = "1"
+duration_text = "6 Rounds"
+summary = "Your target gains +10 Ballistic Skill."
+
+[sub_resource type="Resource" id="PrayerDef_12"]
+script = ExtResource("2")
+prayer_name = "Blessing of Might"
+prayer_type = "Blessing"
+god = "Any"
+range_text = "6 yards"
+target_text = "1"
+duration_text = "6 Rounds"
+summary = "Your target gains +10 Strength."
+
+[sub_resource type="Resource" id="PrayerDef_13"]
+script = ExtResource("2")
+prayer_name = "Blessing of Protection"
+prayer_type = "Blessing"
+god = "Any"
+range_text = "6 yards"
+target_text = "1"
+duration_text = "6 Rounds"
+summary = "Enemies must pass an Average (+20) Willpower Test to attack your target, or must choose a different target or Action."
+
+[sub_resource type="Resource" id="PrayerDef_14"]
+script = ExtResource("2")
+prayer_name = "Blessing of Recuperation"
+prayer_type = "Blessing"
+god = "Any"
+range_text = "Touch"
+target_text = "1"
+duration_text = "Instant"
+summary = "Your target may reduce the duration of 1 disease they're afflicted with by 1 day. Only once per instance of a disease per person."
+
+[sub_resource type="Resource" id="PrayerDef_15"]
+script = ExtResource("2")
+prayer_name = "Blessing of Righteousness"
+prayer_type = "Blessing"
+god = "Any"
+range_text = "6 yards"
+target_text = "1"
+duration_text = "6 Rounds"
+summary = "Your target's weapon counts as Magical."
+
+[sub_resource type="Resource" id="PrayerDef_16"]
+script = ExtResource("2")
+prayer_name = "Blessing of Savagery"
+prayer_type = "Blessing"
+god = "Any"
+range_text = "6 yards"
+target_text = "1"
+duration_text = "6 Rounds"
+summary = "When your target next inflicts a Critical Wound, roll twice and choose the best result."
+
+[sub_resource type="Resource" id="PrayerDef_17"]
+script = ExtResource("2")
+prayer_name = "Blessing of Tenacity"
+prayer_type = "Blessing"
+god = "Any"
+range_text = "6 yards"
+target_text = "1"
+duration_text = "Instant"
+summary = "Your target may remove 1 Condition."
+
+[sub_resource type="Resource" id="PrayerDef_18"]
+script = ExtResource("2")
+prayer_name = "Blessing of Wisdom"
+prayer_type = "Blessing"
+god = "Any"
+range_text = "6 yards"
+target_text = "1"
+duration_text = "6 Rounds"
+summary = "Your target gains +10 Intelligence."
+
+[sub_resource type="Resource" id="PrayerDef_19"]
+script = ExtResource("2")
+prayer_name = "Blessing of Wit"
+prayer_type = "Blessing"
+god = "Any"
+range_text = "6 yards"
+target_text = "1"
+duration_text = "6 Rounds"
+summary = "Your target gains +10 Initiative."
+
+[sub_resource type="Resource" id="PrayerDef_20"]
+script = ExtResource("2")
+prayer_name = "Beacon of Righteous Virtue"
+prayer_type = "Miracle"
+god = "Sigmar"
+range_text = "You"
+target_text = "Area of Effect"
+duration_text = "Fellowship Bonus Rounds"
+summary = "Allies with Line of Sight to you instantly remove all Broken Conditions and gain the Fearless Talent while the Miracle is in effect and they remain in your Line of Sight. Greenskins with Line of Sight to you are subject to Fear 1."
+
+[sub_resource type="Resource" id="PrayerDef_21"]
+script = ExtResource("2")
+prayer_name = "Heed Not the Witch"
+prayer_type = "Miracle"
+god = "Sigmar"
+range_text = "You"
+target_text = "Area of Effect"
+duration_text = "Fellowship Bonus Rounds"
+summary = "Any spells targeting anyone or anywhere within Fellowship Bonus yards of you suffer a penalty of -20 to Language (Magick) Tests, in addition to any other penalties."
+
+[sub_resource type="Resource" id="PrayerDef_22"]
+script = ExtResource("2")
+prayer_name = "Sigmar's Fiery Hammer"
+prayer_type = "Miracle"
+god = "Sigmar"
+range_text = "You"
+target_text = "You"
+duration_text = "Fellowship Bonus Rounds"
+summary = "If wielding a warhammer, it counts as Magical, deals +Fellowship Bonus Damage, and any target struck receives the Ablaze and Prone Conditions."
+
+[sub_resource type="Resource" id="PrayerDef_23"]
+script = ExtResource("2")
+prayer_name = "Soulfire"
+prayer_type = "Miracle"
+god = "Sigmar"
+range_text = "You"
+target_text = "Area of Effect"
+duration_text = "Instant"
+summary = "Holy fire explodes from your body, blasting outwards for Fellowship Bonus yards. All targets within range take 1d10 Wounds, ignoring Toughness Bonus and Armour Points. Targets with the Undead or Daemon Creature Traits also gain the Ablaze Condition."
+
+[sub_resource type="Resource" id="PrayerDef_24"]
+script = ExtResource("2")
+prayer_name = "Twin-tailed Comet"
+prayer_type = "Miracle"
+god = "Sigmar"
+range_text = "Fellowship yards"
+target_text = "Area of Effect"
+duration_text = "Instant"
+summary = "A blazing comet strikes a point within Line of Sight and range. Everything within Fellowship Bonus yards of the impact suffers 1d10 + SL Damage, ignoring Toughness Bonus and Armour Points, and gains the Ablaze Condition. The target location must be outdoors, and may only target those Sigmar would deem an enemy."
+
+[sub_resource type="Resource" id="PrayerDef_25"]
+script = ExtResource("2")
+prayer_name = "Vanquish the Unrighteous"
+prayer_type = "Miracle"
+god = "Sigmar"
+range_text = "Fellowship yards"
+target_text = "Fellowship Bonus allies"
+duration_text = "Fellowship Bonus Rounds"
+summary = "Your chosen allies gain the Hatred Psychology towards Greenskins, Undead, and any associated with Chaos."
+
+[resource]
+script = ExtResource("1")
+prayers = Array[Resource]([SubResource("PrayerDef_1"), SubResource("PrayerDef_2"), SubResource("PrayerDef_3"), SubResource("PrayerDef_4"), SubResource("PrayerDef_5"), SubResource("PrayerDef_6"), SubResource("PrayerDef_7"), SubResource("PrayerDef_8"), SubResource("PrayerDef_9"), SubResource("PrayerDef_10"), SubResource("PrayerDef_11"), SubResource("PrayerDef_12"), SubResource("PrayerDef_13"), SubResource("PrayerDef_14"), SubResource("PrayerDef_15"), SubResource("PrayerDef_16"), SubResource("PrayerDef_17"), SubResource("PrayerDef_18"), SubResource("PrayerDef_19"), SubResource("PrayerDef_20"), SubResource("PrayerDef_21"), SubResource("PrayerDef_22"), SubResource("PrayerDef_23"), SubResource("PrayerDef_24"), SubResource("PrayerDef_25")])

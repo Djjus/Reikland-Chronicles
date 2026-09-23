@@ -1,0 +1,80 @@
+[gd_resource type="Resource" script_class="CareerDefinition" format=3 uid="uid://6q2dtco20s0r"]
+
+[ext_resource type="Script" uid="uid://cr4lrv134m8k1" path="res://scripts/resources/career_definition.gd" id="1"]
+[ext_resource type="Script" uid="uid://3ug4teqahf5m" path="res://scripts/resources/career_level.gd" id="2"]
+
+[sub_resource type="Resource" id="Level_1"]
+script = ExtResource("2")
+level_name = "Sentry"
+status_tier = "Silver"
+status_stars = 1
+attribute_advances = {
+"agility": 5,
+"toughness": 5,
+"weapon_skill": 5
+}
+skills = Array[String](["Consume Alcohol", "Endurance", "Entertain (Storytelling)", "Gamble", "Gossip", "Intuition", "Melee (Basic)", "Perception"])
+talents = Array[String](["Diceman", "Etiquette (Servants)", "Strike to Stun", "Tenacious"])
+trappings = Array[String](["Shield (Buckler)", "Leather Jerkin", "Storm Lantern with Oil"])
+income_skill = "Perception"
+
+[sub_resource type="Resource" id="Level_2"]
+script = ExtResource("2")
+level_name = "Guard"
+tier = 2
+status_tier = "Silver"
+status_stars = 2
+attribute_advances = {
+"agility": 5,
+"ballistic_skill": 5,
+"toughness": 5,
+"weapon_skill": 5
+}
+skills = Array[String](["Athletics", "Cool", "Dodge", "Intimidate", "Melee (Polearm)", "Ranged (Bow)"])
+talents = Array[String](["Relentless", "Reversal", "Shieldsman", "Strike Mighty Blow"])
+trappings = Array[String](["Bow", "Mail Coat", "Shield", "Spear"])
+income_skill = "Intimidate"
+
+[sub_resource type="Resource" id="Level_3"]
+script = ExtResource("2")
+level_name = "Honour Guard"
+tier = 3
+status_tier = "Silver"
+status_stars = 3
+attribute_advances = {
+"agility": 5,
+"ballistic_skill": 5,
+"intelligence": 5,
+"toughness": 5,
+"weapon_skill": 5
+}
+skills = Array[String](["Heal", "Language (Battle)", "Lore (Etiquette)", "Melee (Two-Handed)"])
+talents = Array[String](["Fearless (Intruders)", "Jump Up", "Stout-hearted", "Unshakable"])
+trappings = Array[String](["Halberd", "Helm", "Uniform"])
+income_skill = "Lore (Etiquette)"
+
+[sub_resource type="Resource" id="Level_4"]
+script = ExtResource("2")
+level_name = "Guard Officer"
+tier = 4
+status_tier = "Silver"
+status_stars = 5
+attribute_advances = {
+"agility": 5,
+"ballistic_skill": 5,
+"fellowship": 5,
+"intelligence": 5,
+"toughness": 5,
+"weapon_skill": 5
+}
+skills = Array[String](["Leadership", "Lore (Warfare)"])
+talents = Array[String](["Combat Master", "Furious Assault", "Iron Will", "Robust"])
+trappings = Array[String](["Plate Breastplate"])
+income_skill = "Leadership"
+
+[resource]
+script = ExtResource("1")
+career_name = "Guard"
+valid_races = Array[String](["Dwarf", "Halfling", "High Elf", "Human", "Wood Elf"])
+levels = Array[ExtResource("2")]([SubResource("Level_1"), SubResource("Level_2"), SubResource("Level_3"), SubResource("Level_4")])
+summary = "Standing watch over a gate, a warehouse, or a noble's estate, ready when trouble comes."

@@ -1,0 +1,482 @@
+[gd_resource type="Resource" script_class="CreatureTraitDatabase" load_steps=82 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/creature_trait_database.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/resources/creature_trait_definition.gd" id="2"]
+
+[sub_resource type="Resource" id="CreatureTraitDef_1"]
+script = ExtResource("2")
+trait_name = "Blessed"
+summary = "Able to enact Blessings on behalf of the deity named in brackets."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_2"]
+script = ExtResource("2")
+trait_name = "Afraid"
+summary = "Regards the named target with Fear (0) — see the Fear rules."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_3"]
+script = ExtResource("2")
+trait_name = "Amphibious"
+summary = "At home in water: adds its Agility Bonus to Swim Test SL and moves at full Movement through water."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_4"]
+script = ExtResource("2")
+trait_name = "Arboreal"
+summary = "At home in forests: adds its Agility Bonus to Climb and Stealth Test SL while in woodland."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_5"]
+script = ExtResource("2")
+trait_name = "Animosity"
+summary = "Dislikes the named target — see the Animosity rules."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_6"]
+script = ExtResource("2")
+trait_name = "Armour"
+summary = "Protected by thick hide or armour: gains Rating Armour Points on every Hit Location."
+tags = Array[String](["armour_all_locations"])
+
+[sub_resource type="Resource" id="CreatureTraitDef_7"]
+script = ExtResource("2")
+trait_name = "Belligerent"
+summary = "Loves to win a fight: while holding more Advantage than its opponent, it's Immune to Psychology."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_8"]
+script = ExtResource("2")
+trait_name = "Bestial"
+summary = "No rational thought or language: shies from fire (gaining Broken if struck by it), only ever Dodges in defence, and flees below half Wounds unless protecting young, cornered, or Territorial (in which case it Frenzies instead). Has no Fellowship."
+tags = Array[String](["bestial_flee_behaviour"])
+
+[sub_resource type="Resource" id="CreatureTraitDef_9"]
+script = ExtResource("2")
+trait_name = "Big"
+summary = "A large example of its species: +10 Strength, +10 Toughness, -5 Agility."
+tags = Array[String](["stat_mod:strength:10", "stat_mod:toughness:10", "stat_mod:agility:-5"])
+
+[sub_resource type="Resource" id="CreatureTraitDef_10"]
+script = ExtResource("2")
+trait_name = "Bite"
+summary = "May spend 1 Advantage for a Free Attack; Damage equals Rating (Strength Bonus already included)."
+tags = Array[String](["natural_weapon"])
+
+[sub_resource type="Resource" id="CreatureTraitDef_11"]
+script = ExtResource("2")
+trait_name = "Bounce"
+summary = "Can leap explosively: doubles Movement when Charging or Running, ignoring intervening terrain and characters."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_12"]
+script = ExtResource("2")
+trait_name = "Breath"
+summary = "Its breath is a powerful ranged weapon, usable as a 2-Advantage Free Attack against a whole area — see the full Breath rules for elemental variants (Cold/Corrosion/Fire/Electricity/Poison/Smoke)."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_13"]
+script = ExtResource("2")
+trait_name = "Brute"
+summary = "Heavy and brutish: -1 Movement, -10 Agility, +10 Strength, +10 Toughness."
+tags = Array[String](["stat_mod:agility:-10", "stat_mod:strength:10", "stat_mod:toughness:10", "stat_mod:movement:-1"])
+
+[sub_resource type="Resource" id="CreatureTraitDef_14"]
+script = ExtResource("2")
+trait_name = "Champion"
+summary = "An extraordinarily skilled warrior: winning an Opposed defensive melee Test lets it deal Damage as if it were the attacker."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_15"]
+script = ExtResource("2")
+trait_name = "Chill Grasp"
+summary = "For 2 Advantage and its Action, an Opposed touch attack that inflicts 1d10+SL Wounds ignoring Toughness and Armour if it wins. Magical."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_16"]
+script = ExtResource("2")
+trait_name = "Clever"
+summary = "Particularly sharp-minded: +20 Intelligence, +10 Initiative."
+tags = Array[String](["stat_mod:intelligence:20", "stat_mod:initiative:10"])
+
+[sub_resource type="Resource" id="CreatureTraitDef_17"]
+script = ExtResource("2")
+trait_name = "Cold-blooded"
+summary = "Slow to react: may reverse any failed Willpower Test."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_18"]
+script = ExtResource("2")
+trait_name = "Constrictor"
+summary = "A successful hit Entangles the target, and it may then choose to enter a Grapple."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_19"]
+script = ExtResource("2")
+trait_name = "Construct"
+summary = "A mindless magical construct: uses Strength Bonus wherever Willpower Bonus would apply, and all its attacks are Magical."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_20"]
+script = ExtResource("2")
+trait_name = "Corrosive Blood"
+summary = "Whenever Wounded, everyone Engaged with it suffers 1d10 Wounds (modified by Toughness/Armour, minimum 1) from splashing corrosive blood."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_21"]
+script = ExtResource("2")
+trait_name = "Corruption"
+summary = "Tainted by Chaos or Dark Magic; Strength of the Corruption exposure is given in brackets."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_22"]
+script = ExtResource("2")
+trait_name = "Cunning"
+summary = "Exceptionally cunning: +10 Fellowship, +10 Intelligence, +10 Initiative."
+tags = Array[String](["stat_mod:fellowship:10", "stat_mod:intelligence:10", "stat_mod:initiative:10"])
+
+[sub_resource type="Resource" id="CreatureTraitDef_23"]
+script = ExtResource("2")
+trait_name = "Daemonic"
+summary = "Raw magical essence needing no food, water, or air. All attacks Magical; may shrug off a blow entirely on a good roll, and its soul returns to Chaos immediately at 0 Wounds."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_24"]
+script = ExtResource("2")
+trait_name = "Dark Vision"
+summary = "Sees in the dark as if it were daylight."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_25"]
+script = ExtResource("2")
+trait_name = "Die Hard"
+summary = "Gets back up no matter how hard it's hit: Critical Wounds (even death, with parts reattached) can often be healed or shrugged off."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_26"]
+script = ExtResource("2")
+trait_name = "Disease"
+summary = "Carries the disease named in brackets; anyone it Wounds must Test to avoid Contraction."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_27"]
+script = ExtResource("2")
+trait_name = "Distracting"
+summary = "Nearby living targets (within its Toughness Bonus in yards) suffer -20 to all Tests; the penalty doesn't stack from multiple Distracting foes."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_28"]
+script = ExtResource("2")
+trait_name = "Elite"
+summary = "A hard-nosed veteran: +20 Weapon Skill, +20 Ballistic Skill, +20 Willpower."
+tags = Array[String](["stat_mod:weapon_skill:20", "stat_mod:ballistic_skill:20", "stat_mod:willpower:20"])
+
+[sub_resource type="Resource" id="CreatureTraitDef_29"]
+script = ExtResource("2")
+trait_name = "Ethereal"
+summary = "Insubstantial, able to pass through solid objects; can only be harmed by Magical attacks."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_30"]
+script = ExtResource("2")
+trait_name = "Fast"
+summary = "Moves unexpectedly fast: +1 Movement, +10 Agility."
+tags = Array[String](["stat_mod:agility:10", "stat_mod:movement:1"])
+
+[sub_resource type="Resource" id="CreatureTraitDef_31"]
+script = ExtResource("2")
+trait_name = "Fear"
+summary = "Causes supernatural Fear in other creatures at the given Rating — see the Fear rules."
+tags = Array[String](["fear"])
+
+[sub_resource type="Resource" id="CreatureTraitDef_32"]
+script = ExtResource("2")
+trait_name = "Flight"
+summary = "Can fly up to Rating yards as its Move, ignoring intervening terrain; suffers -20 to ranged attacks while airborne."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_33"]
+script = ExtResource("2")
+trait_name = "Frenzy"
+summary = "Capable of entering Frenzy — see the Frenzy rules."
+tags = Array[String](["frenzy_capable"])
+
+[sub_resource type="Resource" id="CreatureTraitDef_34"]
+script = ExtResource("2")
+trait_name = "Fury"
+summary = "Can spend all its Advantage to gain Hatred (or, with 3+ Advantage, Frenzy) against close-combat opponents."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_35"]
+script = ExtResource("2")
+trait_name = "Ghostly Howl"
+summary = "Can spend all its Advantage (min. 2) on a Free Attack scream that Deafens and Wounds every living target in range, risking Broken too."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_36"]
+script = ExtResource("2")
+trait_name = "Hardy"
+summary = "Sustains more damage than most: Wounds increase by its Toughness Bonus (applied before Size modifiers)."
+tags = Array[String](["stat_mod:wounds_bonus:toughness_bonus"])
+
+[sub_resource type="Resource" id="CreatureTraitDef_37"]
+script = ExtResource("2")
+trait_name = "Hatred"
+summary = "Really hates the named target — see the Hatred rules."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_38"]
+script = ExtResource("2")
+trait_name = "Horns"
+summary = "May make a Free Attack with its horns (or similar sharp appendage) when it gains Advantage from Charging; Damage equals Rating (Strength Bonus already included)."
+tags = Array[String](["natural_weapon"])
+
+[sub_resource type="Resource" id="CreatureTraitDef_39"]
+script = ExtResource("2")
+trait_name = "Hungry"
+summary = "Always hungry for fresh meat: after a kill or finding a fresh body, must pass a Test or lose its next Action and Move feasting."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_40"]
+script = ExtResource("2")
+trait_name = "Immunity"
+summary = "Completely immune to a named Damage type — even from a Critical Wound."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_41"]
+script = ExtResource("2")
+trait_name = "Immunity to Psychology"
+summary = "Utterly fearless: ignores the Psychology rules entirely."
+tags = Array[String](["immune_to_psychology"])
+
+[sub_resource type="Resource" id="CreatureTraitDef_42"]
+script = ExtResource("2")
+trait_name = "Infected"
+summary = "It or its weapon carries a nasty infection; a Wounded living target must Test or contract a Festering Wound."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_43"]
+script = ExtResource("2")
+trait_name = "Infestation"
+summary = "Its hide is infested with biting parasites: opponents suffer -10 to hit it in melee."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_44"]
+script = ExtResource("2")
+trait_name = "Leader"
+summary = "A practiced leader: +10 Fellowship, +10 Willpower. Cannot be taken alongside Bestial."
+tags = Array[String](["stat_mod:fellowship:10", "stat_mod:willpower:10"])
+
+[sub_resource type="Resource" id="CreatureTraitDef_45"]
+script = ExtResource("2")
+trait_name = "Magical"
+summary = "Wreathed in magic: all its attacks count as Magical."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_46"]
+script = ExtResource("2")
+trait_name = "Magic Resistance"
+summary = "Magic has reduced effect on it: any spell affecting it has its SL reduced by the given Rating."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_47"]
+script = ExtResource("2")
+trait_name = "Mental Corruption"
+summary = "Chaos-touched: rolls on the Mental Corruption Table."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_48"]
+script = ExtResource("2")
+trait_name = "Miracles"
+summary = "Able to enact Miracles on behalf of the deity named in brackets."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_49"]
+script = ExtResource("2")
+trait_name = "Mutation"
+summary = "Blessed (or cursed) with a Mutation: rolls on the Physical Corruption Table."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_50"]
+script = ExtResource("2")
+trait_name = "Night Vision"
+summary = "Has the Night Vision Talent."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_51"]
+script = ExtResource("2")
+trait_name = "Painless"
+summary = "Feels no pain: ignores all non-amputation penalties from Critical Wounds (Conditions still apply as normal)."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_52"]
+script = ExtResource("2")
+trait_name = "Petrifying Gaze"
+summary = "Can spend all its Advantage on an Opposed gaze attack that Stuns, and permanently petrifies on a big enough win."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_53"]
+script = ExtResource("2")
+trait_name = "Prejudice"
+summary = "Just doesn't like the named target — see the Prejudice rules."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_54"]
+script = ExtResource("2")
+trait_name = "Ranged"
+summary = "Has a ranged weapon; Damage equals the given Rating at the given range."
+tags = Array[String](["natural_ranged_weapon"])
+
+[sub_resource type="Resource" id="CreatureTraitDef_55"]
+script = ExtResource("2")
+trait_name = "Regenerate"
+summary = "Heals at an extraordinary rate — 1d10 Wounds automatically each round while above 0, with a chance to claw back from 0 or even fully heal a Critical Wound. Fire/Critical Wound damage is exempt."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_56"]
+script = ExtResource("2")
+trait_name = "Skittish"
+summary = "Easily scared by magic or loud noises: gains +3 Broken Conditions when startled this way."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_57"]
+script = ExtResource("2")
+trait_name = "Spellcaster"
+summary = "Able to cast spells from the Lore named in brackets."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_58"]
+script = ExtResource("2")
+trait_name = "Stealthy"
+summary = "Especially stealthy: adds its Agility Bonus to Stealth Test SL."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_59"]
+script = ExtResource("2")
+trait_name = "Stride"
+summary = "A long stride (quadruped or long-legged): multiplies Run Movement by 1.5."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_60"]
+script = ExtResource("2")
+trait_name = "Stupid"
+summary = "Confused without guidance from a non-Stupid ally: must pass an Intelligence Test each round or lose its Move and Action fumbling about."
+tags = Array[String](["stupid_behaviour"])
+
+[sub_resource type="Resource" id="CreatureTraitDef_61"]
+script = ExtResource("2")
+trait_name = "Swamp-strider"
+summary = "At home in swamps: suffers no Movement penalty crossing boggy ground."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_62"]
+script = ExtResource("2")
+trait_name = "Swarm"
+summary = "A mass of creatures acting as one: ignores Psychology and Engaged rules, always Deathblows on a hit, and drains 1 Wound a round from anyone Engaged with it."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_63"]
+script = ExtResource("2")
+trait_name = "Tail Attack"
+summary = "May spend 1 Advantage for a Free Attack with its tail; Damage equals Rating (Strength Bonus included) and knocks smaller, Wounded opponents Prone."
+tags = Array[String](["natural_weapon"])
+
+[sub_resource type="Resource" id="CreatureTraitDef_64"]
+script = ExtResource("2")
+trait_name = "Tentacles"
+summary = "Has a number of tentacles (given by #), each able to Free-Attack for Rating Damage and Entangle/Grapple on a hit."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_65"]
+script = ExtResource("2")
+trait_name = "Territorial"
+summary = "Fights to the death defending a particular area, but won't normally chase enemies who flee it."
+tags = Array[String](["territorial_behaviour"])
+
+[sub_resource type="Resource" id="CreatureTraitDef_66"]
+script = ExtResource("2")
+trait_name = "Terror"
+summary = "Causes supernatural Terror in other creatures at the given Rating — see the Terror rules."
+tags = Array[String](["terror"])
+
+[sub_resource type="Resource" id="CreatureTraitDef_67"]
+script = ExtResource("2")
+trait_name = "Trained"
+summary = "An animal trained via the Animal Training Skill; the specific trained skills are given in brackets."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_68"]
+script = ExtResource("2")
+trait_name = "Tongue Attack"
+summary = "May spend 1 Advantage for a ranged Free Attack with its tongue at the given Rating/range, Entangling and potentially dragging in a smaller target."
+tags = Array[String](["natural_weapon"])
+
+[sub_resource type="Resource" id="CreatureTraitDef_69"]
+script = ExtResource("2")
+trait_name = "Undead"
+summary = "Neither living nor dead, needing none of life's usual prerequisites — relevant when effects specifically target the Undead."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_70"]
+script = ExtResource("2")
+trait_name = "Unstable"
+summary = "Its form is held together by unstable magic: loses Wounds equal to the Advantage gap whenever it ends a Round Engaged with a higher-Advantage opponent, 'dying' at 0."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_71"]
+script = ExtResource("2")
+trait_name = "Vampiric"
+summary = "Heals as many Wounds as its opponent loses on a successful Bite — its only means of healing."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_72"]
+script = ExtResource("2")
+trait_name = "Venom"
+summary = "Its attacks are poisoned: a Wounding hit inflicts a Poisoned Condition (resisted at the given Difficulty, Challenging if none is given)."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_73"]
+script = ExtResource("2")
+trait_name = "Vomit"
+summary = "Can spend 3 Advantage to spew corrosive filth over a small area as a Free Attack, damaging gear and Stunning targets who fail to Dodge."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_74"]
+script = ExtResource("2")
+trait_name = "Tough"
+summary = "More resistant to damage and unlikely to back down: +10 Toughness, +10 Willpower."
+tags = Array[String](["stat_mod:toughness:10", "stat_mod:willpower:10"])
+
+[sub_resource type="Resource" id="CreatureTraitDef_75"]
+script = ExtResource("2")
+trait_name = "Tracker"
+summary = "Adept at following prey: adds its Initiative Bonus to Track Test SL."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_76"]
+script = ExtResource("2")
+trait_name = "Ward"
+summary = "Some blows just seem to miss: rolls to ignore a hit entirely (even a Critical) at the given Rating or higher."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_77"]
+script = ExtResource("2")
+trait_name = "Wallcrawler"
+summary = "Scales walls and ceilings effortlessly: full Movement on any surface, and automatically passes Climb Tests."
+tags = Array[String]([])
+
+[sub_resource type="Resource" id="CreatureTraitDef_78"]
+script = ExtResource("2")
+trait_name = "Weapon"
+summary = "Carries a melee weapon, or fights with teeth/claws/similar; Damage equals Rating, which already includes its Strength Bonus (typically 4 + Strength Bonus, representing a Hand Weapon)."
+tags = Array[String](["natural_weapon"])
+
+[sub_resource type="Resource" id="CreatureTraitDef_79"]
+script = ExtResource("2")
+trait_name = "Web"
+summary = "A successful hit Entangles the target at a Strength equal to the given Rating."
+tags = Array[String]([])
+
+[resource]
+script = ExtResource("1")
+creature_traits = Array[Resource]([SubResource("CreatureTraitDef_1"), SubResource("CreatureTraitDef_2"), SubResource("CreatureTraitDef_3"), SubResource("CreatureTraitDef_4"), SubResource("CreatureTraitDef_5"), SubResource("CreatureTraitDef_6"), SubResource("CreatureTraitDef_7"), SubResource("CreatureTraitDef_8"), SubResource("CreatureTraitDef_9"), SubResource("CreatureTraitDef_10"), SubResource("CreatureTraitDef_11"), SubResource("CreatureTraitDef_12"), SubResource("CreatureTraitDef_13"), SubResource("CreatureTraitDef_14"), SubResource("CreatureTraitDef_15"), SubResource("CreatureTraitDef_16"), SubResource("CreatureTraitDef_17"), SubResource("CreatureTraitDef_18"), SubResource("CreatureTraitDef_19"), SubResource("CreatureTraitDef_20"), SubResource("CreatureTraitDef_21"), SubResource("CreatureTraitDef_22"), SubResource("CreatureTraitDef_23"), SubResource("CreatureTraitDef_24"), SubResource("CreatureTraitDef_25"), SubResource("CreatureTraitDef_26"), SubResource("CreatureTraitDef_27"), SubResource("CreatureTraitDef_28"), SubResource("CreatureTraitDef_29"), SubResource("CreatureTraitDef_30"), SubResource("CreatureTraitDef_31"), SubResource("CreatureTraitDef_32"), SubResource("CreatureTraitDef_33"), SubResource("CreatureTraitDef_34"), SubResource("CreatureTraitDef_35"), SubResource("CreatureTraitDef_36"), SubResource("CreatureTraitDef_37"), SubResource("CreatureTraitDef_38"), SubResource("CreatureTraitDef_39"), SubResource("CreatureTraitDef_40"), SubResource("CreatureTraitDef_41"), SubResource("CreatureTraitDef_42"), SubResource("CreatureTraitDef_43"), SubResource("CreatureTraitDef_44"), SubResource("CreatureTraitDef_45"), SubResource("CreatureTraitDef_46"), SubResource("CreatureTraitDef_47"), SubResource("CreatureTraitDef_48"), SubResource("CreatureTraitDef_49"), SubResource("CreatureTraitDef_50"), SubResource("CreatureTraitDef_51"), SubResource("CreatureTraitDef_52"), SubResource("CreatureTraitDef_53"), SubResource("CreatureTraitDef_54"), SubResource("CreatureTraitDef_55"), SubResource("CreatureTraitDef_56"), SubResource("CreatureTraitDef_57"), SubResource("CreatureTraitDef_58"), SubResource("CreatureTraitDef_59"), SubResource("CreatureTraitDef_60"), SubResource("CreatureTraitDef_61"), SubResource("CreatureTraitDef_62"), SubResource("CreatureTraitDef_63"), SubResource("CreatureTraitDef_64"), SubResource("CreatureTraitDef_65"), SubResource("CreatureTraitDef_66"), SubResource("CreatureTraitDef_67"), SubResource("CreatureTraitDef_68"), SubResource("CreatureTraitDef_69"), SubResource("CreatureTraitDef_70"), SubResource("CreatureTraitDef_71"), SubResource("CreatureTraitDef_72"), SubResource("CreatureTraitDef_73"), SubResource("CreatureTraitDef_74"), SubResource("CreatureTraitDef_75"), SubResource("CreatureTraitDef_76"), SubResource("CreatureTraitDef_77"), SubResource("CreatureTraitDef_78"), SubResource("CreatureTraitDef_79")])

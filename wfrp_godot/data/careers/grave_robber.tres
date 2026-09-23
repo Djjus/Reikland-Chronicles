@@ -1,0 +1,67 @@
+[gd_resource type="Resource" script_class="CareerDefinition" format=3 uid="uid://pe7ajrcjmo28"]
+
+[ext_resource type="Script" uid="uid://cr4lrv134m8k1" path="res://scripts/resources/career_definition.gd" id="1"]
+[ext_resource type="Script" uid="uid://3ug4teqahf5m" path="res://scripts/resources/career_level.gd" id="2"]
+
+[sub_resource type="Resource" id="Level_1"]
+script = ExtResource("2")
+level_name = "Body Snatcher"
+status_stars = 2
+attribute_advances = {
+"initiative": 5,
+"strength": 5,
+"willpower": 5
+}
+skills = Array[String](["Climb", "Cool", "Dodge", "Endurance", "Gossip", "Intuition", "Perception", "Stealth (Any)"])
+talents = Array[String](["Alley Cat", "Criminal", "Flee!", "Strong Back"])
+trappings = Array[String](["Crowbar", "Handcart", "Hooded Cloak", "Tarpaulin"])
+income_skill = "Stealth (Any)"
+
+[sub_resource type="Resource" id="Level_2"]
+script = ExtResource("2")
+level_name = "Grave Robber"
+tier = 2
+status_stars = 3
+attribute_advances = {
+"weapon_skill": 5
+}
+skills = Array[String](["Bribery", "Drive", "Evaluate", "Haggle", "Lore (Medicine)", "Melee (Basic)"])
+talents = Array[String](["Break and Enter", "Night Vision", "Resistance (Disease)", "Very Strong"])
+trappings = Array[String](["Backpack", "Sword", "Spade", "Storm Lantern and Oil"])
+income_skill = "Stealth (Any)"
+
+[sub_resource type="Resource" id="Level_3"]
+script = ExtResource("2")
+level_name = "Tomb Robber"
+tier = 3
+status_tier = "Silver"
+status_stars = 1
+attribute_advances = {
+"dexterity": 5
+}
+skills = Array[String](["Lore (History)", "Pick Lock", "Research", "Set Trap"])
+talents = Array[String](["Read/Write", "Strike Mighty Blow", "Tenacious", "Tunnel Rat"])
+trappings = Array[String](["Pick", "Horse and Cart", "Leather Jack", "Rope", "Trade Tools (Thief)"])
+income_skill = "Stealth (Any)"
+
+[sub_resource type="Resource" id="Level_4"]
+script = ExtResource("2")
+level_name = "Treasure Hunter"
+tier = 4
+status_tier = "Silver"
+status_stars = 5
+attribute_advances = {
+"intelligence": 5
+}
+skills = Array[String](["Navigation", "Trade (Engineer)"])
+talents = Array[String](["Fearless (Undead)", "Sixth Sense", "Strong-minded", "Trapper"])
+trappings = Array[String](["Bedroll", "Maps", "Tent", "Trade Tools (Engineer)", "Writing Kit"])
+income_skill = "Stealth (Any)"
+
+[resource]
+script = ExtResource("1")
+career_name = "Grave Robber"
+career_class = "Rogue"
+valid_races = Array[String](["Halfling", "Human"])
+levels = Array[ExtResource("2")]([SubResource("Level_1"), SubResource("Level_2"), SubResource("Level_3"), SubResource("Level_4")])
+summary = "You brave the threat of necromancy, stealing from the dead to line your own pockets."

@@ -1,0 +1,79 @@
+[gd_resource type="Resource" script_class="CareerDefinition" format=3 uid="uid://cgqv3lyk3v3ih"]
+
+[ext_resource type="Script" uid="uid://cr4lrv134m8k1" path="res://scripts/resources/career_definition.gd" id="1"]
+[ext_resource type="Script" uid="uid://3ug4teqahf5m" path="res://scripts/resources/career_level.gd" id="2"]
+
+[sub_resource type="Resource" id="Level_1"]
+script = ExtResource("2")
+level_name = "Novitiate"
+status_stars = 2
+attribute_advances = {
+"toughness": 5,
+"weapon_skill": 5,
+"willpower": 5
+}
+skills = Array[String](["Cool", "Dodge", "Endurance", "Heal", "Leadership", "Lore (Theology)", "Melee (Any)", "Pray"])
+talents = Array[String](["Bless (Any)", "Etiquette (Cultists)", "Read/Write", "Strong-minded"])
+trappings = Array[String](["Book (Religion)", "Leather Jerkin", "Religious Symbol", "Robes"])
+income_skill = "Pray"
+
+[sub_resource type="Resource" id="Level_2"]
+script = ExtResource("2")
+level_name = "Warrior Priest"
+tier = 2
+status_tier = "Silver"
+status_stars = 2
+attribute_advances = {
+"fellowship": 5,
+"toughness": 5,
+"weapon_skill": 5,
+"willpower": 5
+}
+skills = Array[String](["Charm", "Entertain (Speeches)", "Intimidate", "Language (Battle)", "Melee (Any)", "Ranged (Any)"])
+talents = Array[String](["Dual Wielder", "Inspiring", "Invoke (Any)", "Seasoned Traveller"])
+trappings = Array[String](["Boiled Leather Breastplate"])
+income_skill = "Charm"
+
+[sub_resource type="Resource" id="Level_3"]
+script = ExtResource("2")
+level_name = "Priest Sergeant"
+tier = 3
+status_tier = "Silver"
+status_stars = 3
+attribute_advances = {
+"fellowship": 5,
+"initiative": 5,
+"toughness": 5,
+"weapon_skill": 5,
+"willpower": 5
+}
+skills = Array[String](["Animal Care", "Intuition", "Perception", "Ride (Horse)"])
+talents = Array[String](["Combat Aware", "Holy Visions", "Pure Soul", "Stout-hearted"])
+trappings = Array[String](["Light Warhorse with Saddle and Tack"])
+income_skill = "Intuition"
+
+[sub_resource type="Resource" id="Level_4"]
+script = ExtResource("2")
+level_name = "Priest Captain"
+tier = 4
+status_tier = "Silver"
+status_stars = 4
+attribute_advances = {
+"fellowship": 5,
+"initiative": 5,
+"intelligence": 5,
+"toughness": 5,
+"weapon_skill": 5,
+"willpower": 5
+}
+skills = Array[String](["Consume Alcohol", "Lore (Warfare)"])
+talents = Array[String](["Fearless (Any)", "Furious Assault", "Holy Hatred", "War Leader"])
+trappings = Array[String](["Religious Relic"])
+income_skill = "Lore (Warfare)"
+
+[resource]
+script = ExtResource("1")
+career_name = "Warrior Priest"
+valid_races = Array[String](["Human"])
+levels = Array[ExtResource("2")]([SubResource("Level_1"), SubResource("Level_2"), SubResource("Level_3"), SubResource("Level_4")])
+summary = "A militant cleric who brings divinity to the thick of battle, slaying the enemies of the Empire with righteous fury."

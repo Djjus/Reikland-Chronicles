@@ -1,0 +1,461 @@
+[gd_resource type="Resource" script_class="ArmourDatabase" load_steps=35 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/armour_database.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/resources/armour_definition.gd" id="2"]
+
+[sub_resource type="Resource" id="ArmourDef_1"]
+script = ExtResource("2")
+armour_name = "Leather Jack"
+locations = Array[String](["Body", "Left Arm", "Right Arm"])
+armour_points = 1
+encumbrance = 1
+qualities = Array[String]([])
+summary = "Boiled leather covering the torso and arms."
+price_pennies = 144
+availability = "Common"
+armor_tier = "Light"
+is_indestructible = false
+
+[sub_resource type="Resource" id="ArmourDef_2"]
+script = ExtResource("2")
+armour_name = "Leather Jerkin"
+locations = Array[String](["Body"])
+armour_points = 1
+encumbrance = 1
+qualities = Array[String]([])
+summary = "A sleeveless boiled-leather vest, torso only."
+price_pennies = 120
+availability = "Common"
+armor_tier = "Light"
+is_indestructible = false
+
+[sub_resource type="Resource" id="ArmourDef_3"]
+script = ExtResource("2")
+armour_name = "Leather Leggings"
+locations = Array[String](["Left Leg", "Right Leg"])
+armour_points = 1
+encumbrance = 1
+qualities = Array[String]([])
+summary = "Boiled leather trousers."
+price_pennies = 168
+availability = "Common"
+armor_tier = "Light"
+is_indestructible = false
+
+[sub_resource type="Resource" id="ArmourDef_4"]
+script = ExtResource("2")
+armour_name = "Leather Skullcap"
+locations = Array[String](["Head"])
+armour_points = 1
+encumbrance = 0
+qualities = Array[String](["Partial"])
+summary = "A simple leather skullcap — doesn't cover the whole head."
+price_pennies = 96
+availability = "Common"
+armor_tier = "Light"
+is_indestructible = false
+
+[sub_resource type="Resource" id="ArmourDef_5"]
+script = ExtResource("2")
+armour_name = "Boiled Leather Breastplate"
+locations = Array[String](["Body"])
+armour_points = 2
+encumbrance = 2
+qualities = Array[String](["Weakpoints"])
+summary = "A hardened leather breastplate, tougher than a simple jerkin."
+price_pennies = 216
+availability = "Scarce"
+armor_tier = "Medium"
+is_indestructible = false
+
+[sub_resource type="Resource" id="ArmourDef_6"]
+script = ExtResource("2")
+armour_name = "Mail Chausses"
+locations = Array[String](["Left Leg", "Right Leg"])
+armour_points = 2
+encumbrance = 3
+qualities = Array[String](["Flexible"])
+summary = "Mail leggings."
+price_pennies = 480
+availability = "Scarce"
+armor_tier = "Medium"
+is_indestructible = false
+
+[sub_resource type="Resource" id="ArmourDef_7"]
+script = ExtResource("2")
+armour_name = "Mail Coat"
+locations = Array[String](["Body", "Left Arm", "Right Arm"])
+armour_points = 2
+encumbrance = 3
+qualities = Array[String](["Flexible"])
+summary = "A mail shirt with sleeves, covering the arms as well as the torso."
+price_pennies = 720
+availability = "Common"
+armor_tier = "Medium"
+is_indestructible = false
+
+[sub_resource type="Resource" id="ArmourDef_8"]
+script = ExtResource("2")
+armour_name = "Mail Coif"
+locations = Array[String](["Head"])
+armour_points = 2
+encumbrance = 2
+qualities = Array[String](["Flexible", "Partial"])
+summary = "A mail hood worn under a helmet or alone."
+price_pennies = 240
+availability = "Scarce"
+armor_tier = "Medium"
+is_indestructible = false
+
+[sub_resource type="Resource" id="ArmourDef_9"]
+script = ExtResource("2")
+armour_name = "Mail Shirt"
+locations = Array[String](["Body"])
+armour_points = 2
+encumbrance = 2
+qualities = Array[String](["Flexible"])
+summary = "A sleeveless shirt of interlocking metal rings."
+price_pennies = 480
+availability = "Scarce"
+armor_tier = "Medium"
+is_indestructible = false
+
+[sub_resource type="Resource" id="ArmourDef_10"]
+script = ExtResource("2")
+armour_name = "Plate Breastplate"
+locations = Array[String](["Body"])
+armour_points = 2
+encumbrance = 3
+qualities = Array[String](["Impenetrable", "Weakpoints"])
+summary = "A solid plate breastplate."
+price_pennies = 2400
+availability = "Scarce"
+armor_tier = "Heavy"
+is_indestructible = false
+
+[sub_resource type="Resource" id="ArmourDef_11"]
+script = ExtResource("2")
+armour_name = "Open Helm"
+locations = Array[String](["Head"])
+armour_points = 2
+encumbrance = 1
+qualities = Array[String](["Partial"])
+summary = "An open-faced plate helm — better visibility, less coverage."
+price_pennies = 480
+availability = "Common"
+armor_tier = "Heavy"
+is_indestructible = false
+
+[sub_resource type="Resource" id="ArmourDef_12"]
+script = ExtResource("2")
+armour_name = "Bracers"
+locations = Array[String](["Left Arm", "Right Arm"])
+armour_points = 2
+encumbrance = 3
+qualities = Array[String](["Impenetrable", "Weakpoints"])
+summary = "Plate armour for the arms."
+price_pennies = 1920
+availability = "Rare"
+armor_tier = "Heavy"
+is_indestructible = false
+
+[sub_resource type="Resource" id="ArmourDef_13"]
+script = ExtResource("2")
+armour_name = "Plate Leggings"
+locations = Array[String](["Left Leg", "Right Leg"])
+armour_points = 2
+encumbrance = 3
+qualities = Array[String](["Impenetrable", "Weakpoints"])
+summary = "Full plate leg armour."
+price_pennies = 2400
+availability = "Rare"
+armor_tier = "Heavy"
+is_indestructible = false
+
+[sub_resource type="Resource" id="ArmourDef_14"]
+script = ExtResource("2")
+armour_name = "Helm"
+locations = Array[String](["Head"])
+armour_points = 2
+encumbrance = 2
+qualities = Array[String](["Impenetrable", "Weakpoints"])
+summary = "A fully enclosed plate helm."
+price_pennies = 720
+availability = "Rare"
+armor_tier = "Heavy"
+is_indestructible = false
+
+
+[sub_resource type="Resource" id="ArmourDef_15"]
+script = ExtResource("2")
+armour_name = "Lightweight Mail Chausses"
+locations = Array[String](["Left Leg", "Right Leg"])
+armour_points = 2
+encumbrance = 3
+qualities = Array[String](["Flexible"])
+item_qualities = Array[String](["Lightweight"])
+item_flaws = Array[String]([])
+summary = "Mail leggings. (Cleverly crafted for ease of carrying — reduces its own Encumbrance by 1.)"
+price_pennies = 960
+availability = "Rare"
+armor_tier = "Medium"
+is_indestructible = false
+
+[sub_resource type="Resource" id="ArmourDef_16"]
+script = ExtResource("2")
+armour_name = "Durable Mail Chausses"
+locations = Array[String](["Left Leg", "Right Leg"])
+armour_points = 2
+encumbrance = 3
+qualities = Array[String](["Flexible"])
+item_qualities = Array[String](["Durable"])
+item_flaws = Array[String]([])
+summary = "Mail leggings. (Laboriously crafted using strong materials — can absorb extra damage before it breaks.)"
+price_pennies = 960
+availability = "Rare"
+armor_tier = "Medium"
+is_indestructible = false
+
+[sub_resource type="Resource" id="ArmourDef_17"]
+script = ExtResource("2")
+armour_name = "Lightweight Mail Coat"
+locations = Array[String](["Body", "Left Arm", "Right Arm"])
+armour_points = 2
+encumbrance = 3
+qualities = Array[String](["Flexible"])
+item_qualities = Array[String](["Lightweight"])
+item_flaws = Array[String]([])
+summary = "A mail shirt with sleeves, covering the arms as well as the torso. (Cleverly crafted for ease of carrying — reduces its own Encumbrance by 1.)"
+price_pennies = 1440
+availability = "Scarce"
+armor_tier = "Medium"
+is_indestructible = false
+
+[sub_resource type="Resource" id="ArmourDef_18"]
+script = ExtResource("2")
+armour_name = "Durable Mail Coat"
+locations = Array[String](["Body", "Left Arm", "Right Arm"])
+armour_points = 2
+encumbrance = 3
+qualities = Array[String](["Flexible"])
+item_qualities = Array[String](["Durable"])
+item_flaws = Array[String]([])
+summary = "A mail shirt with sleeves, covering the arms as well as the torso. (Laboriously crafted using strong materials — can absorb extra damage before it breaks.)"
+price_pennies = 1440
+availability = "Scarce"
+armor_tier = "Medium"
+is_indestructible = false
+
+[sub_resource type="Resource" id="ArmourDef_19"]
+script = ExtResource("2")
+armour_name = "Lightweight Mail Coif"
+locations = Array[String](["Head"])
+armour_points = 2
+encumbrance = 2
+qualities = Array[String](["Flexible", "Partial"])
+item_qualities = Array[String](["Lightweight"])
+item_flaws = Array[String]([])
+summary = "A mail hood worn under a helmet or alone. (Cleverly crafted for ease of carrying — reduces its own Encumbrance by 1.)"
+price_pennies = 480
+availability = "Rare"
+armor_tier = "Medium"
+is_indestructible = false
+
+[sub_resource type="Resource" id="ArmourDef_20"]
+script = ExtResource("2")
+armour_name = "Durable Mail Coif"
+locations = Array[String](["Head"])
+armour_points = 2
+encumbrance = 2
+qualities = Array[String](["Flexible", "Partial"])
+item_qualities = Array[String](["Durable"])
+item_flaws = Array[String]([])
+summary = "A mail hood worn under a helmet or alone. (Laboriously crafted using strong materials — can absorb extra damage before it breaks.)"
+price_pennies = 480
+availability = "Rare"
+armor_tier = "Medium"
+is_indestructible = false
+
+[sub_resource type="Resource" id="ArmourDef_21"]
+script = ExtResource("2")
+armour_name = "Lightweight Mail Shirt"
+locations = Array[String](["Body"])
+armour_points = 2
+encumbrance = 2
+qualities = Array[String](["Flexible"])
+item_qualities = Array[String](["Lightweight"])
+item_flaws = Array[String]([])
+summary = "A sleeveless shirt of interlocking metal rings. (Cleverly crafted for ease of carrying — reduces its own Encumbrance by 1.)"
+price_pennies = 960
+availability = "Rare"
+armor_tier = "Medium"
+is_indestructible = false
+
+[sub_resource type="Resource" id="ArmourDef_22"]
+script = ExtResource("2")
+armour_name = "Durable Mail Shirt"
+locations = Array[String](["Body"])
+armour_points = 2
+encumbrance = 2
+qualities = Array[String](["Flexible"])
+item_qualities = Array[String](["Durable"])
+item_flaws = Array[String]([])
+summary = "A sleeveless shirt of interlocking metal rings. (Laboriously crafted using strong materials — can absorb extra damage before it breaks.)"
+price_pennies = 960
+availability = "Rare"
+armor_tier = "Medium"
+is_indestructible = false
+
+[sub_resource type="Resource" id="ArmourDef_23"]
+script = ExtResource("2")
+armour_name = "Lightweight Plate Breastplate"
+locations = Array[String](["Body"])
+armour_points = 2
+encumbrance = 3
+qualities = Array[String](["Impenetrable", "Weakpoints"])
+item_qualities = Array[String](["Lightweight"])
+item_flaws = Array[String]([])
+summary = "A solid plate breastplate. (Cleverly crafted for ease of carrying — reduces its own Encumbrance by 1.)"
+price_pennies = 4800
+availability = "Rare"
+armor_tier = "Heavy"
+is_indestructible = false
+
+[sub_resource type="Resource" id="ArmourDef_24"]
+script = ExtResource("2")
+armour_name = "Durable Plate Breastplate"
+locations = Array[String](["Body"])
+armour_points = 2
+encumbrance = 3
+qualities = Array[String](["Impenetrable", "Weakpoints"])
+item_qualities = Array[String](["Durable"])
+item_flaws = Array[String]([])
+summary = "A solid plate breastplate. (Laboriously crafted using strong materials — can absorb extra damage before it breaks.)"
+price_pennies = 4800
+availability = "Rare"
+armor_tier = "Heavy"
+is_indestructible = false
+
+[sub_resource type="Resource" id="ArmourDef_25"]
+script = ExtResource("2")
+armour_name = "Lightweight Open Helm"
+locations = Array[String](["Head"])
+armour_points = 2
+encumbrance = 1
+qualities = Array[String](["Partial"])
+item_qualities = Array[String](["Lightweight"])
+item_flaws = Array[String]([])
+summary = "An open-faced plate helm — better visibility, less coverage. (Cleverly crafted for ease of carrying — reduces its own Encumbrance by 1.)"
+price_pennies = 960
+availability = "Scarce"
+armor_tier = "Heavy"
+is_indestructible = false
+
+[sub_resource type="Resource" id="ArmourDef_26"]
+script = ExtResource("2")
+armour_name = "Durable Open Helm"
+locations = Array[String](["Head"])
+armour_points = 2
+encumbrance = 1
+qualities = Array[String](["Partial"])
+item_qualities = Array[String](["Durable"])
+item_flaws = Array[String]([])
+summary = "An open-faced plate helm — better visibility, less coverage. (Laboriously crafted using strong materials — can absorb extra damage before it breaks.)"
+price_pennies = 960
+availability = "Scarce"
+armor_tier = "Heavy"
+is_indestructible = false
+
+[sub_resource type="Resource" id="ArmourDef_27"]
+script = ExtResource("2")
+armour_name = "Lightweight Bracers"
+locations = Array[String](["Left Arm", "Right Arm"])
+armour_points = 2
+encumbrance = 3
+qualities = Array[String](["Impenetrable", "Weakpoints"])
+item_qualities = Array[String](["Lightweight"])
+item_flaws = Array[String]([])
+summary = "Plate armour for the arms. (Cleverly crafted for ease of carrying — reduces its own Encumbrance by 1.)"
+price_pennies = 3840
+availability = "Exotic"
+armor_tier = "Heavy"
+is_indestructible = false
+
+[sub_resource type="Resource" id="ArmourDef_28"]
+script = ExtResource("2")
+armour_name = "Durable Bracers"
+locations = Array[String](["Left Arm", "Right Arm"])
+armour_points = 2
+encumbrance = 3
+qualities = Array[String](["Impenetrable", "Weakpoints"])
+item_qualities = Array[String](["Durable"])
+item_flaws = Array[String]([])
+summary = "Plate armour for the arms. (Laboriously crafted using strong materials — can absorb extra damage before it breaks.)"
+price_pennies = 3840
+availability = "Exotic"
+armor_tier = "Heavy"
+is_indestructible = false
+
+[sub_resource type="Resource" id="ArmourDef_29"]
+script = ExtResource("2")
+armour_name = "Lightweight Plate Leggings"
+locations = Array[String](["Left Leg", "Right Leg"])
+armour_points = 2
+encumbrance = 3
+qualities = Array[String](["Impenetrable", "Weakpoints"])
+item_qualities = Array[String](["Lightweight"])
+item_flaws = Array[String]([])
+summary = "Full plate leg armour. (Cleverly crafted for ease of carrying — reduces its own Encumbrance by 1.)"
+price_pennies = 4800
+availability = "Exotic"
+armor_tier = "Heavy"
+is_indestructible = false
+
+[sub_resource type="Resource" id="ArmourDef_30"]
+script = ExtResource("2")
+armour_name = "Durable Plate Leggings"
+locations = Array[String](["Left Leg", "Right Leg"])
+armour_points = 2
+encumbrance = 3
+qualities = Array[String](["Impenetrable", "Weakpoints"])
+item_qualities = Array[String](["Durable"])
+item_flaws = Array[String]([])
+summary = "Full plate leg armour. (Laboriously crafted using strong materials — can absorb extra damage before it breaks.)"
+price_pennies = 4800
+availability = "Exotic"
+armor_tier = "Heavy"
+is_indestructible = false
+
+[sub_resource type="Resource" id="ArmourDef_31"]
+script = ExtResource("2")
+armour_name = "Lightweight Helm"
+locations = Array[String](["Head"])
+armour_points = 2
+encumbrance = 2
+qualities = Array[String](["Impenetrable", "Weakpoints"])
+item_qualities = Array[String](["Lightweight"])
+item_flaws = Array[String]([])
+summary = "A fully enclosed plate helm. (Cleverly crafted for ease of carrying — reduces its own Encumbrance by 1.)"
+price_pennies = 1440
+availability = "Exotic"
+armor_tier = "Heavy"
+is_indestructible = false
+
+[sub_resource type="Resource" id="ArmourDef_32"]
+script = ExtResource("2")
+armour_name = "Durable Helm"
+locations = Array[String](["Head"])
+armour_points = 2
+encumbrance = 2
+qualities = Array[String](["Impenetrable", "Weakpoints"])
+item_qualities = Array[String](["Durable"])
+item_flaws = Array[String]([])
+summary = "A fully enclosed plate helm. (Laboriously crafted using strong materials — can absorb extra damage before it breaks.)"
+price_pennies = 1440
+availability = "Exotic"
+armor_tier = "Heavy"
+is_indestructible = false
+
+[resource]
+script = ExtResource("1")
+pieces = Array[Resource]([SubResource("ArmourDef_1"), SubResource("ArmourDef_2"), SubResource("ArmourDef_3"), SubResource("ArmourDef_4"), SubResource("ArmourDef_5"), SubResource("ArmourDef_6"), SubResource("ArmourDef_7"), SubResource("ArmourDef_8"), SubResource("ArmourDef_9"), SubResource("ArmourDef_10"), SubResource("ArmourDef_11"), SubResource("ArmourDef_12"), SubResource("ArmourDef_13"), SubResource("ArmourDef_14"), SubResource("ArmourDef_15"), SubResource("ArmourDef_16"), SubResource("ArmourDef_17"), SubResource("ArmourDef_18"), SubResource("ArmourDef_19"), SubResource("ArmourDef_20"), SubResource("ArmourDef_21"), SubResource("ArmourDef_22"), SubResource("ArmourDef_23"), SubResource("ArmourDef_24"), SubResource("ArmourDef_25"), SubResource("ArmourDef_26"), SubResource("ArmourDef_27"), SubResource("ArmourDef_28"), SubResource("ArmourDef_29"), SubResource("ArmourDef_30"), SubResource("ArmourDef_31"), SubResource("ArmourDef_32")])

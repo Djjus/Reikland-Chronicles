@@ -1,0 +1,727 @@
+[gd_resource type="Resource" script_class="SocialEncounterDatabase" format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/social_encounter_database.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/resources/social_encounter_definition.gd" id="2"]
+
+[sub_resource type="Resource" id="SocialEnc_1"]
+script = ExtResource("2")
+encounter_name = "The Roadside Peddler"
+portrait_career_key = "pedlar"
+npc_fellowship = 35
+npc_willpower = 30
+intro_text = "A hunched peddler waves you down from beside a rickety handcart piled with pots, ribbons, and dubious-looking charms. {subj_cap} {situation_hook} as {subj} talks. \"Fine goods, friend! Fair prices! And I hear things, too, if you're the sort who values what's on the road ahead...\" {opening_flavor}"
+opening_flavors = Array[String](["A cold wind picks up, and neither of you mentions it.", "Somewhere behind the cart, a wheel creaks like it's about to give up entirely.", "The road here is quieter than it has any right to be.", "A crow watches the whole exchange from a nearby branch with unsettling interest.", "The cart's wares look older and stranger the longer you actually look at them.", "There's a smell of woodsmoke on the air that shouldn't be this close to the road."])
+round1_prompt_text = "{subj_cap}'s clearly nervous about something. Push for a straight answer, charm {obj} into relaxing, or just walk away with whatever you can talk {obj} into."
+round1_success_text = "{subj_cap} lets {poss} guard down a little and admits the road's been \"unfriendly\" further along — worth knowing, and worth something to you."
+round1_retry_text = "{subj_cap} forces a laugh and changes the subject, cart wheels creaking as {subj} shifts {poss} weight. {subj_cap}'s still watching the treeline. Try a different approach."
+round1_final_fail_text = "{subj_cap} clams up entirely, eyes darting to the trees. \"Just — just buy something, or move along.\""
+round2_skills = Array[String](["Charm", "Gossip", "Leadership"])
+round2_prompt_text = "Now that {subj}'s talking, there's clearly more {subj} isn't saying. Press gently, or lay your cards on the table."
+round2_retry_text = "{subj_cap} hesitates, halfway to telling you something, then loses {poss} nerve. One more try."
+reward_item = "Silver Locket"
+npc_reaction_lines = Array[String](["The peddler's cheerful patter is wearing thin — {subj_cap} keeps glancing toward the treeline like {subj}'s counting on someone else to end this.", "{subj_cap}'s hands have stopped fussing with the goods entirely. Whatever the act was, it's cracking."])
+situations = Array[Dictionary]([{
+"combat_monster_names": Array[String](["Outlaw"]),
+"funny_loss_text": "",
+"hook": "keeps glancing back toward the treeline as he talks, a little too quickly, a little too loud",
+"is_combat": true,
+"success_reveal": "It comes out in a rush — {subj}'s not really a peddler, {subj}'s a lookout paying off a debt to some rough sorts hiding nearby by luring in \"customers.\" {subj_cap} is grateful you didn't turn violent, and presses a genuinely fine trinket into your hands as thanks for hearing {obj} out, along with what little coin {poss} has."
+}, {
+"combat_monster_names": Array[String](["Feral Dog"]),
+"funny_loss_text": "",
+"hook": "keeps one hand resting on the cart, close to a bundle wrapped in oilcloth that clearly isn't for sale",
+"is_combat": true,
+"success_reveal": "It turns out the cart's guarded by more than just {poss} own nerve — a couple of half-feral dogs come padding out from behind it, clearly used to {poss} whistle, clearly not used to strangers who don't leave when told to."
+}, {
+"combat_monster_names": Array[String](["Orc"]),
+"funny_loss_text": "",
+"hook": "asks a few too many careful questions about which way you're headed and how many of you there are",
+"is_combat": true,
+"success_reveal": "{subj_cap} finally admits {subj}'s been asked to watch the road and report back on travellers — there's an orc warband scouting the area, and {subj} very much did not sign up to actually fight them. {subj_cap} points you toward where {subj} last saw them, grateful to have someone else handle it."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap} bolts the second {poss} guard is down, cart and all, muttering something about \"not risking it twice.\" You're left standing in the road with absolutely nothing to show for it.",
+"hook": "flinches at every distant hoofbeat like {poss} own name's about to be called",
+"is_combat": false,
+"success_reveal": "{subj_cap} finally admits it — {subj}'s a deserter, three months gone from a regiment {subj} never wanted to join, and the \"peddling\" is just a way to stay moving. The moment {subj} realizes you're not here to drag {obj} back, {subj} packs up the cart and disappears down a side path faster than someone that nervous has any right to move."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "Convinced you're here about the debt after all, {subj} suddenly \"remembers\" urgent business elsewhere and is gone before you can finish your sentence, cart creaking off into the distance.",
+"hook": "does the math on your coin purse a little too obviously every time you speak",
+"is_combat": false,
+"success_reveal": "{subj_cap} finally confesses {subj} owes a genuinely frightening sum to a moneylender in the last town, and briefly mistook you for muscle sent to collect. The relief when {subj} realizes you're not is almost funny — almost."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "Convinced you're a gamekeeper in disguise, {subj} suddenly can't recall a single thing about any of this, and edges the cart away at a pace that fools absolutely nobody.",
+"hook": "keeps a weathered net and a suspiciously fresh brace of hare tucked half out of sight under the cart's tarp",
+"is_combat": false,
+"success_reveal": "It turns out the \"trade goods\" are considerably less legal than advertised — {subj}'s been poaching the local lord's game for months and living in genuine terror of the gamekeepers. {subj_cap} relaxes once {subj}'s sure you're not one of them, and even offers a fair cut of the trade."
+}, {
+"combat_monster_names": Array[String](["Cultist"]),
+"funny_loss_text": "",
+"hook": "keeps a small, unmarked crate roped shut at the very back of the cart, apart from everything else on offer",
+"is_combat": true,
+"success_reveal": "{subj_cap} finally admits {subj}'s been paid to carry the crate to a \"quiet meeting\" further down the road, no questions asked, and the coin was too good to think hard about who was asking. A handful of robed figures are already waiting at the treeline when the truth comes out, clearly expecting their delivery on schedule."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "Convinced {poss} luck has finally run out, {subj} abandons the cart outright and simply runs, leaving you standing in the road next to a pile of pots and ribbons and no explanation at all.",
+"hook": "won't stop glancing at a battered ledger tucked into {poss} coat, doing sums under {poss} breath",
+"is_combat": false,
+"success_reveal": "{subj_cap} finally confesses {subj}'s certain you're the moneylender's collector, sent early and in disguise to catch {obj} short. The relief when {subj} realizes you're not almost knocks {obj} off {poss} feet — followed immediately by a much longer, much less guarded conversation than you expected."
+}, {
+"combat_monster_names": Array[String](["Wild Boar"]),
+"funny_loss_text": "",
+"hook": "keeps a haunch of raw meat wrapped loosely enough that the smell carries well down the road",
+"is_combat": true,
+"success_reveal": "It turns out the \"fresh cuts\" weren't sourced anywhere near as carefully as advertised — the smell has been drawing exactly the kind of attention {subj} was hoping to avoid, and a wild boar comes crashing out of the treeline clearly following its nose."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "Convinced for one terrible moment that you've been sent to drag {obj} back, {subj} bolts before you can get out a single reassuring word, cart abandoned and creaking to a stop in the middle of the road.",
+"hook": "flinches at anything resembling a staff or a raised hand, then catches {obj_lc}self doing it",
+"is_combat": false,
+"success_reveal": "{subj_cap} finally admits {subj}'s a runaway apprentice, three towns and one very angry master ago, and the peddling is just the least conspicuous way {subj} could think of to stay fed and moving. There's real fear behind the admission — and real gratitude that you didn't turn out to be who {subj} was afraid of."
+}])
+
+[sub_resource type="Resource" id="SocialEnc_2"]
+script = ExtResource("2")
+encounter_name = "The Blustering Watchman"
+portrait_career_key = "watchman"
+npc_fellowship = 30
+npc_willpower = 45
+intro_text = "A figure in a mismatched, half-buttoned uniform plants {obj_lc}self in the middle of the road, one hand on a rusty halberd {subj} clearly doesn't know how to use. \"Halt! Road toll, in the name of... the road! Papers, or coin, or you're not passing.\" {subj_cap} {situation_hook}. {opening_flavor}"
+opening_flavors = Array[String](["There's no toll booth in sight, and never has been.", "The \"uniform\" doesn't match any regiment you've ever actually seen.", "A pair of birds scatter from a nearby tree at the sound of {poss} voice.", "The road behind {obj_lc} is completely, suspiciously empty.", "{subj_cap} shifts {poss} grip on the halberd like {subj}'s never actually held one before.", "Somewhere close by, something rustles in the ditch and goes still."])
+round1_skills = Array[String](["Charm", "Leadership", "Intimidate"])
+round1_prompt_text = "There's no toll booth, no other guards, and {poss} uniform doesn't match anything official. Talk your way past {obj}, one way or another."
+round1_success_text = "{subj_cap} wavers, uniform sagging with {poss} confidence. \"Well — I suppose — just this once...\""
+round1_retry_text = "{subj_cap} puffs {poss} chest back out, unconvinced. \"That's exactly what someone dodging the toll would say!\" Try something else."
+round1_final_fail_text = "{subj_cap} plants the halberd butt-first in the dirt with great ceremony. \"The toll stands!\""
+round2_skills = Array[String](["Charm", "Leadership", "Intimidate", "Gossip"])
+round2_prompt_text = "{subj_cap}'s rattled but digging in out of pure stubbornness now. One more push should settle it."
+round2_retry_text = "{subj_cap} hesitates, halfway to giving in, then remembers {obj_lc}self. \"No! I mean — no. The toll!\""
+reward_item = "Rusty Halberd"
+npc_reaction_lines = Array[String](["{poss_cap} grip on the halberd has gone from confident to purely decorative.", "{subj_cap}'s uniform seems to have shrunk two sizes in the last few minutes alone."])
+situations = Array[Dictionary]([{
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap} draws {obj_lc}self up to {poss} full, mismatched height and refuses to budge another inch. \"The toll stands, and that's final!\" You end up paying it just to be done with the argument, no wiser about the washed-out bridge {subj} never gets around to mentioning.",
+"hook": "has clearly appointed {obj_lc}self to this post with no authority whatsoever, uniform mismatched and half-buttoned",
+"is_combat": false,
+"success_reveal": "{poss_cap} shoulders slump, all the bluster gone out of {obj} at once. \"...Right. Yes. Go on, then. Wasn't really a toll anyway.\" {subj_cap} even mumbles a genuinely useful warning about a washed-out bridge ahead as you pass."
+}, {
+"combat_monster_names": Array[String](["Outlaw"]),
+"funny_loss_text": "",
+"hook": "seems awfully confident for someone standing alone in the middle of an empty road",
+"is_combat": true,
+"success_reveal": "A low whistle cuts through the trees, and it becomes very clear {subj} wasn't actually alone — a couple of rough sorts step out from the treeline, {poss} actual backup, {subj} having just been the friendly-looking bait."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "With the sergeant still watching, {subj_cap} plants the halberd and refuses to yield an inch — better a stranger's bad opinion than a superior's, apparently. The toll stands, paid in full, while {subj} straightens {poss} uniform for an audience of one.",
+"hook": "keeps glancing back over {poss} shoulder toward a stern-looking figure watching from a distance",
+"is_combat": false,
+"success_reveal": "{subj_cap} finally cracks — {subj}'s a fresh recruit trying to impress a sergeant who's been watching this whole exchange, and desperately doesn't want to look weak in front of {obj}. The moment you let {obj} save face, {subj} waves you through, visibly relieved."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap} simply repeats the \"regulations\" a third time, word for word, unbothered by how thin they sound under scrutiny. There's no arguing with someone this committed to a bit — the toll gets paid, and you're left no wiser what {subj}'s actually protecting.",
+"hook": "recites the \"official toll regulations\" with the exact cadence of someone who made every word of it up on the spot",
+"is_combat": false,
+"success_reveal": "It turns out {subj} genuinely, sincerely believes {subj}'s still enlisted — {subj} was discharged years ago and nobody's ever had the heart to tell {obj}. There's something almost sad about how proud {subj} is of the \"post.\""
+}, {
+"combat_monster_names": Array[String](["Clanrat"]),
+"funny_loss_text": "",
+"hook": "keeps eyeing a rusted grate in the ditch beside the road, just a little too often to be nothing",
+"is_combat": true,
+"success_reveal": "Push too hard and {subj} panics, giving three short raps on the old grate — and the toll, it turns out, was never really {poss} own idea at all. Something considerably less human comes scrabbling up out of the dark to collect it instead."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "Something in your pressing seems to embarrass {obj} rather than open {obj} up — {subj_cap} straightens, clears {poss} throat, and retreats hard into official-sounding bluster. The toll stands, and the conversation's over, whatever {subj} might have actually wanted from it.",
+"hook": "talks a little too eagerly once the conversation actually gets going, like {subj} hasn't spoken to anyone in days",
+"is_combat": false,
+"success_reveal": "{subj_cap} finally admits the toll was never about coin at all — it's the only excuse {subj} could think of to get someone, anyone, to actually stop and talk to {obj} out here. {subj_cap} waves you through looking almost embarrassed, and considerably less lonely."
+}, {
+"combat_monster_names": Array[String](["Highway Bandit"]),
+"funny_loss_text": "",
+"hook": "keeps glancing down a side track {subj} very clearly doesn't want you asking about",
+"is_combat": true,
+"success_reveal": "Push hard enough and {subj} finally breaks — the \"toll\" was never {poss} own idea, it's a cut owed to a bandit camp down that very track, and {subj}'s just the unlucky soul stuck collecting it. The bandits themselves come looking when the coin doesn't show up on schedule, apparently rather less patient than {subj} was hoping."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap} only plants {obj_lc}self more firmly between you and the ruin, refusing to explain why it matters so much. Whatever {subj}'s guarding against, {subj}'d clearly rather face it alone than admit needing company — the toll stands, and {subj} doesn't move.",
+"hook": "keeps positioning {obj_lc}self so the crumbling ruin behind {obj_lc} is always at {poss} back, never {poss} front",
+"is_combat": false,
+"success_reveal": "{subj_cap} finally admits {subj} volunteered for this post specifically because it meant never having to walk past that ruin alone after dark, and the toll was just an excuse to have someone else standing here with {obj} for a while. {subj_cap} waves you through with genuine, slightly sheepish gratitude."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap}'s hand tightens on the old stone, and whatever {subj} isn't saying stays unsaid — pride, it turns out, holds up better than logic does. The toll stands, paid same as it would've been to {poss} father, thirty years back.",
+"hook": "stands beside a weathered old boundary stone, one hand resting on it like it matters more than the halberd does",
+"is_combat": false,
+"success_reveal": "{subj_cap} finally admits the stone marks where {poss} father stood this same watch for thirty years before {obj}, and the toll — invented, unofficial, utterly pointless — is the only way {subj} knows how to keep standing in his footsteps. There's nothing to argue with in an answer like that, and {subj} seems to know it."
+}, {
+"combat_monster_names": Array[String](["Goblin"]),
+"funny_loss_text": "",
+"hook": "keeps glancing toward a suspiciously tidy pile of brush just off the road, like {subj}'s counting on it for something",
+"is_combat": true,
+"success_reveal": "It turns out {subj}'s own \"post\" was chosen for {obj} rather than by {obj} — a goblin raiding party has been using this stretch of road as a killing ground, and {subj}'s halfhearted toll was the only warning {subj} dared give without getting caught helping travellers along. The goblins themselves, tired of waiting on their decoy, come out of the brush anyway."
+}])
+
+[sub_resource type="Resource" id="SocialEnc_3"]
+script = ExtResource("2")
+encounter_name = "The Humble Pilgrim"
+portrait_career_key = "flagellant"
+npc_willpower = 35
+intro_text = "A traveller in plain, road-worn robes falls into step beside you, staff in hand, a wooden Sigmarite hammer swinging from a cord at {poss} neck. \"Fellow traveller! The road's safer shared, wouldn't you say?\" {subj_cap} {situation_hook} as {subj} walks. {opening_flavor}"
+opening_flavors = Array[String](["The staff looks freshly cut, not the worn travelling-stick of someone who's walked far on it.", "For a pilgrim, {subj}'s boots are suspiciously fine.", "A raven keeps pace overhead for longer than seems natural.", "The road narrows here, hemmed by treeline on both sides.", "{subj_cap} keeps perfect pace with you, never quite falling behind or pulling ahead.", "There's a second set of footprints in the mud that don't match {poss} own stride."])
+round1_prompt_text = "{subj_cap}'s piety feels a half-step too rehearsed — worth pressing, one way or another."
+round1_success_text = "{subj_cap} relaxes a fraction, whatever act this is slipping for just a moment before {subj} catches it."
+round1_retry_text = "{subj_cap} recovers smoothly, piety sliding back into place like a mask readjusted. \"Sigmar tests us all, friend.\""
+round1_final_fail_text = "{subj_cap} presses a hand to the wooden hammer at {poss} neck, wounded. \"You doubt a man of faith?\""
+round2_skills = Array[String](["Charm", "Leadership", "Intimidate", "Gossip"])
+round2_prompt_text = "Whatever {subj}'s hiding is close to the surface now — one more push should bring it out."
+round2_retry_text = "{subj_cap} nearly slips again, catching {obj_lc}self at the last moment with a practiced, pious sigh."
+reward_xp = 6
+npc_reaction_lines = Array[String](["The pious mask slips a fraction more with every word — {subj}'s stopped quoting scripture entirely.", "{poss_cap} hand keeps drifting toward {poss} own robes, like {subj}'s reconsidering whatever's underneath them."])
+situations = Array[Dictionary]([{
+"combat_monster_names": Array[String](["Highway Bandit"]),
+"funny_loss_text": "",
+"hook": "keeps sizing up your gear with quick, professional glances he thinks you haven't noticed",
+"is_combat": true,
+"success_reveal": "The pilgrim's act drops all at once — {subj}'s no more a man of Sigmar than the staff is a holy relic. \"Right then,\" {subj} says, all pretence gone, \"you're either handing over that purse, or my associates are.\" Two rough shapes step out from the treeline, already grinning."
+}, {
+"combat_monster_names": Array[String](["Outlaw"]),
+"funny_loss_text": "",
+"hook": "keeps glancing toward a bend in the road ahead with poorly-hidden anticipation",
+"is_combat": true,
+"success_reveal": "{subj_cap} finally drops the act with something almost like relief. \"You're sharper than most,\" {subj} admits. \"There's a real ambush waiting round that bend — I'd rather not be standing in the middle of it when it goes wrong. We can call this even, or you can come find out who's waiting.\""
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap}'s hand drifts to the wooden hammer at {poss} neck, piety sliding firmly back into place. \"Sigmar keep you, friend,\" {subj} says, in a tone that makes plain the conversation's over, and falls back a deliberate pace to let you walk on ahead alone.",
+"hook": "flinches every time you mention the nearest town's watch by name",
+"is_combat": false,
+"success_reveal": "{subj_cap} finally admits it — {subj}'s a real highwayman between jobs, the robes stolen off an actual pilgrim {subj} won't discuss further, worn purely because armed men in fine clothes get stopped and questioned far more than beggars do. {subj_cap} seems almost grateful to stop performing piety and just talk plainly for once, and shares a genuinely useful warning about where {poss} old crew still operates."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "Convinced you've seen through {obj} for the worse reason, {subj} bolts into the treeline mid-sentence, wooden hammer bouncing against {poss} chest as {subj} runs.",
+"hook": "can't quite meet your eyes when {subj} talks about {poss} own \"pilgrimage\"",
+"is_combat": false,
+"success_reveal": "{subj_cap} finally confesses there is no pilgrimage — {subj}'s fleeing a debt to the very sort of highwaymen {subj}'s currently disguised as, and the robes were the only disguise {subj} could steal in time. The relief when you don't turn {obj} in is real, and so is the warning {subj} offers about the road ahead."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "The moment your guard drops, so does {poss} — a hand darts for your purse strings, and {subj}'s gone into the trees before you can do more than shout after {obj}, considerably lighter in the pocket than you were a moment ago.",
+"hook": "keeps one hand tucked inside {poss} robes in a way that has nothing to do with prayer",
+"is_combat": false,
+"success_reveal": "The \"holy relic\" {subj} finally produces from inside {poss} robes is a garrotte, not a prayer book — {subj}'s a real cutpurse who took the disguise off a dead pilgrim and never looked back. {subj_cap} weighs {poss} odds against you for a long moment before deciding they're bad, and simply melts back into the treeline rather than press the matter."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap} checks the sun once more, decides against whatever {subj} was weighing, and offers a hurried blessing before peeling off down a side track without explanation. You're left with the distinct, uneasy feeling of having been sized up and dismissed.",
+"hook": "keeps checking the sun's position like {subj}'s timing something down to the minute",
+"is_combat": false,
+"success_reveal": "{subj_cap} finally admits {subj}'s a scout for a much larger band further down the road, sent ahead in disguise specifically to judge whether passing travellers are worth the trouble of robbing. {subj_cap} seems almost impressed you talked {obj} out of the job, and heads off to report you as \"not worth it\" — which, from a highwayman, might be the nicest thing anyone's said to you all week."
+}])
+
+[sub_resource type="Resource" id="SocialEnc_4"]
+script = ExtResource("2")
+encounter_name = "The Hedge-Witch"
+portrait_career_key = "hedge_witch"
+npc_fellowship = 30
+npc_willpower = 45
+intro_text = "An old woman crouches at the roadside, gathering herbs into a basket with hands far steadier than her stooped back suggests they should be. {subj_cap} {situation_hook} without looking up. \"Sit a while, if you like. Or don't. The road's not going anywhere.\" {opening_flavor}"
+opening_flavors = Array[String](["The herbs in her basket aren't ones you recognize, and you've walked this road before.", "A black cat watches from a fence post with far too much interest in the conversation.", "The air smells faintly of something burnt, though there's no fire in sight.", "Her shadow, for one unsettling moment, seems to fall the wrong direction.", "The birdsong nearby has gone strangely quiet since you approached.", "A ring of mushrooms circles the spot she's crouched in, a little too perfectly."])
+round1_prompt_text = "There's something worth learning here, if you can find the right way to ask."
+round1_success_text = "She looks up at last, weighing you properly for the first time. \"Hm. Maybe you're worth talking to after all.\""
+round1_retry_text = "She goes back to her herbs without a word, entirely unbothered by the attempt."
+round1_final_fail_text = "\"Careful,\" she says mildly, not looking up. \"Words have weight out here. Mind how you spend them.\""
+round2_skills = Array[String](["Charm", "Leadership", "Gossip", "Intimidate"])
+round2_prompt_text = "She's listening properly now — whatever you say next will decide how this actually goes."
+round2_retry_text = "She tilts her head, considering, and says nothing at all for a long moment."
+reward_xp = 7
+npc_reaction_lines = Array[String](["She's stopped sorting her herbs entirely, watching you now with real, undivided attention.", "Something in her expression has shifted from testing you to actually deciding something."])
+situations = Array[Dictionary]([{
+"combat_monster_names": Array[String](["Forest Goblin"]),
+"funny_loss_text": "",
+"hook": "keeps glancing toward a distant treeline like she's expecting company",
+"is_combat": true,
+"success_reveal": "\"There's a nest of goblins gone bold past those trees,\" she says finally, \"eating into the game I rely on. Deal with them, and I'll make it worth the walk.\" She presses a small bundle of dried herbs into your hand — a real, working salve, by the look of it."
+}, {
+"combat_monster_names": Array[String](["Wolf"]),
+"funny_loss_text": "",
+"hook": "hums something old and wordless under her breath the entire time",
+"is_combat": true,
+"success_reveal": "\"You've a look about you that says you can handle yourself,\" she says. \"There's a wolf been circling closer to the village each night. Not natural-acting, that one. See to it, and I'll owe you a kindness.\""
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "She only clicks her tongue and goes back to her herbs, entirely unbothered by your caution. \"Suit yourself,\" she says, not looking up again, and the conversation is plainly over.",
+"hook": "keeps offering you tastes of things from her basket you're fairly sure aren't food",
+"is_combat": false,
+"success_reveal": "\"Just herbs, dear,\" she says, amused at your caution. \"I'm no witch, whatever the village says — just an old woman who knows what grows where and doesn't waste it. Though I'll admit I don't correct them. Keeps the curious ones at a respectful distance.\" She shares a genuinely useful bit of local knowledge before you go."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "\"Rude,\" she says simply, and the basket, the herbs, and the old woman herself are somehow just gone when you next look — leaving you fairly sure you've made an enemy you can't easily find again.",
+"hook": "watches you with the patient, assessing look of someone deciding whether you're worth the trouble",
+"is_combat": false,
+"success_reveal": "\"I test everyone who stops,\" she admits eventually. \"Most fail. You didn't. There's a difference between rudeness and honesty, and you managed the second.\" She offers a small charm — more comfort than magic, most likely, but offered sincerely."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "\"You're no different from the rest of them,\" she mutters, and gathers her basket with hands that suddenly seem a great deal less frail, leaving without another word.",
+"hook": "keeps one hand resting protectively over the basket whenever you get too close",
+"is_combat": false,
+"success_reveal": "\"Village apothecary won't buy from a woman who lives alone in the woods,\" she says, bitterness plain, \"whatever her herbs are worth. Calls it prudence. I call it convenient.\" She's grateful enough for someone who'll simply talk to her like a person that she shares a genuinely rare recipe before you part ways."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "Her hand closes over the old scar, and whatever {subj} was about to say dies in her throat. \"Best you move along,\" she says, quiet and final, gathering her basket with hands gone suddenly unsteady. She doesn't look up again as you go.",
+"hook": "keeps glancing at a scar across her own palm like it still aches",
+"is_combat": false,
+"success_reveal": "\"Witch-hunters came through some years back,\" she says quietly. \"Wasn't a witch then either. Doesn't much matter to men with torches.\" There's real fear behind the words, and real relief when you don't reach for a weapon. She shares what little safety she can offer in thanks — a warning about a stretch of road best avoided after dark."
+}])
+
+[sub_resource type="Resource" id="SocialEnc_5"]
+script = ExtResource("2")
+encounter_name = "The Amiable Swindler"
+portrait_career_key = "charlatan"
+npc_fellowship = 45
+npc_willpower = 25
+intro_text = "A cheerful stranger waves you over to a folding table set up right on the roadside, three cups arranged neatly on top. \"Friend! Friend, you look sharp-eyed — care to test it? Watch the ball, win double your coin!\" {subj_cap} {situation_hook} as {subj} shuffles the cups. {opening_flavor}"
+opening_flavors = Array[String](["A small, appreciative crowd of exactly nobody has gathered to watch.", "The table wobbles on legs that look deliberately uneven.", "One of the cups has a chip in the rim you're fairly sure is meant to be a marker.", "{subj_cap}'s sleeves are a good deal roomier than fashion strictly requires.", "A dog nearby watches the cups with more suspicion than you'd expect from a dog.", "The whole setup has clearly been assembled and struck many times before."])
+round1_skills = Array[String](["Gossip", "Charm", "Intimidate", "Leadership"])
+round1_prompt_text = "Something about this whole setup doesn't sit right — worth pushing on."
+round1_success_text = "{subj_cap}'s cheerful patter falters for just a moment, like a rehearsed line missed its cue."
+round1_retry_text = "{subj_cap} laughs it off smoothly, patter never missing a beat. \"Suspicious sort, aren't you? Fair enough, fair enough.\""
+round1_final_fail_text = "\"Now, now,\" {subj_cap} says, all wounded good humour. \"A man can't run an honest game round here?\""
+round2_skills = Array[String](["Intimidate", "Charm", "Gossip", "Leadership"])
+round2_prompt_text = "{subj_cap}'s rattled now — one more push and the whole act comes apart."
+round2_retry_text = "{subj_cap} rallies with visible effort, patter sliding back into place a half-second too late to be convincing."
+npc_reaction_lines = Array[String](["{poss_cap} patter's got noticeably less smooth — the cups have stopped moving as fast as {poss} mouth.", "{subj_cap}'s stopped performing entirely. Whatever's left is a lot closer to the truth."])
+situations = Array[Dictionary]([{
+"combat_monster_names": Array[String](["Outlaw"]),
+"funny_loss_text": "",
+"hook": "keeps a small weighted ball palmed in {poss} off hand the entire time, badly hidden",
+"is_combat": true,
+"is_opposed": true,
+"success_reveal": "\"Alright, alright, you've got me,\" {subj_cap} admits, holding up both hands, the weighted ball dropping onto the table with a telling little thud. \"No ball ever leaves my hand, friend. Never has. Care to let it go, or are we doing this the hard way?\" A couple of rough sorts materialize from a nearby alley, clearly {poss} actual muscle for exactly this outcome."
+}, {
+"combat_monster_names": Array[String](["Highway Bandit"]),
+"funny_loss_text": "",
+"hook": "keeps glancing past you at two large men loitering with unconvincing casualness",
+"is_combat": true,
+"is_opposed": true,
+"success_reveal": "The moment you call out the scam, {subj}'s \"friends\" stop pretending to loiter. \"Should've just lost your coin quietly,\" {subj_cap} sighs, already backing away as they close in."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap}'s grin never wavers — if anything it widens, patter picking back up exactly where it left off. \"No harm in a friendly game, eh?\" {subj} says, already reaching for the cups again, entirely undeterred by your scrutiny.",
+"hook": "flashes a grin that's just a little too practiced to be genuine",
+"is_combat": false,
+"is_opposed": true,
+"success_reveal": "\"Fine, fine — it's rigged, obviously,\" {subj_cap} admits, entirely unbothered. \"But you clocked it in under a minute, which is better than most. Tell you what — no hard feelings, and here's a genuinely useful tip for free: don't play the ring game two towns over, that one's actually dangerous.\""
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "\"Ah, shame,\" {subj_cap} says, packing up the table with impressive speed the moment you press too hard, gone down a side street before you can get another word in.",
+"hook": "keeps a genuinely impressive collection of loose coin just visible in an open satchel",
+"is_combat": false,
+"is_opposed": true,
+"success_reveal": "\"You got me fair,\" {subj_cap} laughs, holding up both hands. \"Honestly? Refreshing. Most marks just get angry.\" {subj_cap} seems to actually enjoy the company enough to share a few real tricks of the trade, purely for the conversation."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "Whatever {subj} was worried about, your pressing seems to confirm it — {subj_cap} goes pale, mutters something about \"remembering an appointment,\" and has the table folded and gone before you can get another word in.",
+"hook": "keeps checking over {poss} shoulder like {subj}'s worried about being recognized",
+"is_combat": false,
+"is_opposed": true,
+"success_reveal": "\"Look, you got me, fine,\" {subj_cap} admits, dropping the act entirely. \"Truth is I owe some genuinely unpleasant people money, and this table's the fastest way I know to make it. Wasn't personal.\" {subj_cap} seems almost relieved to stop performing cheer for a moment, and shares a bit of real information out of simple gratitude."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap} just laughs it off and starts shuffling the deck instead of the cups, patter never missing a beat. \"New game, then, if the old one's rumbled,\" {subj} says, plainly not done working the road today.",
+"hook": "keeps a suspiciously well-worn deck of cards tucked half-visible beneath the table",
+"is_combat": false,
+"is_opposed": true,
+"success_reveal": "\"Alright, the cups are a warm-up,\" {subj_cap} admits with a grin. \"Real game's the cards, if you're interested — and no, I won't cheat you at that one either, not with how well you clocked this.\" {subj_cap} genuinely seems to respect a sharp mark more than a gullible one, and offers a fair trade of information for the entertainment."
+}])
+
+[sub_resource type="Resource" id="SocialEnc_6"]
+script = ExtResource("2")
+encounter_name = "The Desperate Farmer"
+portrait_career_key = "villager"
+npc_fellowship = 35
+npc_willpower = 30
+intro_text = "A weathered farmer flags you down at the roadside, hands still dusty from the field, worry written plainly across {poss} face. \"Please — a moment, that's all I ask.\" {subj_cap} {situation_hook} as {subj} explains. {opening_flavor}"
+opening_flavors = Array[String](["A half-tilled field stretches out behind {obj}, work clearly abandoned mid-furrow.", "A child watches nervously from a nearby doorway, too young to understand but old enough to be scared.", "The farmhouse behind {obj} has seen better years, roof patched in three different kinds of thatch.", "A dog paces anxiously at the farmer's heel, picking up on {poss} own nerves.", "The whole homestead has the particular quiet of a place holding its breath.", "A neighbour watches from a fair distance away, clearly too frightened to come closer {obj}self."])
+round1_skills = Array[String](["Charm", "Leadership", "Gossip", "Intimidate"])
+round1_prompt_text = "{subj_cap} needs convincing you're actually here to help, not just passing through."
+round1_success_text = "{subj_cap}'s shoulders drop half an inch, some of the fear finally easing. \"You mean it. Thank Sigmar, you actually mean it.\""
+round1_retry_text = "{subj_cap} hesitates, still not quite convinced, wringing {poss} hands. \"I don't mean to doubt you, only — I can't afford to be wrong about this.\""
+round1_final_fail_text = "{subj_cap} pulls back a step, guard rising. \"Perhaps I've made a mistake asking a stranger.\""
+round2_skills = Array[String](["Leadership", "Charm", "Gossip", "Intimidate"])
+round2_prompt_text = "{subj_cap} is close to trusting you fully now — one more honest word should settle it."
+round2_retry_text = "{subj_cap} wavers, torn between desperation and caution, and says nothing for a long moment."
+reward_xp = 6
+npc_reaction_lines = Array[String](["{poss_cap} hands have finally stopped wringing — {subj}'s actually listening now, not just hoping.", "{subj_cap}'s guard is nearly gone. Whatever {subj}'s been sitting on, it's right at the surface."])
+situations = Array[Dictionary]([{
+"combat_monster_names": Array[String](["Wolf"]),
+"funny_loss_text": "",
+"hook": "keeps glancing toward the treeline at the edge of {poss} own field with real dread",
+"is_combat": true,
+"success_reveal": "\"Something's been at the livestock,\" {subj_cap} admits, \"and it's bold now, bold enough to come right up to the fence line in daylight. I've a family here. I can't fight it and I can't just watch it happen either.\" A wolf's fresh tracks are plainly visible right at the fence."
+}, {
+"combat_monster_names": Array[String](["Forest Goblin"]),
+"funny_loss_text": "",
+"hook": "keeps {poss} voice low, glancing back at the farmhouse like {subj} doesn't want to be overheard",
+"is_combat": true,
+"success_reveal": "\"Goblins,\" {subj_cap} says finally, barely above a whisper. \"Small band, moved into the old quarry past the north field. Taken two sheep already. I've reported it and reported it and nobody's come.\" {subj_cap}'s hands are shaking, more from anger now than fear."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap}'s hands still on the scrap of cloth, and whatever courage it took to almost ask fades out of {obj} entirely. \"Never mind. Forget I said anything,\" {subj} manages, and turns back toward the farmhouse without another word — the boy, wherever he is, goes unlooked-for.",
+"hook": "keeps twisting a torn scrap of cloth in {poss} hands the entire conversation",
+"is_combat": false,
+"success_reveal": "\"My boy went missing three days past,\" {subj_cap} finally manages, voice cracking. \"Found this near the old well and haven't slept since. Reeve won't send anyone for one missing farm boy. Please — even just to look.\" It turns out the boy simply wandered further than usual and is perfectly fine, curled up asleep in a hollow tree half a mile off — but {poss} genuine, unguarded relief at the news is worth more than any reward could be."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap} tucks the bills back under their stone, shame plain on {poss} face, and mutters something about not wanting to trouble a stranger with it after all. Whatever word {subj} needed carried to town goes uncarried.",
+"hook": "keeps glancing at a stack of unpaid-looking bills tucked under a stone on the windowsill",
+"is_combat": false,
+"success_reveal": "\"Reeve's doubled the tax again,\" {subj_cap} admits, shame plain on {poss} face. \"I'm not asking for coin, just — if you're passing through town, a word to anyone who'll listen wouldn't go amiss. Nobody believes one farmer alone.\" It's a small thing to promise, and {poss} gratitude for simply being heard is entirely genuine."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap} straightens, pride winning out over need, and insists everything's quite fine after all. \"Wasting your time, is all this,\" {subj} says, turning back to the half-tilled field — proud, alone, and no better off than before you stopped.",
+"hook": "won't quite meet your eyes when {subj} mentions {poss} own harvest this year",
+"is_combat": false,
+"success_reveal": "\"Truth is, the harvest failed bad this year,\" {subj_cap} admits, humiliation plain. \"Not asking for charity — asking if you know honest work needs doing anywhere close by. Pride's not worth much when there's mouths to feed.\" {subj_cap}'s dignity through the admission says more about {obj} than the request itself does."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap} glances once more at the shuttered farmhouse and decides against asking a stranger to look into it after all. \"It's nothing. Family business, likely,\" {subj} says, unconvinced by {poss} own words — and heads off to check alone, however (un)wisely.",
+"hook": "keeps glancing nervously at a neighbouring farmhouse, dark and shuttered",
+"is_combat": false,
+"success_reveal": "\"Neighbours haven't been seen in four days,\" {subj_cap} says, real worry in {poss} voice. \"Not the sort to just leave without word. I'd check myself, only—\" {subj_cap} gestures helplessly at the child watching from the doorway. It turns out the neighbours simply left early for a family wedding two towns over and forgot to mention it — an anticlimactic, entirely wholesome relief that has {subj_cap} laughing at {obj}self by the end of it."
+}])
+
+[sub_resource type="Resource" id="SocialEnc_7"]
+script = ExtResource("2")
+encounter_name = "The Wandering Priest of Sigmar"
+portrait_career_key = "priest"
+npc_fellowship = 38
+npc_willpower = 42
+intro_text = "A priest in genuine, well-worn Sigmarite robes stands at a small roadside shrine, hammer symbol held loosely in one hand. {subj_cap} {situation_hook} as {subj} turns to greet you. \"Sigmar's peace upon you, traveller. A moment of your time, if you can spare it?\" {opening_flavor}"
+opening_flavors = Array[String](["The shrine behind {obj} is freshly tended, flowers still damp with morning dew.", "A small collection box sits nearby, conspicuously empty.", "{poss} robes are patched in a dozen places, worn thin from genuine travel, not affectation.", "A pair of crows watch from the shrine's own roof with unusual stillness.", "The whole shrine has the particular quiet of a place people have stopped visiting.", "{poss} hammer symbol is dented in a way that suggests it's seen more than prayer."])
+round1_skills = Array[String](["Leadership", "Charm", "Gossip", "Intimidate"])
+round1_prompt_text = "Something in {poss} request needs more than polite agreement — worth actually engaging."
+round1_success_text = "{subj_cap} studies you a moment longer than politeness requires, and seems to like what {subj} finds."
+round1_retry_text = "{subj_cap} inclines {poss} head patiently. \"Sigmar rewards persistence as much as piety. Try again, if you would.\""
+round1_final_fail_text = "{subj_cap}'s expression cools, just slightly. \"I see. Perhaps I've misjudged your character.\""
+round2_skills = Array[String](["Charm", "Leadership", "Gossip", "Intimidate"])
+round2_prompt_text = "{subj_cap} is close to trusting you with the real request now."
+round2_retry_text = "{subj_cap} hesitates, weighing something {subj} hasn't said aloud yet."
+reward_xp = 7
+npc_reaction_lines = Array[String](["{subj_cap} studies you with the particular attention of someone updating a first impression.", "{poss_cap} grip on the hammer symbol has eased — whatever test this was, you're passing it."])
+situations = Array[Dictionary]([{
+"combat_monster_names": Array[String](["Cultist"]),
+"funny_loss_text": "",
+"hook": "keeps glancing toward a stretch of forest with real unease, hammer symbol gripped a little tighter",
+"is_combat": true,
+"success_reveal": "\"There is a taint in those woods,\" {subj_cap} says finally, \"cultists, by the signs I've found. I've prayed on it and I've written to the temple, and I've received neither answer nor aid. If you're willing, I can point you to where I've seen their marks.\" {subj_cap} offers a genuine blessing before you go, and seems to mean every word of it."
+}, {
+"combat_monster_names": Array[String](["Wolf"]),
+"funny_loss_text": "",
+"hook": "keeps one hand resting on a fresh grave at the shrine's edge as {subj} speaks",
+"is_combat": true,
+"success_reveal": "\"A parishioner was taken by wolves on the road not three days past,\" {subj_cap} says, grief plain and unhidden. \"I buried what could be recovered. I would see the pack that did it driven off before it takes another soul under my care.\""
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap} follows your eyes to the empty box and simply closes it, faith intact but the request unspoken. \"Sigmar provides in His own time,\" {subj} says, with the tired patience of someone who's said it many times before, and turns back to the shrine.",
+"hook": "keeps glancing at the empty collection box with weary, practiced resignation",
+"is_combat": false,
+"success_reveal": "\"The temple sends less each season,\" {subj_cap} admits, \"and this shrine survives on what little the village can spare, which is less each year besides. I don't ask for coin — only that you carry word of this place, should you meet anyone of means on your travels.\" {subj_cap}'s faith seems entirely undimmed by the hardship, which is its own kind of remarkable."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap} glances at the nervous acolyte and decides against involving a stranger after all. \"{subj_cap} has enough to worry over without an audience,\" {subj} says gently, steering you both back toward simple pleasantries.",
+"hook": "keeps glancing at a young acolyte hovering nervously nearby, clearly still learning the role",
+"is_combat": false,
+"success_reveal": "\"My acolyte's first true test of faith is soon,\" {subj_cap} says, warmth plain despite the worry underneath. \"I'd see {obj} face it prepared rather than merely willing. If you've wisdom to share with someone new to the road, {subj}'d be grateful to hear it.\" The acolyte's genuine, wide-eyed gratitude afterward is worth more than the request itself."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap} tucks the cloth back over the idol without another word, deciding some questions are best left to Sigmar and not a passing stranger. \"Some things a priest keeps to himself,\" {subj} says, and the subject is plainly closed.",
+"hook": "keeps a small, cracked idol half-wrapped in cloth near the shrine's own base",
+"is_combat": false,
+"success_reveal": "\"Recovered from a ruin some ways east,\" {subj_cap} explains. \"Older than Sigmar's own worship, I think, and I confess I don't know what to do with it — destroy it, study it, or simply leave it be. I'd value a second, less superstitious opinion, if you've one to offer.\" The conversation that follows is genuinely thoughtful, whichever way you lean."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap} catches {obj_lc}self and straightens, plainly deciding a stranger isn't who {subj} should be confiding a priest's private worries to. \"Sigmar's peace go with you,\" {subj} says, a touch too formally, and turns back to watching the road alone.",
+"hook": "keeps glancing toward the road behind you like {subj}'s expecting someone else entirely",
+"is_combat": false,
+"success_reveal": "\"Forgive me — I mistook you for someone I'm expecting,\" {subj_cap} admits, faintly embarrassed. \"A witch hunter, sent to investigate troubling rumours from the village. I confess I'm not looking forward to the conversation. Might I trouble you to simply listen to an old priest's worries for a moment instead?\" {subj_cap}'s worries, once shared, turn out to be entirely mundane — which seems to be exactly the reassurance {subj} needed."
+}])
+
+[sub_resource type="Resource" id="SocialEnc_8"]
+script = ExtResource("2")
+encounter_name = "The Refugee"
+portrait_career_key = "beggar"
+npc_fellowship = 32
+npc_willpower = 28
+intro_text = "A gaunt figure sits slumped against a milestone, what little {subj} owns bundled into a single pack beside {obj}. {subj_cap} looks up at your approach, too tired for real caution. {subj_cap} {situation_hook}. {opening_flavor}"
+opening_flavors = Array[String](["{poss} boots are worn clean through at the sole, feet wrapped in rags underneath.", "A child's toy pokes half out of the pack, the only thing in it that isn't strictly practical.", "{subj_cap} flinches at the sound of your own footsteps before {subj} registers who it is.", "The milestone {subj}'s resting against reads a distance {subj} has clearly walked every mile of.", "A thin trail of smoke still rises somewhere on the horizon behind {obj}.", "{subj_cap}'s hands haven't stopped their small, restless shaking since you arrived."])
+round1_skills = Array[String](["Charm", "Leadership", "Gossip", "Intimidate"])
+round1_prompt_text = "{subj_cap} needs a reason to trust a stranger enough to actually talk."
+round1_success_text = "{subj_cap}'s shoulders ease, just slightly. \"You're not going to move me along, then. Small mercies.\""
+round1_retry_text = "{subj_cap} looks away, guarded. \"I've had kinder greetings and worse ones both. Try again, if you like.\""
+round1_final_fail_text = "{subj_cap} draws {poss} pack a little closer, wary. \"I've nothing worth taking, if that's what this is.\""
+round2_prompt_text = "{subj_cap}'s close to trusting you with the whole of it now."
+round2_retry_text = "{subj_cap} hesitates, the words right there and still not quite coming."
+reward_xp = 6
+npc_reaction_lines = Array[String](["{poss_cap} shoulders have come down another notch. {subj}'s stopped watching the road behind {obj} quite so often.", "{subj_cap}'s exhaustion is showing plainer than the caution now — {subj}'s close to just saying it."])
+situations = Array[Dictionary]([{
+"combat_monster_names": Array[String](["Gor"]),
+"funny_loss_text": "",
+"hook": "keeps glancing back the way {subj} came, like {subj} still expects to be followed",
+"is_combat": true,
+"success_reveal": "\"Beastmen,\" {subj_cap} says finally, voice flat with exhaustion. \"Hit the village three nights back. I ran. Don't know who else did.\" A patrol of the very same warband turns up on the road not an hour later, clearly still hunting stragglers."
+}, {
+"combat_monster_names": Array[String](["Wolf"]),
+"funny_loss_text": "",
+"hook": "keeps a hand pressed to a crude, half-healed wound {subj} clearly hasn't had looked at properly",
+"is_combat": true,
+"success_reveal": "\"Wolves took the last of our flock, then came back for us,\" {subj_cap} admits. \"Drove the whole village off. I got clear. Not sure how many others did.\" The pack itself has drawn attention — something's been trailing {poss} scent for a while now, and it's close."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap} glances once more down the road and decides silence is safer than an answer. \"Better you don't know,\" {subj} says, pulling {poss} pack a little closer, and says nothing further no matter how you press.",
+"hook": "keeps {poss} voice carefully quiet, glancing at the road in both directions before speaking",
+"is_combat": false,
+"success_reveal": "\"Reeve's men,\" {subj_cap} says finally. \"Burned the village for harbouring a deserter — one man, and they burned the whole place for it. I wasn't the deserter. Didn't matter.\" There's no fixing that with coin or a kind word, only the simple, real relief of being believed."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap} opens {poss} mouth, then closes it again, whatever the answer is plainly too raw to hand to a stranger. \"Alone. That's all there is to it,\" {subj} says, and the flatness in {poss} voice makes clear there's nothing more coming.",
+"hook": "won't quite explain why {subj}'s travelling entirely alone",
+"is_combat": false,
+"success_reveal": "\"There isn't anyone else,\" {subj_cap} says eventually, quiet and flat in the particular way of someone who's said it enough times to stop it hurting on the way out. \"Flux took the rest of us over the winter. I'm what's left.\" {subj_cap} doesn't want pity, particularly — just doesn't want to be alone in the telling of it, for once."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap} tucks {poss} hands away, out of sight, whatever {subj} almost said swallowed back down with them. \"Doesn't matter how I got here,\" {subj} says, quiet and closed, and won't be drawn any further on it.",
+"hook": "keeps glancing at {poss} own hands like {subj} doesn't recognize them anymore",
+"is_combat": false,
+"success_reveal": "\"Wasn't always like this,\" {subj_cap} admits, gesturing vaguely at {poss}self — the rags, the road, all of it. \"Had a farm. Had a name people used without spitting after it. The harvest failed twice running and the debt did the rest.\" {subj_cap}'s grateful for nothing more than being spoken to like a person again."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap} just shakes {poss} head, too tired to explain the flinch, and says nothing further about the town ahead. Whatever {subj} knows, {subj} keeps — and you walk on toward it no wiser than before.",
+"hook": "flinches hard at the mention of the nearest town by name",
+"is_combat": false,
+"success_reveal": "\"Don't go there,\" {subj_cap} says, urgent all at once. \"Sickness, bad sickness, spreading fast. They're not letting anyone leave, and I only got out because no one was watching the west gate yet.\" The warning, once given, plainly cost {obj} something to share — {subj} could have kept moving and said nothing at all."
+}])
+
+[sub_resource type="Resource" id="SocialEnc_9"]
+script = ExtResource("2")
+encounter_name = "The Fellow Traveller"
+portrait_career_key = "townsman"
+npc_fellowship = 42
+npc_willpower = 38
+intro_text = "A well-spoken traveller falls in beside you on the road, friendly and unhurried, offering easy conversation and half a loaf of bread from {poss} own pack. \"No sense walking in silence, is there?\" {subj_cap} {situation_hook} as {subj} talks. {opening_flavor}"
+opening_flavors = Array[String](["{poss} conversation is warm, easy, and just a little too well-rehearsed.", "A small, tarnished symbol peeks out from {poss} collar before {subj} tucks it away again.", "{subj_cap} asks after your own beliefs with more genuine interest than small talk usually carries.", "The bread {subj} offers is good — better than a simple traveller's rations have any right to be.", "{subj_cap} steers the conversation gently toward the state of the world, and how little help the gods seem to offer it.", "There's a stillness to {poss} eyes that the easy smile doesn't quite reach."])
+round1_skills = Array[String](["Gossip", "Charm", "Intimidate", "Leadership"])
+round1_prompt_text = "Something underneath the friendliness doesn't sit right — worth pressing gently."
+round1_success_text = "{subj_cap}'s easy smile flickers, just once, like a mask slipping half a degree."
+round1_retry_text = "{subj_cap} laughs it off warmly. \"You've a suspicious mind, friend. Can't say I blame you, these days.\""
+round1_final_fail_text = "{subj_cap}'s smile cools by a careful degree. \"I only meant to make the road shorter, friend.\""
+round2_skills = Array[String](["Intimidate", "Charm", "Leadership", "Gossip"])
+round2_prompt_text = "Whatever {subj}'s really about is close to the surface now."
+round2_retry_text = "{subj_cap} recovers smoothly, warmth sliding back into place a half-second too late to be entirely convincing."
+reward_xp = 8
+npc_reaction_lines = Array[String](["The easy smile keeps slipping and resetting, half a beat too late each time.", "{subj_cap}'s stopped bothering to smooth it back into place at all."])
+situations = Array[Dictionary]([{
+"combat_monster_names": Array[String](["Cultist"]),
+"funny_loss_text": "",
+"hook": "keeps steering the talk toward how the \"old ways\" are due to return, given enough patience",
+"is_combat": true,
+"success_reveal": "The pleasant mask comes off entirely, and what's underneath is considerably colder. \"You were pleasant company,\" {subj_cap} says, almost regretful, \"which is more than I can say for what happens now.\" A handful of {poss} actual fellow travellers step out from the treeline at a whistle you didn't hear {subj} give."
+}, {
+"combat_monster_names": Array[String](["Cultist"]),
+"funny_loss_text": "",
+"hook": "presses just a little too hard on whether you've ever felt the gods had truly abandoned you",
+"is_combat": true,
+"success_reveal": "\"You're not the sort to be brought around gently, are you,\" {subj_cap} says, and the warmth drops out of {poss} voice entirely. \"Shame. The direct approach is so much messier.\" {subj}'s \"fellow travellers\" were never far behind."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "Convinced you've seen through {obj} for the worse reason, {subj_cap}'s pleasant expression vanishes entirely, and {subj} peels off down a side path without so much as a farewell.",
+"hook": "keeps glancing at the tarnished symbol at {poss} own throat like {subj} regrets wearing it in company",
+"is_combat": false,
+"success_reveal": "\"I'll not insult you by denying it,\" {subj_cap} says quietly, once pressed. \"I follow something older than Sigmar's temple. That's not the same as being your enemy, whatever the witch hunters would have you believe. I've never harmed a soul on this road, and I don't intend to start with you.\" {subj_cap} seems, against every expectation, to actually mean it."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap}'s easy warmth cools by exactly the careful degree it takes to end a conversation without quite ending a friendship. \"Safe travels, friend,\" {subj} says, and finds a reason to fall back a few respectful paces for the rest of the road.",
+"hook": "keeps the conversation just slightly too focused on whether you'd report something you didn't understand",
+"is_combat": false,
+"success_reveal": "\"I'm testing you, a little,\" {subj_cap} admits eventually, almost sheepish about it. \"There are things on this road worth fearing more than honest heretics, and I needed to know which kind of stranger you were before I said too much.\" {subj_cap} shares a genuinely useful warning about a real danger further down the road, cult business set entirely aside."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap} just shrugs and steers the conversation elsewhere, whatever {poss} old habits are about staying exactly {poss} own business. \"Everyone's got their quirks,\" {subj} says lightly, and the subject doesn't come up again.",
+"hook": "keeps a small, careful distance from any shrine or wayside marker you pass",
+"is_combat": false,
+"success_reveal": "\"Old habits,\" {subj_cap} says when you notice, wry about it. \"I left that life behind some years back — the belief stuck harder than the practice did, is all, and I'd rather not be recognized by the wrong sort for old company I no longer keep.\" {subj_cap}'s relief at not being immediately condemned for {poss} own past is plainly genuine."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap} lets the question drop, plainly deciding a stranger isn't who {subj} should be trusting with whatever's really behind it. \"Never mind. Idle curiosity,\" {subj} says, unconvincingly, and changes the subject for good.",
+"hook": "asks careful, roundabout questions about how well-guarded the next town's temple actually is",
+"is_combat": false,
+"success_reveal": "\"Not what you're thinking,\" {subj_cap} says quickly, catching your look. \"My own sister's shut up in there against her will, on the flimsiest heresy charge the local priest could invent. I'm trying to work out how to get her out, not how to get anyone in.\" The desperation behind the admission is entirely real, whatever else {subj} might also be."
+}])
+
+[sub_resource type="Resource" id="SocialEnc_10"]
+script = ExtResource("2")
+encounter_name = "The Quiet Traveller"
+portrait_career_key = "outlaw"
+npc_fellowship = 30
+npc_willpower = 32
+intro_text = "A traveller in heavy, ill-fitting layers keeps a careful, deliberate distance as {subj} walks the same road, gloved hands never quite still. {subj_cap} {situation_hook}, polite but plainly guarded. {opening_flavor}"
+opening_flavors = Array[String](["It's warm for the road, and {subj}'s dressed for a much colder one.", "{subj_cap} keeps {poss} hood up even in the full light of day.", "{subj_cap} angles {obj}self away from you slightly, out of habit more than rudeness.", "A pair of crows keep unusually close pace overhead, and {subj_cap} seems to notice them too.", "{poss} gloves are worn through at the fingertips, whatever's underneath clearly needing the cover badly.", "{subj_cap} keeps well clear of the roadside shrine you both pass, without comment."])
+round1_skills = Array[String](["Charm", "Leadership", "Gossip", "Intimidate"])
+round1_prompt_text = "{subj_cap} needs real reassurance before {subj}'ll let their guard down at all."
+round1_success_text = "{subj_cap} relaxes, marginally, the careful distance narrowing by half a step."
+round1_retry_text = "{subj_cap} draws back instead, wary. \"I mean you no trouble. I'd ask the same courtesy.\""
+round1_final_fail_text = "{subj_cap} pulls {poss} hood lower, voice tight. \"I think it's best we part ways here.\""
+round2_skills = Array[String](["Charm", "Leadership", "Gossip", "Intimidate"])
+round2_prompt_text = "Whatever {subj}'s hiding under all those layers, {subj}'s close to trusting you with it."
+round2_retry_text = "{subj_cap} hesitates, hand halfway to a glove {subj} doesn't quite remove."
+reward_xp = 8
+npc_reaction_lines = Array[String](["The careful distance {subj}'s kept all this time has narrowed considerably.", "{poss_cap} gloved hands have gone still, like {subj}'s finally deciding whether to remove them."])
+situations = Array[Dictionary]([{
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap}'s hands stay exactly where they are, sleeves down, gloves on. \"Some things are better left covered,\" {subj} says, quiet but immovable, and the careful distance between you never quite closes.",
+"hook": "keeps {poss} gloved hands tucked deep in {poss} sleeves, never once removing them",
+"is_combat": false,
+"success_reveal": "{subj_cap} finally, carefully, peels back one glove — the hand beneath is subtly, unmistakably wrong, fingers too long and jointed in a way no hand should be. \"Now you know why the layers,\" {subj_cap} says, flat with old, practiced resignation. \"Do what you feel you must.\" There is nothing else remarkable about {obj} at all — no other sign, no threat, no danger beyond what you decide to make of this."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "Something in your look must have given you away, because {subj_cap} simply turns and walks the other direction without another word, hood drawn tighter than ever.",
+"hook": "keeps {poss} hood drawn so low you've barely seen more than {poss} own mouth this whole walk",
+"is_combat": false,
+"success_reveal": "\"It's my eyes,\" {subj_cap} admits eventually, voice tight with the effort of saying it at all. \"Wrong colour, wrong shape, wrong in a way people notice and never forget. I've done nothing to deserve what happens when they're seen. I only want to reach the next town without a mob deciding my fate for me.\""
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap} shifts to favour the other side instead, wincing, and plainly decides the ache isn't a stranger's business. \"It's nothing,\" {subj} says, in the tone of someone who's said that particular lie a great many times before.",
+"hook": "keeps unconsciously favouring one side, like something under the heavy coat sits wrong",
+"is_combat": false,
+"success_reveal": "\"A second spine, if you must know,\" {subj_cap} says eventually, bitter and matter-of-fact about it in the way of someone long past being surprised by their own body. \"Doesn't work. Doesn't do anything. Just aches, and marks me for burning if anyone official ever sees it. I'd be grateful for your silence, more than anything else you could offer.\""
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap} just quickens {poss} pace toward the next stand of trees, plainly more interested in outrunning the weather than explaining the dread. \"Best we both keep moving,\" {subj} says, and doesn't elaborate.",
+"hook": "keeps glancing skyward with plain, old dread whenever a storm cloud passes over",
+"is_combat": false,
+"success_reveal": "\"Lightning finds me,\" {subj_cap} admits, half a joke and half entirely serious. \"Has three times now. No priest has an explanation that isn't 'you've clearly angered someone.' I've stopped asking. I'd just like to reach shelter before the next one, if you're headed the same way.\""
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap} declines the offer to rest properly, boots staying firmly laced. \"I manage well enough as I am,\" {subj} says, tired and final, and the conversation doesn't go any further than that.",
+"hook": "won't remove {poss} boots even when offered a chance to rest properly",
+"is_combat": false,
+"success_reveal": "\"They're not really feet anymore,\" {subj_cap} admits quietly, once the silence has stretched long enough to be worse than the confession. \"Haven't been for years. I manage. I'd rather you didn't see, is all — not out of shame for what I am, just tiredness at what people do once they know.\""
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap} goes very still at the mention, then very quiet, and offers nothing further no matter how gently you press. \"I'd rather not discuss it,\" {subj} manages eventually, and the hood stays low for the rest of the walk.",
+"hook": "flinches, hard, at the mention of witch hunters passing through the area recently",
+"is_combat": false,
+"success_reveal": "\"They're not wrong to look,\" {subj_cap} says eventually, quiet and steady despite the fear plainly underneath. \"I am what they're looking for. I've also never harmed a soul, never called on anything I shouldn't, never asked to be born wrong. That won't matter to them. I don't imagine it'll matter to you either, but I'd rather say it plainly than have you find out and feel lied to.\""
+}])
+
+[sub_resource type="Resource" id="SocialEnc_11"]
+script = ExtResource("2")
+encounter_name = "The Broken-Down Cart"
+portrait_career_key = "merchant"
+npc_fellowship = 36
+npc_willpower = 25
+intro_text = "A merchant's cart sits canted hard to one side in a rut, a wheel shattered clean off, goods spilled half across the road. {subj_cap} {situation_hook}, sleeves already rolled up. \"Wheel's done for. Wouldn't happen to have a strong back and a spare hour, would you?\" {opening_flavor}"
+opening_flavors = Array[String](["A second wheel looks close to following the first one's example.", "The cargo scattered across the road is a stranger mix of goods than a normal trade route would carry.", "A horse stands patiently nearby, entirely unbothered by the chaos.", "The rut itself looks suspiciously deliberate for something this far from the usual bad patch of road.", "{subj_cap}'s ledger, dropped in the spill, has fallen open to a page of numbers that don't look like ordinary trade.", "The light's starting to go, and neither of you has said aloud what that might mean out here."])
+round1_skills = Array[String](["Leadership", "Charm", "Gossip", "Intimidate"])
+round1_prompt_text = "{subj_cap} could use a hand — the question is what kind of help {subj} actually needs."
+round1_success_text = "{subj_cap} wipes {poss} brow, grateful. \"Sigmar's mercy, an extra pair of hands. Let's get this sorted.\""
+round1_retry_text = "{subj_cap} eyes the wheel again, unconvinced by your first attempt at a plan. \"Try again — we haven't got all evening.\""
+round1_final_fail_text = "{subj_cap} waves you off, mildly annoyed. \"Perhaps just stand clear, then, if that's the best of it.\""
+round2_skills = Array[String](["Leadership", "Gossip", "Charm", "Intimidate"])
+round2_prompt_text = "Between the two of you, the cart's nearly sorted — one more good push should see it done."
+round2_retry_text = "The wheel slips back half into the rut, both of you swearing in unison."
+reward_xp = 6
+npc_reaction_lines = Array[String](["{subj_cap} works a little easier now, some of the earlier tension gone out of {poss} shoulders.", "Whatever {subj}'s been dancing around, {subj}'s clearly about to just say it outright."])
+situations = Array[Dictionary]([{
+"combat_monster_names": Array[String](["Wild Boar"]),
+"funny_loss_text": "",
+"hook": "keeps glancing nervously toward the treeline while you work, more than the wheel alone explains",
+"is_combat": true,
+"success_reveal": "The wheel's barely back on before {subj_cap}'s worry proves well-founded — something's been stalking the cart's cargo for a while now, and the noise of the repair was apparently the last straw for its patience."
+}, {
+"combat_monster_names": Array[String](["Outlaw"]),
+"funny_loss_text": "",
+"hook": "keeps one hand near a cudgel tucked under the driver's seat the whole time you work",
+"is_combat": true,
+"success_reveal": "\"Wasn't just bad luck, this wheel,\" {subj_cap} admits once it's fixed. \"Someone's been harassing carts on this stretch, and I think they're circling back to finish the job now we're stopped and vulnerable.\" Sure enough, a shape steps out onto the road ahead, blocking the way forward."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap} waves off any further questions, too embarrassed to admit the wheel's own trouble lies with {poss} own greed. \"Just bad luck, is all,\" {subj} insists, unconvincingly, and gets back to the repair without another word on it.",
+"hook": "keeps apologizing for the mess in a way that suggests {subj}'s more embarrassed than actually worried",
+"is_combat": false,
+"success_reveal": "\"Overloaded her, plain and simple,\" {subj_cap} admits once the wheel's back on, sheepish about it. \"Greed got ahead of good sense. You've saved me a very long, very humiliating walk to the next town for a new axle.\" {subj_cap} insists on a genuinely fair cut of the cargo as thanks."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap} just works faster instead of answering, jaw tight with an anxiety {subj} plainly doesn't want to put into words. \"No time to explain, only to finish,\" {subj} mutters, and the wheel goes back on in tense, unbroken silence.",
+"hook": "keeps glancing at the sun's position, doing quiet, worried arithmetic under {poss} breath",
+"is_combat": false,
+"success_reveal": "\"Due at market by nightfall, or I lose the contract entirely,\" {subj_cap} explains, working fast. \"Family depends on this run more than the coin alone lets on.\" {subj_cap}'s relief at making it back on schedule, thanks to your help, is worth more to {obj} than {subj} quite manages to say aloud."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap} snatches the ledger back up and tucks it well out of sight, the earlier warmth cooling considerably. \"Some books aren't for reading,\" {subj} says, flat, and the rest of the repair passes in careful, deliberate quiet.",
+"hook": "keeps glancing at the ledger dropped in the spill like {subj}'d rather you hadn't seen it",
+"is_combat": false,
+"success_reveal": "\"Not quite an ordinary trade route, this one,\" {subj_cap} admits once you've clearly noticed. \"Nothing illegal, just — quiet. Discreet clients prefer discreet books. I'd take it as a kindness if you didn't ask further, and I'll return the kindness in coin.\""
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "{subj_cap}'s thanks trail off into something more like old, practiced wariness, whatever {subj} was working up the nerve to explain going unsaid after all. \"Can't be too careful, these days,\" {subj} says, apologetic but unmoved, and finishes the last strap alone.",
+"hook": "won't stop thanking you, well past the point where it's actually necessary",
+"is_combat": false,
+"success_reveal": "\"You'll have to forgive me,\" {subj_cap} says, still fixing the last strap long after the wheel's secure. \"Last three folk who stopped to 'help' just helped themselves to the cargo instead. Forgotten what an honest hand looks like, is all.\" {subj_cap}'s gratitude, once it settles, is entirely genuine."
+}])
+
+[sub_resource type="Resource" id="SocialEnc_12"]
+script = ExtResource("2")
+encounter_name = "The Stagecoach"
+portrait_career_key = "coachman"
+npc_willpower = 35
+intro_text = "A stagecoach rattles to a stop on the road ahead of you, the driver hailing you down with a raised hand. \"Ho there! A moment of your time, if you'd be so kind!\" {subj_cap} {situation_hook} from the driver's bench. {opening_flavor}"
+opening_flavors = Array[String](["A curtained window shifts slightly, someone inside plainly listening.", "The horses are lathered hard, driven far faster than the road's condition really allows.", "A crest on the coach door has been hastily, imperfectly painted over.", "One wheel wobbles in a way that suggests this stop wasn't entirely voluntary.", "The driver keeps glancing back down the road the coach just came from.", "A guard rides alongside, hand resting a little too readily on {poss} own weapon."])
+round1_skills = Array[String](["Charm", "Leadership", "Gossip", "Intimidate"])
+round1_prompt_text = "{subj_cap}'s asking for something — worth working out exactly what before agreeing to anything."
+round1_success_text = "{subj_cap} looks relieved to be dealing with someone who isn't immediately suspicious of a stopped coach."
+round1_retry_text = "{subj_cap} glances toward the coach, hesitating. \"Perhaps I should explain myself better.\""
+round1_final_fail_text = "{subj_cap} straightens, guarded. \"Perhaps this was a mistake. Good day to you.\""
+round2_skills = Array[String](["Charm", "Leadership", "Gossip", "Intimidate"])
+round2_prompt_text = "Whatever's really going on with this coach, {subj_cap}'s close to telling you outright."
+round2_retry_text = "{subj_cap} glances toward the curtained window before answering, choosing words carefully."
+reward_xp = 8
+npc_reaction_lines = Array[String](["{subj_cap} keeps glancing toward the coach less anxiously than before, like the worst might not be coming after all.", "The guarded formality's dropped out of {poss} voice entirely — {subj}'s talking plainly now."])
+situations = Array[Dictionary]([{
+"combat_monster_names": Array[String](["Highway Bandit"]),
+"funny_loss_text": "",
+"hook": "keeps glancing back down the road with real, undisguised dread",
+"is_combat": true,
+"success_reveal": "\"We're being followed,\" {subj_cap} admits, voice low. \"Have been for the better part of an hour. I'd count it a great favour if you'd see them off before they catch us up entirely.\" Sure enough, riders crest the rise behind the coach within minutes."
+}, {
+"combat_monster_names": Array[String](["Gor"]),
+"funny_loss_text": "",
+"hook": "keeps the guard riding unusually close, both of them watching the treeline more than the road",
+"is_combat": true,
+"success_reveal": "\"There's been trouble on this stretch,\" the driver admits. \"Something in the woods, taking travellers who stop too long. We'd not have flagged you down at all, except the coach itself can't outrun it and we're out of better options.\" The trees ahead rustle, entirely unnaturally still a moment before."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "The curtained window twitches once and goes still, whoever's behind it deciding against showing {obj}self after all. \"My passenger prefers privacy,\" the driver says, a shade too quickly, and the coach doesn't linger to discuss it further.",
+"hook": "keeps glancing at the hastily painted-over crest on the coach door",
+"is_combat": false,
+"success_reveal": "\"Not proud of the disguise,\" the passenger admits, having stepped down to explain in person. \"Fleeing an arranged marriage I want no part of, and my family's crest travels faster than I do if I don't cover it. I'd be grateful for your discretion more than anything else.\""
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "The driver checks the pocket-watch one last time and decides there's no more time to spend on explanations. \"We really must be going,\" {subj} says, already gathering the reins, and the coach pulls away before you can press further.",
+"hook": "keeps checking a pocket-watch with real, mounting anxiety",
+"is_combat": false,
+"success_reveal": "\"We're dangerously behind schedule,\" the driver admits, \"and the coach ahead of us on this route hasn't been seen since yesterday. I don't like what that might mean, and I don't like it more the longer we sit here talking, if I'm honest.\" The warning, urgently given, seems entirely sincere."
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "The driver's expression closes right along with the curtain. \"I've said what I'm going to say on the matter,\" {subj} says, firm but not unkind, and busies {obj}self checking the harness instead of talking further.",
+"hook": "keeps the curtained window firmly shut despite the day's warmth",
+"is_combat": false,
+"success_reveal": "\"My passenger's unwell,\" the driver explains, lowering {poss} voice. \"Nothing catching, just — private. {subj_cap} asked me to keep the curtains drawn and the questions to a minimum. I'd consider it a kindness if you let it lie.\""
+}, {
+"combat_monster_names": Array[String]([]),
+"funny_loss_text": "The driver seems to think better of the offer before {subj} finishes weighing it, and waves you off instead. \"We'll manage as we are,\" {subj} says, not quite believing it, and the coach rattles on shorthanded regardless.",
+"hook": "keeps eyeing your own gear with plain, professional appraisal",
+"is_combat": false,
+"success_reveal": "\"I'll be blunt,\" the driver admits. \"We're short a guard — lost him to a twisted ankle two towns back — and this stretch of road has a poor reputation. I can't pay much, but I can pay something, if you'd ride along as far as the next town.\""
+}])
+
+[resource]
+script = ExtResource("1")
+encounters = Array[ExtResource("2")]([SubResource("SocialEnc_1"), SubResource("SocialEnc_2"), SubResource("SocialEnc_3"), SubResource("SocialEnc_4"), SubResource("SocialEnc_5"), SubResource("SocialEnc_6"), SubResource("SocialEnc_7"), SubResource("SocialEnc_8"), SubResource("SocialEnc_9"), SubResource("SocialEnc_10"), SubResource("SocialEnc_11"), SubResource("SocialEnc_12")])

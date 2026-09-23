@@ -1,0 +1,69 @@
+[gd_resource type="Resource" script_class="CareerDefinition" format=3 uid="uid://drne38qqnjkra"]
+
+[ext_resource type="Script" uid="uid://cr4lrv134m8k1" path="res://scripts/resources/career_definition.gd" id="1"]
+[ext_resource type="Script" uid="uid://3ug4teqahf5m" path="res://scripts/resources/career_level.gd" id="2"]
+
+[sub_resource type="Resource" id="Level_1"]
+script = ExtResource("2")
+level_name = "River Recruit"
+status_tier = "Silver"
+status_stars = 1
+attribute_advances = {
+"ballistic_skill": 5,
+"fellowship": 5,
+"strength": 5
+}
+skills = Array[String](["Athletics", "Dodge", "Endurance", "Melee (Basic)", "Perception", "Row", "Sail", "Swim"])
+talents = Array[String](["Strong Swimmer", "Strong Back", "Very Strong", "Waterman"])
+trappings = Array[String](["Sword", "Leather Jack", "Uniform"])
+income_skill = "Melee (Basic)"
+
+[sub_resource type="Resource" id="Level_2"]
+script = ExtResource("2")
+level_name = "Riverwarden"
+tier = 2
+status_tier = "Silver"
+status_stars = 2
+attribute_advances = {
+"weapon_skill": 5
+}
+skills = Array[String](["Bribery", "Charm", "Intimidate", "Gossip", "Lore (Riverways)", "Ranged (Blackpowder)"])
+talents = Array[String](["Criminal", "Gunner", "Fisherman", "Seasoned Traveller"])
+trappings = Array[String](["Lantern and Oil", "Pistol with 10 Shots", "Shield"])
+income_skill = "Intimidate"
+
+[sub_resource type="Resource" id="Level_3"]
+script = ExtResource("2")
+level_name = "Shipsword"
+tier = 3
+status_tier = "Silver"
+status_stars = 4
+attribute_advances = {
+"initiative": 5
+}
+skills = Array[String](["Climb", "Cool", "Intuition", "Leadership"])
+talents = Array[String](["Fearless (Wreckers)", "Hatred (Any)", "Pilot", "Sea Legs"])
+trappings = Array[String](["Grappling Hook", "Helm", "Mail Shirt"])
+income_skill = "Leadership"
+
+[sub_resource type="Resource" id="Level_4"]
+script = ExtResource("2")
+level_name = "Shipsword Master"
+tier = 4
+status_tier = "Gold"
+status_stars = 1
+attribute_advances = {
+"intelligence": 5
+}
+skills = Array[String](["Lore (Law)", "Navigation"])
+talents = Array[String](["Commanding Presence", "Kingpin", "Menacing", "Orientation"])
+trappings = Array[String](["Patrol Boats and Crew", "Symbol of Rank"])
+income_skill = "Leadership"
+
+[resource]
+script = ExtResource("1")
+career_name = "Riverwarden"
+career_class = "Riverfolk"
+valid_races = Array[String](["Halfling", "Human"])
+levels = Array[ExtResource("2")]([SubResource("Level_1"), SubResource("Level_2"), SubResource("Level_3"), SubResource("Level_4")])
+summary = "Strong-backed and sure, you patrol the riverways in pursuit of lawbreakers and troublemakers."

@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="LocalMapDefinition" format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/difficulty_area_definition.gd" id="1_bbmkw"]
+[ext_resource type="Script" path="res://scripts/resources/local_map_definition.gd" id="2_ejfpi"]
+[ext_resource type="Script" path="res://scripts/resources/location_definition.gd" id="2_v2qye"]
+[ext_resource type="Script" path="res://scripts/resources/province_definition.gd" id="3_opobh"]
+[ext_resource type="Script" path="res://scripts/resources/quest_monster_map_marker.gd" id="4_aeoik"]
+[ext_resource type="Script" path="res://scripts/resources/quest_npc_map_marker.gd" id="5_36kup"]
+
+[sub_resource type="Resource" id="Resource_rvusd"]
+script = ExtResource("1_bbmkw")
+area_name = "Village"
+bounds = Rect2i(4, 12, 16, 7)
+tile_type = "village"
+is_safe_area = true
+
+[sub_resource type="Resource" id="Resource_boyww"]
+script = ExtResource("1_bbmkw")
+area_name = "Dark Forest (Goblin Fort)"
+tier = 1
+monster_pool = Array[String](["Forest Goblin"])
+habitat = "forest"
+bounds = Rect2i(33, 19, 16, 10)
+tile_type = "woods"
+
+[sub_resource type="Resource" id="Resource_vgfnw"]
+script = ExtResource("1_bbmkw")
+area_name = "Northern Cave (Bears)"
+tier = 1
+monster_pool = Array[String](["Bear"])
+habitat = "cave"
+bounds = Rect2i(33, 1, 16, 9)
+tile_type = "caves"
+
+[sub_resource type="Resource" id="Resource_cbbx1"]
+script = ExtResource("1_bbmkw")
+area_name = "East of the River"
+tier = 1
+bounds = Rect2i(33, 1, 16, 28)
+
+[resource]
+script = ExtResource("2_ejfpi")
+map_name = "Giessingen"
+map_rows = Array[String](["MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM", "M..FFF.....................~~~~~~~T.....T.TMMMMM.M", "M..FFF.....................~~~~~~~..T......MMMMM.M", "M..........................~~~~~~~........TMMMMM.M", "M..zzzz....kkkk..,.........~~~~~~~.........MMMMM.M", "M..zzzz....kkkk..........,.~~~~~~~..T......iiiii.M", "M..zzzz....kkkk...........,~~~~~~~.......TTiiyii.M", "M..zzzz....kkkk............~~~~~~~...T.....T.....M", "M...........................~~~~~~~............T.M", "M...................H.......~~~~~~~..............M", "M...........................~~~~~~~T......T......M", "M.........,..............,..~~~~~~~..............M", "M....BBBBB....BBBBB.........~~~~~~~..............M", "M....B..YB....B..SB.........~~~~~~~..............M", "M....wwdww....rrdrr.........~~~~~~~..............M", "M...GGGGGGWGGGGGGGG.........~~~~~~~..............M", "M...GGGGG@GGGGGGGGGGG........~~~~~~~.............M", "M.....l.GBBB...l...GGGGG.....~~~~~~~..T..........M", "M.......Gwdw.N.....G...GGGGGXXXXXXXXXGGG.........M", "M...,.,,GGGG.......G.........~~~~~~~..........TT.M", "M..TT,,T...T.......G.......~~~~~~~TTTTT..TTTTT.TTM", "M....,T....T.......G.......~~~~~~~.TT.T..TT..T..TM", "M..TT.TTTTTT....,..G.......~~~~~~~TTTT..TTT.TTTTTM", "M..TTTTT..TT.......G.......~~~~~~~.TT.T.aaaaaaTTTM", "M..TTT..TTTT.,.....G........~~~~~~~T.TT.aUUUUa.T.M", "M..TT.TT.TTT.......G........~~~~~~~T.T..atUUtaT..M", "M..TT...TTT........G.......,~~~~~~~T.T..aUUUUaT..M", "M................,.G........~~~~~~~TT...aajaaaT.TM", "M..................G........~~~~~~~TTT......TT..TM", "MMMMMMMMMMMMMMMMMMM.MMMMMMMMMMMMMMMMMMMMMMMMMMMMMM"])
+difficulty_areas = Array[ExtResource("1_bbmkw")]([SubResource("Resource_rvusd"), SubResource("Resource_boyww"), SubResource("Resource_vgfnw"), SubResource("Resource_cbbx1")])
+elder_tile = Vector2i(13, 15)
+world_map_exit_tile = Vector2i(19, 29)
+world_map_return_tile = Vector2i(15, 30)
+default_camera_zoom = 0.703125
+companion_maker_tile = Vector2i(17, 26)
+elevation_overrides = {
+Vector2i(3, 1): 1,
+Vector2i(4, 1): 1,
+Vector2i(5, 1): 1,
+Vector2i(3, 2): 1,
+Vector2i(4, 2): 1,
+Vector2i(5, 2): 1
+}

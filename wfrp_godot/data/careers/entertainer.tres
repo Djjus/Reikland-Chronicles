@@ -1,0 +1,67 @@
+[gd_resource type="Resource" script_class="CareerDefinition" format=3 uid="uid://dd4ba08kdmyif"]
+
+[ext_resource type="Script" uid="uid://cr4lrv134m8k1" path="res://scripts/resources/career_definition.gd" id="1"]
+[ext_resource type="Script" uid="uid://3ug4teqahf5m" path="res://scripts/resources/career_level.gd" id="2"]
+
+[sub_resource type="Resource" id="Level_1"]
+script = ExtResource("2")
+level_name = "Busker"
+status_stars = 3
+attribute_advances = {
+"agility": 5,
+"dexterity": 5,
+"fellowship": 5
+}
+skills = Array[String](["Athletics", "Charm", "Entertain (Any)", "Gossip", "Haggle", "Perform (Any)", "Play (Any)", "Sleight of Hand"])
+talents = Array[String](["Attractive", "Mimic", "Public Speaker", "Suave"])
+trappings = Array[String](["Bowl", "Instrument"])
+income_skill = "Entertain (Any)"
+
+[sub_resource type="Resource" id="Level_2"]
+script = ExtResource("2")
+level_name = "Entertainer"
+tier = 2
+status_stars = 5
+attribute_advances = {
+"weapon_skill": 5
+}
+skills = Array[String](["Entertain (Any)", "Ride (Any)", "Melee (Basic)", "Perform (Any)", "Play (Any)", "Ranged (Throwing)"])
+talents = Array[String](["Contortionist", "Jump Up", "Sharpshooter", "Trick Riding"])
+trappings = Array[String](["Costume", "Instrument", "Selection of Scripts", "Throwing Weapons"])
+income_skill = "Entertain (Any)"
+
+[sub_resource type="Resource" id="Level_3"]
+script = ExtResource("2")
+level_name = "Troubadour"
+tier = 3
+status_tier = "Silver"
+status_stars = 3
+attribute_advances = {
+"ballistic_skill": 5
+}
+skills = Array[String](["Animal Care", "Animal Training (Any)", "Art (Writing)", "Language (Any)"])
+talents = Array[String](["Blather", "Master of Disguise", "Perfect Pitch", "Read/Write"])
+trappings = Array[String](["Trained Animal", "Writing Kit"])
+income_skill = "Entertain (Any)"
+
+[sub_resource type="Resource" id="Level_4"]
+script = ExtResource("2")
+level_name = "Troupe Leader"
+tier = 4
+status_tier = "Gold"
+status_stars = 1
+attribute_advances = {
+"toughness": 5
+}
+skills = Array[String](["Drive", "Leadership"])
+talents = Array[String](["Dealmaker", "Etiquette (Any)", "Seasoned Traveller", "Sharp"])
+trappings = Array[String](["Draught Horses and Wagon (Stage)", "Wardrobe of Costumes and Props", "Troupe of Entertainers"])
+income_skill = "Leadership"
+
+[resource]
+script = ExtResource("1")
+career_name = "Entertainer"
+career_class = "Ranger"
+valid_races = Array[String](["Dwarf", "Halfling", "High Elf", "Human", "Wood Elf"])
+levels = Array[ExtResource("2")]([SubResource("Level_1"), SubResource("Level_2"), SubResource("Level_3"), SubResource("Level_4")])
+summary = "Whether high-born or low-brow, you distract people from the harsh realities of life."

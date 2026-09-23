@@ -1,0 +1,69 @@
+[gd_resource type="Resource" script_class="CareerDefinition" format=3 uid="uid://gr8m2opr51ql"]
+
+[ext_resource type="Script" uid="uid://cr4lrv134m8k1" path="res://scripts/resources/career_definition.gd" id="1"]
+[ext_resource type="Script" uid="uid://3ug4teqahf5m" path="res://scripts/resources/career_level.gd" id="2"]
+
+[sub_resource type="Resource" id="Level_1"]
+script = ExtResource("2")
+level_name = "Initiate"
+status_stars = 2
+attribute_advances = {
+"agility": 5,
+"toughness": 5,
+"willpower": 5
+}
+skills = Array[String](["Athletics", "Cool", "Endurance", "Intuition", "Lore (Theology)", "Perception", "Pray", "Research"])
+talents = Array[String](["Bless (Any)", "Holy Visions", "Read/Write", "Suave"])
+trappings = Array[String](["Religious Symbol", "Robes"])
+income_skill = "Pray"
+starting_prayers = Array[String](["Soothe", "Ward Against Evil"])
+
+[sub_resource type="Resource" id="Level_2"]
+script = ExtResource("2")
+level_name = "Priest"
+tier = 2
+status_tier = "Silver"
+status_stars = 1
+attribute_advances = {
+"fellowship": 5
+}
+skills = Array[String](["Charm", "Entertain (Storytelling)", "Gossip", "Heal", "Intimidate", "Melee (Basic)"])
+talents = Array[String](["Blather", "Bookish", "Etiquette (Cultists)", "Invoke (Any)"])
+trappings = Array[String](["Book (Religion)", "Ceremonial Robes"])
+income_skill = "Pray"
+
+[sub_resource type="Resource" id="Level_3"]
+script = ExtResource("2")
+level_name = "High Priest"
+tier = 3
+status_tier = "Gold"
+status_stars = 1
+attribute_advances = {
+"intelligence": 5
+}
+skills = Array[String](["Art (Writing)", "Entertain (Speeches)", "Leadership", "Lore (Heraldry)"])
+talents = Array[String](["Acute Sense (Any)", "Hatred (Any)", "Impassioned Zeal", "Strong-minded"])
+trappings = Array[String](["Quality Robes", "Religious Relic", "Subordinate Priests", "Temple"])
+income_skill = "Leadership"
+
+[sub_resource type="Resource" id="Level_4"]
+script = ExtResource("2")
+level_name = "Lector"
+tier = 4
+status_tier = "Gold"
+status_stars = 2
+attribute_advances = {
+"initiative": 5
+}
+skills = Array[String](["Language (Any)", "Lore (Politics)"])
+talents = Array[String](["Master Orator", "Pure Soul", "Resistance (Any)", "Savant (Theology)"])
+trappings = Array[String](["Library (Theology)", "Subordinate High Priests"])
+income_skill = "Leadership"
+
+[resource]
+script = ExtResource("1")
+career_name = "Priest"
+career_class = "Academic"
+valid_races = Array[String](["Human"])
+levels = Array[ExtResource("2")]([SubResource("Level_1"), SubResource("Level_2"), SubResource("Level_3"), SubResource("Level_4")])
+summary = "Priests tend to congregations of the faithful throughout the Old World, their duties varying with the deity they serve."

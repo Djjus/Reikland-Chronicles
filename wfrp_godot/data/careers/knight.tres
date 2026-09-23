@@ -1,0 +1,80 @@
+[gd_resource type="Resource" script_class="CareerDefinition" format=3 uid="uid://v71oasqeffly"]
+
+[ext_resource type="Script" uid="uid://cr4lrv134m8k1" path="res://scripts/resources/career_definition.gd" id="1"]
+[ext_resource type="Script" uid="uid://3ug4teqahf5m" path="res://scripts/resources/career_level.gd" id="2"]
+
+[sub_resource type="Resource" id="Level_1"]
+script = ExtResource("2")
+level_name = "Squire"
+status_tier = "Silver"
+status_stars = 3
+attribute_advances = {
+"agility": 5,
+"initiative": 5,
+"strength": 5
+}
+skills = Array[String](["Athletics", "Animal Care", "Charm Animal", "Heal", "Lore (Heraldry)", "Melee (Cavalry)", "Ride (Horse)", "Trade (Farrier)"])
+talents = Array[String](["Etiquette (Any)", "Roughrider", "Sturdy", "Warrior Born"])
+trappings = Array[String](["Leather Jack", "Mail Shirt", "Riding Horse with Saddle and Tack", "Shield", "Trade Tools (Farrier)"])
+income_skill = "Trade (Farrier)"
+
+[sub_resource type="Resource" id="Level_2"]
+script = ExtResource("2")
+level_name = "Knight"
+tier = 2
+status_tier = "Silver"
+status_stars = 5
+attribute_advances = {
+"agility": 5,
+"initiative": 5,
+"strength": 5,
+"weapon_skill": 5
+}
+skills = Array[String](["Cool", "Dodge", "Endurance", "Intimidate", "Language (Battle)", "Melee (Any)"])
+talents = Array[String](["Menacing", "Seasoned Traveller", "Shieldsman", "Strike Mighty Blow"])
+trappings = Array[String](["Lance", "Plate Breastplate", "Helm"])
+income_skill = "Intimidate"
+
+[sub_resource type="Resource" id="Level_3"]
+script = ExtResource("2")
+level_name = "First Knight"
+tier = 3
+status_tier = "Gold"
+status_stars = 2
+attribute_advances = {
+"agility": 5,
+"fellowship": 5,
+"initiative": 5,
+"strength": 5,
+"weapon_skill": 5
+}
+skills = Array[String](["Charm", "Consume Alcohol", "Leadership", "Lore (Warfare)"])
+talents = Array[String](["Fearless (Any)", "Stout-hearted", "Unshakable", "War Leader"])
+trappings = Array[String](["Barding"])
+income_skill = "Leadership"
+
+[sub_resource type="Resource" id="Level_4"]
+script = ExtResource("2")
+level_name = "Knight of the Inner Circle"
+tier = 4
+status_tier = "Gold"
+status_stars = 4
+attribute_advances = {
+"agility": 5,
+"fellowship": 5,
+"initiative": 5,
+"intelligence": 5,
+"strength": 5,
+"weapon_skill": 5
+}
+skills = Array[String](["Lore (Any)", "Secret Signs (Any)"])
+talents = Array[String](["Disarm", "Inspiring", "Iron Will", "Strike to Injure"])
+trappings = Array[String](["Plumed Great Helm"])
+income_skill = "Lore (Any)"
+
+[resource]
+script = ExtResource("1")
+career_name = "Knight"
+valid_races = Array[String](["High Elf", "Human", "Wood Elf"])
+levels = Array[ExtResource("2")]([SubResource("Level_1"), SubResource("Level_2"), SubResource("Level_3"), SubResource("Level_4")])
+summary = "Thundering into battle on a heavy charger, dominating the field and spreading fear in your wake."

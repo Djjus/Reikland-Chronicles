@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="RaceDefinition" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/race_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+race_name = "Wood Elf"
+characteristic_bases = {
+"weapon_skill": 30,
+"ballistic_skill": 30,
+"strength": 20,
+"toughness": 20,
+"initiative": 30,
+"agility": 40,
+"dexterity": 30,
+"intelligence": 20,
+"willpower": 30,
+"fellowship": 10
+}
+starting_fate = 0
+starting_resilience = 1
+extra_points = 2
+starting_extra_wounds = 0
+movement = 5
+racial_skill_pool = Array[String](["Athletics", "Climb", "Endurance", "Entertain (Sing)", "Intimidate", "Language (Eltharin)", "Melee (Basic)", "Outdoor Survival", "Perception", "Ranged (Bow)", "Stealth (Rural)", "Track"])
+racial_talents = Array[String](["Acute Sense (Sight)", "Night Vision", "Rover"])
+racial_talent_choice_groups = Array[Array]([["Hardy", "Second Sight"], ["Read/Write", "Very Resilient"]])
+summary = "Reclusive dwellers of the deep forests, wary of outsiders and deadly with a bow."

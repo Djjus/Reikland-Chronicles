@@ -1,0 +1,68 @@
+[gd_resource type="Resource" script_class="CareerDefinition" format=3 uid="uid://bw0sbo03ij56y"]
+
+[ext_resource type="Script" uid="uid://cr4lrv134m8k1" path="res://scripts/resources/career_definition.gd" id="1"]
+[ext_resource type="Script" uid="uid://3ug4teqahf5m" path="res://scripts/resources/career_level.gd" id="2"]
+
+[sub_resource type="Resource" id="Level_1"]
+script = ExtResource("2")
+level_name = "Novitiate"
+status_stars = 1
+attribute_advances = {
+"dexterity": 5,
+"fellowship": 5,
+"intelligence": 5
+}
+skills = Array[String](["Art (Calligraphy)", "Cool", "Endurance", "Entertain (Storyteller)", "Gossip", "Heal", "Lore (Theology)", "Pray"])
+talents = Array[String](["Bless (Any)", "Stone Soup", "Panhandle", "Read/Write"])
+trappings = Array[String](["Religious Symbol", "Robes"])
+income_skill = "Pray"
+starting_prayers = Array[String](["Soothe", "Sense Corruption"])
+
+[sub_resource type="Resource" id="Level_2"]
+script = ExtResource("2")
+level_name = "Nun"
+tier = 2
+status_stars = 4
+attribute_advances = {
+"willpower": 5
+}
+skills = Array[String](["Charm", "Melee (Any)", "Research", "Trade (Brewer)", "Trade (Herbalist)", "Trade (Vintner)"])
+talents = Array[String](["Etiquette (Cultists)", "Field Dressing", "Holy Visions", "Invoke (Any)"])
+trappings = Array[String](["Book (Religion)", "Religious Relic", "Trade Tools (Any)"])
+income_skill = "Charm"
+
+[sub_resource type="Resource" id="Level_3"]
+script = ExtResource("2")
+level_name = "Abbess"
+tier = 3
+status_tier = "Silver"
+status_stars = 2
+attribute_advances = {
+"initiative": 5
+}
+skills = Array[String](["Leadership", "Lore (Local)", "Lore (Politics)", "Perception"])
+talents = Array[String](["Resistance (Any)", "Robust", "Savant (Theology)", "Stout-hearted"])
+trappings = Array[String](["Abbey", "Library (Theology)"])
+income_skill = "Leadership"
+
+[sub_resource type="Resource" id="Level_4"]
+script = ExtResource("2")
+level_name = "Prioress General"
+tier = 4
+status_tier = "Silver"
+status_stars = 5
+attribute_advances = {
+"toughness": 5
+}
+skills = Array[String](["Language (Any)", "Lore (Any)"])
+talents = Array[String](["Commanding Presence", "Iron Will", "Pure Soul", "Strong-minded"])
+trappings = Array[String](["Religious Order"])
+income_skill = "Leadership"
+
+[resource]
+script = ExtResource("1")
+career_name = "Nun"
+career_class = "Academic"
+valid_races = Array[String](["Human"])
+levels = Array[ExtResource("2")]([SubResource("Level_1"), SubResource("Level_2"), SubResource("Level_3"), SubResource("Level_4")])
+summary = "You are devoted to the service of your deity, having sworn vows for a life of service."

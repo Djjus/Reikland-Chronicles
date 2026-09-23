@@ -1,0 +1,80 @@
+[gd_resource type="Resource" script_class="CareerDefinition" format=3 uid="uid://dx27ef1ut2j7b"]
+
+[ext_resource type="Script" uid="uid://cr4lrv134m8k1" path="res://scripts/resources/career_definition.gd" id="1"]
+[ext_resource type="Script" uid="uid://3ug4teqahf5m" path="res://scripts/resources/career_level.gd" id="2"]
+
+[sub_resource type="Resource" id="Level_1"]
+script = ExtResource("2")
+level_name = "Horseman"
+status_tier = "Silver"
+status_stars = 2
+attribute_advances = {
+"agility": 5,
+"strength": 5,
+"weapon_skill": 5
+}
+skills = Array[String](["Animal Care", "Charm Animal", "Endurance", "Language (Battle)", "Melee (Basic)", "Outdoor Survival", "Perception", "Ride (Horse)"])
+talents = Array[String](["Combat Aware", "Crack the Whip", "Lightning Reflexes", "Roughrider"])
+trappings = Array[String](["Leather Jack", "Riding Horse with Saddle and Tack"])
+income_skill = "Ride (Horse)"
+
+[sub_resource type="Resource" id="Level_2"]
+script = ExtResource("2")
+level_name = "Cavalryman"
+tier = 2
+status_tier = "Silver"
+status_stars = 4
+attribute_advances = {
+"agility": 5,
+"ballistic_skill": 5,
+"strength": 5,
+"weapon_skill": 5
+}
+skills = Array[String](["Charm", "Consume Alcohol", "Cool", "Gossip", "Melee (Cavalry)", "Ranged (Blackpowder)"])
+talents = Array[String](["Etiquette (Soldiers)", "Gunner", "Seasoned Traveller", "Trick Riding"])
+trappings = Array[String](["Plate Breastplate", "Helm", "Light Warhorse with Saddle and Tack", "Pistol with 10 Shots", "Shield"])
+income_skill = "Charm"
+
+[sub_resource type="Resource" id="Level_3"]
+script = ExtResource("2")
+level_name = "Cavalry Sergeant"
+tier = 3
+status_tier = "Gold"
+status_stars = 1
+attribute_advances = {
+"agility": 5,
+"ballistic_skill": 5,
+"strength": 5,
+"weapon_skill": 5,
+"willpower": 5
+}
+skills = Array[String](["Intimidate", "Intuition", "Leadership", "Lore (Warfare)"])
+talents = Array[String](["Combat Reflexes", "Fast Shot", "Hatred (Any)", "War Leader"])
+trappings = Array[String](["Sash"])
+income_skill = "Leadership"
+
+[sub_resource type="Resource" id="Level_4"]
+script = ExtResource("2")
+level_name = "Cavalry Officer"
+tier = 4
+status_tier = "Gold"
+status_stars = 2
+attribute_advances = {
+"agility": 5,
+"ballistic_skill": 5,
+"fellowship": 5,
+"strength": 5,
+"weapon_skill": 5,
+"willpower": 5
+}
+skills = Array[String](["Gamble", "Lore (Heraldry)"])
+talents = Array[String](["Accurate Shot", "Inspiring", "Reaction Strike", "Robust"])
+trappings = Array[String](["Deck of Cards", "Quality Clothing"])
+income_skill = "Lore (Heraldry)"
+
+[resource]
+script = ExtResource("1")
+career_name = "Cavalryman"
+valid_races = Array[String](["High Elf", "Human", "Wood Elf"])
+levels = Array[ExtResource("2")]([SubResource("Level_1"), SubResource("Level_2"), SubResource("Level_3"), SubResource("Level_4")])
+summary = "A dashing and fearless rider, bringing speed, versatility, and skill-at-arms to the battlefield."

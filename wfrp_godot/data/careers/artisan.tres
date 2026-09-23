@@ -1,0 +1,68 @@
+[gd_resource type="Resource" script_class="CareerDefinition" format=3 uid="uid://4ss1agybswc8"]
+
+[ext_resource type="Script" uid="uid://cr4lrv134m8k1" path="res://scripts/resources/career_definition.gd" id="1"]
+[ext_resource type="Script" uid="uid://3ug4teqahf5m" path="res://scripts/resources/career_level.gd" id="2"]
+
+[sub_resource type="Resource" id="Level_1"]
+script = ExtResource("2")
+level_name = "Apprentice Artisan"
+status_stars = 2
+attribute_advances = {
+"dexterity": 5,
+"strength": 5,
+"toughness": 5
+}
+skills = Array[String](["Athletics", "Cool", "Consume Alcohol", "Dodge", "Endurance", "Evaluate", "Stealth (Urban)", "Trade (Any)"])
+talents = Array[String](["Artistic", "Craftsman (Any)", "Strong Back", "Very Strong"])
+trappings = Array[String](["Chalk", "Leather Jerkin", "1d10 Rags"])
+income_skill = "Trade (Any)"
+
+[sub_resource type="Resource" id="Level_2"]
+script = ExtResource("2")
+level_name = "Artisan"
+tier = 2
+status_tier = "Silver"
+status_stars = 1
+attribute_advances = {
+"fellowship": 5
+}
+skills = Array[String](["Charm", "Haggle", "Lore (Local)", "Gossip", "Language (Guilder)", "Perception"])
+talents = Array[String](["Dealmaker", "Etiquette (Guilder)", "Nimble Fingered", "Sturdy"])
+trappings = Array[String](["Guild Licence", "Trade Tools"])
+income_skill = "Trade (Any)"
+
+[sub_resource type="Resource" id="Level_3"]
+script = ExtResource("2")
+level_name = "Master Artisan"
+tier = 3
+status_tier = "Silver"
+status_stars = 3
+attribute_advances = {
+"willpower": 5
+}
+skills = Array[String](["Intuition", "Leadership", "Research", "Secret Signs (Guilder)"])
+talents = Array[String](["Acute Sense (Taste or Touch)", "Master Tradesman (Any)", "Read/Write", "Tinker"])
+trappings = Array[String](["Apprentice", "Workshop"])
+income_skill = "Trade (Any)"
+
+[sub_resource type="Resource" id="Level_4"]
+script = ExtResource("2")
+level_name = "Guildmaster"
+tier = 4
+status_tier = "Gold"
+status_stars = 1
+attribute_advances = {
+"intelligence": 5
+}
+skills = Array[String](["Bribery", "Intimidate"])
+talents = Array[String](["Briber", "Magnum Opus", "Public Speaker", "Schemer"])
+trappings = Array[String](["Guild", "Quality Clothing"])
+income_skill = "Trade (Any)"
+
+[resource]
+script = ExtResource("1")
+career_name = "Artisan"
+career_class = "Burgher"
+valid_races = Array[String](["Dwarf", "Halfling", "High Elf", "Human", "Wood Elf"])
+levels = Array[ExtResource("2")]([SubResource("Level_1"), SubResource("Level_2"), SubResource("Level_3"), SubResource("Level_4")])
+summary = "A skilled craftsperson, you take pride in your work, creating products for sale and commission."

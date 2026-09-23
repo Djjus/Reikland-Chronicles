@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="DungeonThemeDefinition" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/dungeon_theme_definition.gd" id="1_theme"]
+[ext_resource type="Texture2D" path="res://assets/tiles/dungeon_goblin_fort/mud_floor_01.png" id="2_mud01"]
+[ext_resource type="Texture2D" path="res://assets/tiles/dungeon_goblin_fort/mud_floor_02.png" id="3_mud02"]
+
+[resource]
+script = ExtResource("1_theme")
+theme_id = "goblin_fort"
+theme_name = "The Goblin Fort Dungeon"
+monster_faction = "Greenskin"
+difficulty_tier = 2
+is_outdoor = true
+wall_char = "#"
+floor_char = "."
+door_closed_char = "D"
+door_open_char = "O"
+entrance_char = "E"
+tile_atlas = {
+".": ExtResource("2_mud01"),
+"E": ExtResource("2_mud01")
+}
+floor_textures = Array[Texture2D]([ExtResource("2_mud01"), ExtResource("3_mud02")])
+quest_room_monster_names = Array[String](["Orc", "Goblin", "Goblin"])
+monster_lair_monster_names = Array[String](["Goblin", "Goblin", "Forest Goblin", "Forest Goblin"])
+monster_patrol_monster_names = Array[String](["Goblin", "Forest Goblin"])
+quest_bonus_reward_chance = 0.6

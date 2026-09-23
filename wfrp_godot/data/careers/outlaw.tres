@@ -1,0 +1,66 @@
+[gd_resource type="Resource" script_class="CareerDefinition" format=3 uid="uid://xplf714qb8vw"]
+
+[ext_resource type="Script" uid="uid://cr4lrv134m8k1" path="res://scripts/resources/career_definition.gd" id="1"]
+[ext_resource type="Script" uid="uid://3ug4teqahf5m" path="res://scripts/resources/career_level.gd" id="2"]
+
+[sub_resource type="Resource" id="Level_1"]
+script = ExtResource("2")
+level_name = "Brigand"
+status_stars = 1
+attribute_advances = {
+"strength": 5,
+"toughness": 5,
+"weapon_skill": 5
+}
+skills = Array[String](["Athletics", "Consume Alcohol", "Cool", "Endurance", "Gamble", "Intimidate", "Melee (Basic)", "Outdoor Survival"])
+talents = Array[String](["Combat Aware", "Criminal", "Rover", "Flee!"])
+trappings = Array[String](["Bedroll", "Sword", "Leather Jerkin", "Tinderbox"])
+income_skill = "Melee (Basic)"
+
+[sub_resource type="Resource" id="Level_2"]
+script = ExtResource("2")
+level_name = "Outlaw"
+tier = 2
+status_stars = 2
+attribute_advances = {
+"ballistic_skill": 5
+}
+skills = Array[String](["Dodge", "Heal", "Lore (Local)", "Perception", "Ranged (Bow)", "Stealth (Rural)"])
+talents = Array[String](["Dirty Fighting", "Marksman", "Strike to Stun", "Trapper"])
+trappings = Array[String](["Bow with 10 Arrows", "Shield", "Tent"])
+income_skill = "Ranged (Bow)"
+
+[sub_resource type="Resource" id="Level_3"]
+script = ExtResource("2")
+level_name = "Outlaw Chief"
+tier = 3
+status_stars = 4
+attribute_advances = {
+"initiative": 5
+}
+skills = Array[String](["Gossip", "Intuition", "Leadership", "Ride (Horse)"])
+talents = Array[String](["Rapid Reload", "Roughrider", "Menacing", "Very Resilient"])
+trappings = Array[String](["Helm", "Riding Horse with Saddle and Tack", "Sleeved Mail Shirt", "Band of Outlaws"])
+income_skill = "Leadership"
+
+[sub_resource type="Resource" id="Level_4"]
+script = ExtResource("2")
+level_name = "Bandit King"
+tier = 4
+status_tier = "Silver"
+status_stars = 2
+attribute_advances = {
+"fellowship": 5
+}
+skills = Array[String](["Charm", "Lore (Empire)"])
+talents = Array[String](["Deadeye Shot", "Fearless (Road Wardens)", "Iron Will", "Robust"])
+trappings = Array[String](["'Fiefdom' of Outlaw Chiefs", "Lair"])
+income_skill = "Leadership"
+
+[resource]
+script = ExtResource("1")
+career_name = "Outlaw"
+career_class = "Rogue"
+valid_races = Array[String](["Dwarf", "Halfling", "High Elf", "Human", "Wood Elf", "Ogre"])
+levels = Array[ExtResource("2")]([SubResource("Level_1"), SubResource("Level_2"), SubResource("Level_3"), SubResource("Level_4")])
+summary = "You prey upon travellers, extracting a toll from the vulnerable and the unsuspecting."
